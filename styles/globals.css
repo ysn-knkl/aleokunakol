@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-surface-75 text-text-primary;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply container max-w-6xl;
+  }
+
+  /* buton: brand -> accent geçişli */
+  .btn-primary {
+    @apply inline-block rounded-full px-5 py-2.5 font-semibold text-white shadow-soft transition;
+    background: linear-gradient(90deg, #047b8c, #f68b85);
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-text-secondary hover:text-text-primary transition;
+  }
+
+  /* kartlar açık tema */
+  .card {
+    @apply rounded-2xl bg-white border border-brand-300/20 shadow-soft;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+    scroll-margin-top: 90px;
+  }
+  .title {
+    @apply text-3xl md:text-4xl font-bold text-text-primary;
+  }
+  .lead {
+    @apply text-lg text-text-secondary;
+  }
+
+  /* navbar flicker fix */
+  .nav-shadow-fix {
+    will-change: transform, backdrop-filter;
+    -webkit-backface-visibility: hidden;
+  }
+  .prose-legal {
+    @apply prose prose-neutral;
+  }
+
+  .prose-legal :where(h3) {
+    @apply text-[1.05rem] md:text-lg font-semibold text-text-primary mt-2 mb-2;
+  }
+
+  .prose-legal :where(p) {
+    @apply leading-relaxed text-[0.98rem] text-text-secondary;
+  }
+
+  .prose-legal :where(ul) {
+    @apply list-disc list-inside space-y-1 text-[0.98rem] text-text-secondary;
+  }
+
+  .prose-legal a {
+    @apply text-brand-700 underline underline-offset-2 hover:opacity-90;
+  }
+}
