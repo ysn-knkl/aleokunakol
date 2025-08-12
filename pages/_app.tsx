@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 const LOCALE_TO_OG: Record<string, string> = {
   tr: "tr_TR",
   en: "en_US",
-  de: "de_AT", // Avusturya Almancası için mantıklı varsayılan
+  de: "de_AT", 
   ro: "ro_RO",
 };
 
@@ -16,8 +16,8 @@ function AppSeo() {
   const { t } = useTranslation("common");
   const { locale, locales, asPath } = useRouter();
 
-  const current = locale ?? "tr";
-  const ogLocale = LOCALE_TO_OG[current] || "tr_TR";
+  const current = locale ?? "de";
+  const ogLocale = LOCALE_TO_OG[current] || "de_AT";
 
   // hreflang/alternate
   const hrefLangs =
