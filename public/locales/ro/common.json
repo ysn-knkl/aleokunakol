@@ -1,4 +1,127 @@
 {
-  "aboutTitle": "Despre mine",
-  "aboutDescription": "Sunt terapeut și ajut copiii prin integrarea reflexelor primitive."
+  "lastUpdated": "Actualizat: 2025",
+  "phone": "Telefon:",
+  "seo": {
+    "title": "QRI Reflex | Integrarea Reflexelor",
+    "description": "Terapie reflexă, QRI, aromaterapie și altele",
+    "siteName": "QRI Reflex"
+  },
+  "nav": {
+    "about": "Despre mine",
+    "services": "Servicii",
+    "offer": "Ofertă",
+    "contact": "Contact",
+    "privacy": "Confidențialitate",
+    "impressum": "Impressum",
+    "cta": "Programează-te"
+  },
+  "hero": {
+    "title": "Un început puternic pentru copii",
+    "lead": "QRI combină integrarea reflexelor și reglarea senzorială pentru un corp și o minte mai calme.",
+    "cta": "Programează-te"
+  },
+  "about": {
+    "title": "Despre mine",
+    "body": "Sunt fizioterapeută și sprijin copiii prin integrarea reflexelor. Lucrez cu evaluări, programe personalizate și consiliere pentru familii."
+  },
+  "services": {
+    "title": "Cu Integrarea Reflexelor",
+    "imageAlt": "Terapie reflexă",
+    "bullets": [
+      "Dificultățile de comportament scad",
+      "Concentrarea și învățarea se îmbunătățesc",
+      "Abilitățile motorii se dezvoltă",
+      "Somnul este susținut",
+      "Încrederea în sine crește"
+    ]
+  },
+  "offer": {
+    "title": "Ofertă",
+    "blocks": [
+      {
+        "title": "QRI – Integrarea Reflexelor asistată de laser",
+        "bullets": [
+          "Dificultățile de comportament scad",
+          "Concentrarea se îmbunătățește",
+          "Abilitățile motorii se dezvoltă",
+          "Somnul este susținut",
+          "Încrederea în sine crește"
+        ]
+      },
+      {
+        "title": "Reflexe primitive – Evaluare și program",
+        "bullets": [
+          "Evaluarea reflexelor",
+          "Plan de exerciții personalizat",
+          "Protocoale pentru acasă",
+          "Educația familiei",
+          "Monitorizarea progresului"
+        ]
+      },
+      {
+        "title": "Reglare senzorială și postură",
+        "bullets": [
+          "Strategii senzoriale",
+          "Respirație și core",
+          "Coordonare",
+          "Adaptări ale mediului",
+          "Conștientizarea corpului"
+        ]
+      },
+      {
+        "title": "Consilierea familiei & Monitorizare",
+        "bullets": [
+          "Monitorizare între ședințe",
+          "Aplicații practice",
+          "Colaborare cu școala",
+          "Verificări periodice",
+          "Progres orientat pe obiective"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact & Programări",
+    "reviewsTitle": "Recenzii"
+  },
+  "privacy": {
+    "title": "Politica de confidențialitate",
+    "body1": "Informațiile împărtășite în timpul proceselor de programare și contact sunt utilizate exclusiv pentru furnizarea serviciilor și în conformitate cu legea.",
+    "li1": "Nu folosim cookie-uri de urmărire.",
+    "li2": "Datele nu sunt partajate cu terți.",
+    "li3": "Aveți dreptul de acces, rectificare și ștergere a datelor.",
+    "contact": "Operator de date: QRI Reflex Therapy • info@qri-therapie.at"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legalLine": "Obligația de informare conform §5 Legea comerțului electronic, §14 UGB, §63 GewO și §25 Legea mass-media.",
+    "profession": "Fizioterapeut",
+    "subject": "Obiectul activității",
+    "subjectText": "Fizioterapie și Integrarea Reflexelor",
+    "membership": "Apartenențe",
+    "membershipText": "Membru al Camerei de Comerț din Viena",
+    "law": "Reglementări profesionale",
+    "lawText": "Legea comerțului din 1994 – disponibilă pe www.ris.bka.gv.at",
+    "disclaimer": "Declinarea responsabilității",
+    "disclaimerText": "Nu ne asumăm răspunderea pentru conținutul linkurilor externe; responsabilitatea aparține exclusiv operatorilor acestora.",
+    "copyright": "Drepturi de autor",
+    "copyrightText": "Conținutul acestui site este protejat prin drepturi de autor."
+  },
+  "footer": {
+    "title": "QRI Reflex Therapy",
+    "description": "Integrarea reflexelor și abordări de terapie de reglare.",
+    "contactTitle": "Contact",
+    "contact": {
+      "address": "Argentinierstraße 18/3, 1040 Viena",
+      "email": "info@qri-therapie.at",
+      "phone": "+43 660 1234567"
+    },
+    "quickLinksTitle": "Linkuri rapide",
+    "links": {
+      "about": "Despre mine",
+      "services": "Servicii",
+      "contact": "Programare"
+    },
+    "location": "Viena, Austria"
+  }
 }

@@ -6,8 +6,8 @@ const About: React.FC = () => {
   return (
     <section id="about" className="section">
       <div className="container-x">
-        <h2 className="title">{t('aboutTitle')}</h2>
-        <p className="lead mt-4">{t('aboutDescription')}</p>
+        <h2 className="title">{t('about.title')}</h2>
+        <p className="lead mt-4">{t('about.body')}</p>
       </div>
     </section>
   );

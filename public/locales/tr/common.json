@@ -1,4 +1,136 @@
 {
-  "aboutTitle": "Hakkımda",
-  "aboutDescription": "Çocuklara refleks entegrasyonu ile yardımcı olan bir terapistim."
+  "lastUpdated": "Güncelleme: 2025",
+  "phone": "Telefon:",
+  "email": "E-Posta:",
+  "seo": {
+    "title": "QRI Reflex | Refleks Entegrasyonu",
+    "description": "Refleks terapisi, QRI, aromaterapi ve daha fazlası",
+    "siteName": "QRI Reflex"
+  },
+  "nav": {
+    "about": "Hakkımda",
+    "services": "Hizmetler",
+    "offer": "Angebot",
+    "contact": "İletişim",
+    "privacy": "Gizlilik",
+    "impressum": "Impressum",
+    "cta": "Randevu Al"
+  },
+  "hero": {
+    "title": "Çocuklar için güçlü bir başlangıç",
+    "lead": "QRI, refleks entegrasyonu ve duyusal düzenleme ile daha sakin bir beden ve zihin.",
+    "cta": "Randevu Al"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "body": "Çocuklara refleks entegrasyonu ile destek veren bir fizyoterapistim. Değerlendirme, kişisel program ve aile danışmanlığı ile ilerlerim."
+  },
+  "services": {
+    "title": "Refleks Entegrasyonu ile",
+    "imageAlt": "Refleks terapisi",
+    "bullets": [
+      "Davranışsal zorluklar azalır",
+      "Odaklanma ve öğrenme artar",
+      "Motor beceriler gelişir",
+      "Uyku düzeni desteklenir",
+      "Özgüven güçlenir"
+    ]
+  },
+  "offer": {
+    "title": "Angebot",
+    "blocks": [
+      {
+        "title": "QRI – Lazer Destekli Refleks Entegrasyonu",
+        "bullets": [
+          "Davranışsal zorluklar azalır",
+          "Odaklanma artar",
+          "Motor beceriler gelişir",
+          "Uyku desteklenir",
+          "Özgüven güçlenir"
+        ]
+      },
+      {
+        "title": "Primitive Refleks – Değerlendirme ve Program",
+        "bullets": [
+          "Refleks değerlendirmesi",
+          "Kişisel egzersiz planı",
+          "Ev protokolleri",
+          "Aile eğitimi",
+          "İlerleme izleme"
+        ]
+      },
+      {
+        "title": "Duyusal Düzenleme ve Postür",
+        "bullets": [
+          "Duyusal stratejiler",
+          "Solunum ve core",
+          "Koordinasyon",
+          "Ortam uyarlamaları",
+          "Beden farkındalığı"
+        ]
+      },
+      {
+        "title": "Aile Danışmanlığı & Takip",
+        "bullets": [
+          "Seans dışı takip",
+          "Pratik uygulamalar",
+          "Okul işbirliği",
+          "Periyodik kontrol",
+          "Hedef odaklı ilerleme"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişim & Randevu",
+    "reviewsTitle": "Yorumlar"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "body1": "Randevu ve iletişim süreçlerinde paylaşılan bilgiler yalnızca hizmet sunumu amacıyla ve mevzuata uygun biçimde işlenir.",
+    "li1": "Takip amaçlı çerez kullanmıyoruz.",
+    "li2": "Veriler üçüncü kişilerle paylaşılmaz.",
+    "li3": "Erişim, düzeltme, silme haklarına sahipsiniz.",
+    "contact": "Veri sorumlusu: QRI Reflex Therapie • info@qri-therapie.at"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legalLine": "Informationspflicht laut §5 E-Commerce Gesetz, §14 UGB, §63 GewO und §25 Mediengesetz.",
+    "profession": "Physiotherapeutin",
+    "subject": "Unternehmensgegenstand",
+    "subjectText": "Physiotherapie und Reflexintegration",
+    "membership": "Mitgliedschaften",
+    "membershipText": "Mitglied der Wirtschaftskammer Wien",
+    "law": "Berufsrechtliche Vorschriften",
+    "lawText": "Gewerbeordnung 1994 – abrufbar unter www.ris.bka.gv.at",
+    "disclaimer": "Haftungsausschluss",
+    "disclaimerText": "Externe bağlantıların içeriğinden sorumluluk kabul edilmez; sorumluluk ilgili işletmecilere aittir.",
+    "copyright": "Urheberrecht",
+    "copyrightText": "Bu sitedeki içerikler telif hakkına tabidir.",
+    "name": "Alexandra Oana Okunakol",
+    "addressLines": [
+      "Argentinierstrasse 50",
+      "1040 Wien",
+      "Österreich"
+    ],
+    "emailAddress": "info@aleokunakol.com",
+    "phoneNumber": "+43 (660) 573 36 20"
+  },
+  "footer": {
+    "title": "QRI Reflex Therapie",
+    "description": "Refleks entegrasyonu ve düzenleyici terapi yaklaşımları.",
+    "contactTitle": "İletişim",
+    "contact": {
+      "address": "Argentinierstraße 18/3, 1040 Wien",
+      "email": "info@qri-therapie.at",
+      "phone": "+43 660 1234567"
+    },
+    "quickLinksTitle": "Hızlı Bağlantılar",
+    "links": {
+      "about": "Hakkımda",
+      "services": "Hizmetler",
+      "contact": "Randevu"
+    },
+    "location": "Viyana, Avusturya"
+  }
 }

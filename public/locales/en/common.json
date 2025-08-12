@@ -1,4 +1,127 @@
 {
-  "aboutTitle": "About Me",
-  "aboutDescription": "I'm a therapist focused on helping children through reflex integration."
+  "lastUpdated": "Updated: 2025",
+  "phone": "Phone:",
+  "seo": {
+    "title": "QRI Reflex | Reflex Integration",
+    "description": "Reflex therapy, QRI, aromatherapy and more",
+    "siteName": "QRI Reflex"
+  },
+  "nav": {
+    "about": "About Me",
+    "services": "Services",
+    "offer": "Offer",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "impressum": "Impressum",
+    "cta": "Book Appointment"
+  },
+  "hero": {
+    "title": "A strong start for children",
+    "lead": "QRI combines reflex integration and sensory regulation for a calmer body and mind.",
+    "cta": "Book Appointment"
+  },
+  "about": {
+    "title": "About Me",
+    "body": "I am a physiotherapist supporting children through reflex integration. I work with assessments, personalized programs, and family guidance."
+  },
+  "services": {
+    "title": "With Reflex Integration",
+    "imageAlt": "Reflex therapy",
+    "bullets": [
+      "Behavioral challenges decrease",
+      "Focus and learning improve",
+      "Motor skills develop",
+      "Sleep patterns are supported",
+      "Confidence grows"
+    ]
+  },
+  "offer": {
+    "title": "Offer",
+    "blocks": [
+      {
+        "title": "QRI – Laser-Assisted Reflex Integration",
+        "bullets": [
+          "Behavioral challenges decrease",
+          "Focus improves",
+          "Motor skills develop",
+          "Sleep is supported",
+          "Confidence grows"
+        ]
+      },
+      {
+        "title": "Primitive Reflex – Assessment and Program",
+        "bullets": [
+          "Reflex assessment",
+          "Personalized exercise plan",
+          "Home protocols",
+          "Family education",
+          "Progress tracking"
+        ]
+      },
+      {
+        "title": "Sensory Regulation and Posture",
+        "bullets": [
+          "Sensory strategies",
+          "Breathing and core",
+          "Coordination",
+          "Environmental adaptations",
+          "Body awareness"
+        ]
+      },
+      {
+        "title": "Family Counseling & Follow-up",
+        "bullets": [
+          "Follow-up outside sessions",
+          "Practical applications",
+          "School cooperation",
+          "Periodic check-ups",
+          "Goal-oriented progress"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact & Appointment",
+    "reviewsTitle": "Reviews"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "body1": "Information shared during booking and contact processes is used solely for service provision and in accordance with the law.",
+    "li1": "We do not use tracking cookies.",
+    "li2": "Data is not shared with third parties.",
+    "li3": "You have the right to access, correct, and delete your data.",
+    "contact": "Data controller: QRI Reflex Therapy • info@qri-therapie.at"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legalLine": "Information obligation under §5 E-Commerce Law, §14 UGB, §63 GewO, and §25 Media Law.",
+    "profession": "Physiotherapist",
+    "subject": "Business Purpose",
+    "subjectText": "Physiotherapy and Reflex Integration",
+    "membership": "Memberships",
+    "membershipText": "Member of the Vienna Chamber of Commerce",
+    "law": "Professional Regulations",
+    "lawText": "Trade Regulations Act 1994 – available at www.ris.bka.gv.at",
+    "disclaimer": "Disclaimer",
+    "disclaimerText": "No liability is accepted for the content of external links; responsibility lies solely with their operators.",
+    "copyright": "Copyright",
+    "copyrightText": "The contents of this website are protected by copyright."
+  },
+  "footer": {
+    "title": "QRI Reflex Therapy",
+    "description": "Reflex integration and regulatory therapy approaches.",
+    "contactTitle": "Contact",
+    "contact": {
+      "address": "Argentinierstraße 18/3, 1040 Vienna",
+      "email": "info@qri-therapie.at",
+      "phone": "+43 660 1234567"
+    },
+    "quickLinksTitle": "Quick Links",
+    "links": {
+      "about": "About Me",
+      "services": "Services",
+      "contact": "Appointment"
+    },
+    "location": "Vienna, Austria"
+  }
 }

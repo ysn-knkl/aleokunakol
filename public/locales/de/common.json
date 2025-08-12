@@ -1,4 +1,127 @@
 {
-  "aboutTitle": "Über mich",
-  "aboutDescription": "Ich bin Therapeutin mit Fokus auf frühkindliche Reflexintegration."
+  "lastUpdated": "Aktualisiert: 2025",
+  "phone": "Telefon:",
+  "seo": {
+    "title": "QRI Reflex | Reflexintegration",
+    "description": "Reflextherapie, QRI, Aromatherapie und mehr",
+    "siteName": "QRI Reflex"
+  },
+  "nav": {
+    "about": "Über Mich",
+    "services": "Leistungen",
+    "offer": "Angebot",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum",
+    "cta": "Termin Buchen"
+  },
+  "hero": {
+    "title": "Ein starker Start für Kinder",
+    "lead": "QRI kombiniert Reflexintegration und sensorische Regulation für einen ruhigeren Körper und Geist.",
+    "cta": "Termin Buchen"
+  },
+  "about": {
+    "title": "Über Mich",
+    "body": "Ich bin Physiotherapeutin und unterstütze Kinder durch Reflexintegration. Ich arbeite mit Bewertungen, individuellen Programmen und Familienberatung."
+  },
+  "services": {
+    "title": "Mit Reflexintegration",
+    "imageAlt": "Reflextherapie",
+    "bullets": [
+      "Verhaltensprobleme nehmen ab",
+      "Konzentration und Lernen verbessern sich",
+      "Motorische Fähigkeiten entwickeln sich",
+      "Schlafrhythmus wird unterstützt",
+      "Selbstvertrauen wächst"
+    ]
+  },
+  "offer": {
+    "title": "Angebot",
+    "blocks": [
+      {
+        "title": "QRI – Laserunterstützte Reflexintegration",
+        "bullets": [
+          "Verhaltensprobleme nehmen ab",
+          "Konzentration verbessert sich",
+          "Motorische Fähigkeiten entwickeln sich",
+          "Schlaf wird unterstützt",
+          "Selbstvertrauen wächst"
+        ]
+      },
+      {
+        "title": "Primitive Reflex – Bewertung und Programm",
+        "bullets": [
+          "Reflexbewertung",
+          "Individueller Übungsplan",
+          "Hausprotokolle",
+          "Familienaufklärung",
+          "Fortschrittskontrolle"
+        ]
+      },
+      {
+        "title": "Sensorische Regulation und Haltung",
+        "bullets": [
+          "Sensorische Strategien",
+          "Atmung und Core",
+          "Koordination",
+          "Umweltanpassungen",
+          "Körperbewusstsein"
+        ]
+      },
+      {
+        "title": "Familienberatung & Nachbetreuung",
+        "bullets": [
+          "Nachverfolgung außerhalb der Sitzungen",
+          "Praktische Anwendungen",
+          "Schulkooperation",
+          "Regelmäßige Kontrollen",
+          "Zielorientierter Fortschritt"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt & Termin",
+    "reviewsTitle": "Bewertungen"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "body1": "Informationen, die während des Buchungs- und Kontaktprozesses geteilt werden, werden ausschließlich zur Erbringung von Dienstleistungen und in Übereinstimmung mit dem Gesetz verwendet.",
+    "li1": "Wir verwenden keine Tracking-Cookies.",
+    "li2": "Daten werden nicht an Dritte weitergegeben.",
+    "li3": "Sie haben das Recht auf Zugriff, Berichtigung und Löschung Ihrer Daten.",
+    "contact": "Verantwortlicher: QRI Reflex Therapie • info@qri-therapie.at"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legalLine": "Informationspflicht laut §5 E-Commerce-Gesetz, §14 UGB, §63 GewO und §25 Mediengesetz.",
+    "profession": "Physiotherapeutin",
+    "subject": "Unternehmensgegenstand",
+    "subjectText": "Physiotherapie und Reflexintegration",
+    "membership": "Mitgliedschaften",
+    "membershipText": "Mitglied der Wirtschaftskammer Wien",
+    "law": "Berufsrechtliche Vorschriften",
+    "lawText": "Gewerbeordnung 1994 – abrufbar unter www.ris.bka.gv.at",
+    "disclaimer": "Haftungsausschluss",
+    "disclaimerText": "Für den Inhalt externer Links wird keine Haftung übernommen; verantwortlich sind ausschließlich deren Betreiber.",
+    "copyright": "Urheberrecht",
+    "copyrightText": "Die Inhalte dieser Website sind urheberrechtlich geschützt."
+  },
+  "footer": {
+    "title": "QRI Reflex Therapie",
+    "description": "Reflexintegration und regulative Therapieansätze.",
+    "contactTitle": "Kontakt",
+    "contact": {
+      "address": "Argentinierstraße 18/3, 1040 Wien",
+      "email": "info@qri-therapie.at",
+      "phone": "+43 660 1234567"
+    },
+    "quickLinksTitle": "Schnellzugriff",
+    "links": {
+      "about": "Über Mich",
+      "services": "Leistungen",
+      "contact": "Termin"
+    },
+    "location": "Wien, Österreich"
+  }
 }

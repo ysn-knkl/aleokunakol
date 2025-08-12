@@ -1,48 +1,53 @@
+import { useTranslation } from "next-i18next";
+
 export default function ImpressumContent() {
+  const { t } = useTranslation("common");
+
+  // adres satırları dizi olarak gelir
+  const rawLines = t("impressum.addressLines", { returnObjects: true });
+  const addressLines = Array.isArray(rawLines) ? (rawLines as string[]) : [];
+
   return (
     <div className="prose max-w-none">
-      <h3>Impressum</h3>
-      <p>
-        Informationspflicht laut §5 E-Commerce Gesetz, §14
-        Unternehmensgesetzbuch, §63 Gewerbeordnung und Offenlegungspflicht laut
-        §25 Mediengesetz.
-      </p>
+      <h2>{t("impressum.title")}</h2>
+      <p>{t("impressum.legalLine")}</p>
 
-      <p>
-        <strong>Alexandra Oana Okunakol</strong>
+      <address className="not-italic">
+        <strong>{t("impressum.name")}</strong>
         <br />
-        Physiotherapeutin
+        {t("impressum.profession")}
         <br />
-        Argentinierstrasse 50
+        {addressLines.map((line, i) => (
+          <span key={i}>
+            {line}
+            <br />
+          </span>
+        ))}
+        <strong>{t("email")}</strong>{" "}
+        <a href={`mailto:${t("impressum.emailAddress")}`}>
+          {t("impressum.emailAddress")}
+        </a>
         <br />
-        1040 Wien
-        <br />
-        Österreich
-      </p>
+        <strong>{t("phone")}</strong>{" "}
+        <a href={`tel:${t("impressum.phoneNumber")}`}>
+          {t("impressum.phoneNumber")}
+        </a>
+      </address>
 
-      <p>
-        <strong>E-Mail:</strong>{" "}
-        <a href="mailto:info@aleokunakol.com">info@aleokunakol.com</a>
-        <br />
-        <strong>Telefon:</strong>{" "}
-        <a href="tel:+436605733620">+43 (660) 573 36 20</a>
-      </p>
+      <h3>{t("impressum.subject")}</h3>
+      <p>{t("impressum.subjectText")}</p>
 
-      <h4>Unternehmensgegenstand</h4>
-      <p>Physiotherapie und Reflexintegration</p>
+      <h3>{t("impressum.membership")}</h3>
+      <p>{t("impressum.membershipText")}</p>
 
-      <h4>Haftungsausschluss</h4>
-      <p>
-        Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung
-        für Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind
-        ausschließlich deren Betreiber verantwortlich.
-      </p>
+      <h3>{t("impressum.law")}</h3>
+      <p>{t("impressum.lawText")}</p>
 
-      <h4>Urheberrecht</h4>
-      <p>
-        Die Inhalte dieser Website sind urheberrechtlich geschützt. Jede Nutzung
-        ohne schriftliche Zustimmung ist unzulässig.
-      </p>
+      <h3>{t("impressum.disclaimer")}</h3>
+      <p>{t("impressum.disclaimerText")}</p>
+
+      <h3>Urheberrecht</h3>
+      <p>{t("impressum.copyrightText")}</p>
     </div>
   );
 }
