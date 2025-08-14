@@ -24,7 +24,6 @@ export default function Angebot() {
                             id={id}
                             className="grid items-center gap-10 md:grid-cols-2 scroll-mt-24"
                         >
-                            {/* Metin */}
                             <div className={reverse ? 'md:order-2' : ''}>
                                 <h3 className="text-2xl font-semibold text-text-primary">{b.title}</h3>
                                 <ul className="mt-5 space-y-3 text-text-secondary text-lg list-disc list-inside">
@@ -34,10 +33,9 @@ export default function Angebot() {
                                 </ul>
                             </div>
 
-                            {/* Görsel */}
                             <div className={`relative h-72 md:h-[420px] rounded-xl2 overflow-hidden border border-brand-300/30 shadow-soft ${reverse ? 'md:order-1' : ''}`}>
                                 <Image
-                                    src="/services.jpg"
+                                    src="/info-cards/info-card-1.jpg"
                                     alt={b.title}
                                     fill
                                     style={{ objectFit: 'cover' }}

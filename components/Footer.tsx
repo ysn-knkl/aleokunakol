@@ -2,14 +2,26 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
+  const mapSrc = `https://www.google.com/maps?q=beholistic%20Argentinierstra%C3%9Fe%2018/3%2C%201040%20Vienna&z=16&output=embed&hl=${i18n.language}`;
 
   return (
-    <footer className="mt-20">
-      <div className="h-72 w-full overflow-hidden">
+    <footer className="container-x">
+      <div className="w-full overflow-hidden aspect-[16/9] md:aspect-[21/9] min-h-[280px]">
         <iframe
-          /* Google Maps embed kodu buraya */
+          title="Beholistic – Argentinierstraße 18/3, 1040 Vienna (Google Maps)"
+          src={mapSrc}
+          loading="lazy"
+          className="h-full w-full"
+          style={{ border: 0 }}
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
         />
+        <p className="sr-only">
+          <a href="https://www.google.com/maps?q=beholistic%20Argentinierstra%C3%9Fe%2018/3%2C%201040%20Vienna" target="_blank" rel="noopener noreferrer">
+            Open in Google Maps
+          </a>
+        </p>
       </div>
 
       <div className="bg-surface-50 border-t border-brand-300/30">

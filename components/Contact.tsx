@@ -1,9 +1,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
-import ClientOnly from './common/ClientOnly';
 
-const DisqusThread = dynamic(() => import('./DisqusThread'), { ssr: false });
+const CalendlyPopup = dynamic(() => import("./CalendlyPopup"), { ssr: false });
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('common');
@@ -14,22 +13,14 @@ const Contact: React.FC = () => {
         <h2 className="title">{t('contact.title')}</h2>
 
         <div className="card mx-auto mt-8 max-w-4xl p-2">
-          <iframe
-            src="https://calendly.com/YOUR_USERNAME"
-            className="h-[640px] w-full rounded-xl"
-            title="Calendly"
-          />
+          <CalendlyPopup />
         </div>
 
-        <div className="card mx-auto mt-10 max-w-4xl p-6">
-          <h3 className="text-text-primary text-xl font-semibold mb-4">
-            {t('contact.reviewsTitle')}
-          </h3>
-          <DisqusThread />
-        </div>
       </div>
     </section>
   );
 };
 
 export default Contact;
+
+

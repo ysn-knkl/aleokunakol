@@ -22,7 +22,7 @@ const Services: React.FC = () => {
         </div>
         <div className="relative h-72 md:h-[420px] rounded-xl2 overflow-hidden border border-brand-300/30 shadow-soft">
           <Image
-            src="/services.jpg"
+            src="/mother-child.jpg"
             alt={t("services.imageAlt")}
             fill
             style={{ objectFit: "cover" }}

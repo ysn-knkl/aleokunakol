@@ -123,5 +123,27 @@
       "contact": "Programare"
     },
     "location": "Viena, Austria"
+  },
+  "calendly": {
+    "consent": {
+      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
+      "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
+      "allow": "Zustimmen und öffnen",
+      "moreInfo": "Mehr erfahren"
+    }
+  },
+  "infoCards": {
+    "card1": {
+      "title": "Dispozitivul laser QRI",
+      "description": "Susține integrarea reflexelor în mod blând și sigur, cu tehnologie laser de nivel redus."
+    },
+    "card2": {
+      "title": "Aplicare în ședință",
+      "description": "Rutine scurte, ludice, adaptate ritmului copilului pentru mai mult calm și focus."
+    },
+    "card3": {
+      "title": "Reglare senzorială",
+      "description": "Stimulare blândă craniană și corporală pentru relaxare și conștientizarea corpului."
+    }
   }
 }

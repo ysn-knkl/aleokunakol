@@ -123,5 +123,27 @@
       "contact": "Termin"
     },
     "location": "Wien, Österreich"
+  },
+  "calendly": {
+    "consent": {
+      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
+      "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
+      "allow": "Zustimmen und öffnen",
+      "moreInfo": "Mehr erfahren"
+    }
+  },
+  "infoCards": {
+    "card1": {
+      "title": "QRI-Lasergerät",
+      "description": "Unterstützt die Reflexintegration sanft und sicher mit Low-Level-Lasertechnologie."
+    },
+    "card2": {
+      "title": "Anwendung in der Sitzung",
+      "description": "Kurze, spielerische Abläufe im Rhythmus des Kindes – für mehr Ruhe und Fokus."
+    },
+    "card3": {
+      "title": "Sensorische Regulation",
+      "description": "Sanfte Stimulation von Kopf und Körper zur Förderung von Entspannung und Körperwahrnehmung."
+    }
   }
 }

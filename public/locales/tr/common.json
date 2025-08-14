@@ -132,5 +132,27 @@
       "contact": "Randevu"
     },
     "location": "Viyana, Avusturya"
+  },
+  "calendly": {
+    "consent": {
+      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
+      "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
+      "allow": "Zustimmen und öffnen",
+      "moreInfo": "Mehr erfahren"
+    }
+  },
+  "infoCards": {
+    "card1": {
+      "title": "QRI Lazer Cihazı",
+      "description": "Hassas, düşük seviyeli lazer ile refleks entegrasyonunu güvenli ve konforlu şekilde destekler."
+    },
+    "card2": {
+      "title": "Seans Uygulaması",
+      "description": "Çocuğun ritmine uygun, kısa ve oyunlaştırılmış uygulamalarla sakinlik ve odaklanmayı artırır."
+    },
+    "card3": {
+      "title": "Duyusal Düzenleme",
+      "description": "Baş ve gövde bölgesine yumuşak uyarılar vererek beden farkındalığı ve gevşemeyi teşvik eder."
+    }
   }
 }

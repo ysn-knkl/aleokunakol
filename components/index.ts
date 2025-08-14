@@ -1,0 +1,9 @@
+export { default as Navbar } from "./Navbar";
+export { default as Hero } from "./Hero";
+export { default as About } from "./About";
+export { default as Services } from "./Services";
+export { default as Contact } from "./Contact";
+export { default as Footer } from "./Footer";
+export { default as Angebot } from "./Angebot";
+export { default as InfoCard } from "./InfoCard";
+export { default as MotherChildCard } from "./MotherChildCard";

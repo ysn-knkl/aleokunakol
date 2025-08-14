@@ -1,10 +1,4 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Services from "../components/Services";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import Angebot from "../components/Angebot";
+import { Navbar, Hero, About, Services, Contact, Footer, Angebot, InfoCard, MotherChildCard } from "../components";
 
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -30,6 +24,8 @@ export default function Home() {
         <About />
         <Services />
         <Angebot />
+        <InfoCard />
+        <MotherChildCard />
         <Contact />
         <Footer />
       </main>
