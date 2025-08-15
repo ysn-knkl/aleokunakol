@@ -10,12 +10,14 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "next": "latest",
+    "next-auth": "^4.24.11",
     "next-i18next": "latest",
     "next-seo": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/next-auth": "^3.15.0",
     "@types/node": "24.2.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
