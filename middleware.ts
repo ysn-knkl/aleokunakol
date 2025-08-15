@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const locales = ['de', 'en', 'tr', 'ro'] as const;
-const defaultLocale = 'de';
+const locales = ['tr','en','de','ro'] as const;
+const defaultLocale = 'de'; 
 
 function detectLocale(req: NextRequest): string {
   // 1) Kullanıcı seçim çerezi öncelikli
