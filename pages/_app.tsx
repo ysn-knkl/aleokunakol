@@ -1,3 +1,4 @@
+// pages/_app.tsx
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
@@ -15,31 +16,37 @@ const LOCALE_TO_OG: Record<string, string> = {
 
 function AppSeo() {
   const { t } = useTranslation("common");
-  const { locale, locales = [], asPath } = useRouter();
+  const { locale, locales = [], defaultLocale, asPath } = useRouter();
 
-  // Configurable base URL (ENV) and default locale for x-default
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const defaultLocale = "de"; // project-wide default when path has no locale
+  const current = (locale ?? defaultLocale ?? "de") as keyof typeof LOCALE_TO_OG;
+  const ogLocale = LOCALE_TO_OG[current] || LOCALE_TO_OG.de;
 
-  // Current locale and OG locale mapping
-  const current = (locale as keyof typeof LOCALE_TO_OG) || defaultLocale;
-  const ogLocale = LOCALE_TO_OG[current] || LOCALE_TO_OG[defaultLocale];
+  // asPath şu anki URL'i (aktif locale ile) içerir → canonical bunu doğrudan kullansın
+  const canonical = `${BASE_URL}${asPath}`.replace(/([^:]\/)\/+/, "$1");
 
-  // Current path ("/" -> "") and canonical URL
-  const path = asPath === "/" ? "" : asPath;
-  const canonical = `${BASE_URL}/${current}${path}`.replace(/([^:]\/)\/+/, "$1");
+  // asPath içindeki mevcut locale prefix'ini sök (hreflang üretimi için)
+  const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re =
+    locales.length > 0
+      ? new RegExp(`^/(?:${locales.map(esc).join("|")})(?=/|$)`)
+      : /^$/; // boş, match etmez
+  const pathNoLocale = asPath.replace(re, "") || "/";
 
-  // hreflang alternates built from configured locales
+  // hreflang alternates
   const alternates = [
     ...locales.map((lc) => ({
       rel: "alternate" as const,
       hrefLang: lc,
-      href: `${BASE_URL}/${lc}${path}`,
+      href: `${BASE_URL}/${lc}${pathNoLocale}`.replace(/([^:]\/)\/+/, "$1"),
     })),
     {
       rel: "alternate" as const,
       hrefLang: "x-default",
-      href: `${BASE_URL}/${defaultLocale}${path}`,
+      href: `${BASE_URL}/${defaultLocale ?? "de"}${pathNoLocale}`.replace(
+        /([^:]\/)\/+/,
+        "$1"
+      ),
     },
   ];
 

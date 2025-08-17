@@ -1,3 +1,4 @@
+// components/navbar/UserMenu.tsx
 import { useEffect, useRef, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -13,7 +14,7 @@ export default function UserMenu() {
   const [alignRight, setAlignRight] = useState(true);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  // dışarı tıkla
+  // Outside click → close
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (!rootRef.current) return;
@@ -23,23 +24,23 @@ export default function UserMenu() {
     return () => document.removeEventListener("click", onClick);
   }, []);
 
-  // ESC
+  // ESC → close
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // dropdown hizalama (desktop)
+  // Desktop dropdown alignment
   useEffect(() => {
     if (!open || !rootRef.current) return;
     const trigger = rootRef.current.querySelector("button[data-trigger='user-desktop']");
     if (!trigger) return;
     const rect = (trigger as HTMLElement).getBoundingClientRect();
     const viewportW = window.innerWidth;
-    const menuW = 260;
+    const menuW = 260; // px
     const spaceRight = viewportW - rect.right;
-    setAlignRight(spaceRight >= menuW + 8);
+    setAlignRight(spaceRight >= menuW + 8); // enough space on the right → anchor right edge
   }, [open]);
 
   const initials =
@@ -50,18 +51,19 @@ export default function UserMenu() {
       .map((p) => p[0]?.toUpperCase())
       .join("") || "";
 
-  // MOBİL: durumuna göre direkt aksiyon
+  // MOBILE: direct action by auth state
   const handleMobileClick = () => {
     if (status === "authenticated") {
       signOut({ callbackUrl: `/${locale}` });
     } else {
+      // force account chooser
       signIn("google", { callbackUrl: `/${locale}`, prompt: "select_account" });
     }
   };
 
   return (
     <div className="relative" ref={rootRef}>
-      {/* Desktop: badge (login ise initials, değilse generic) */}
+      {/* Desktop trigger: badge (initials if authed, generic if not) */}
       <button
         data-trigger="user-desktop"
         onClick={() => setOpen((v) => !v)}
@@ -82,7 +84,7 @@ export default function UserMenu() {
         )}
       </button>
 
-      {/* Mobile: sadece Sign in / Sign out metin butonu */}
+      {/* Mobile trigger: only Sign in / Sign out text button */}
       <button
         onClick={handleMobileClick}
         className="md:hidden rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition"
@@ -95,11 +97,11 @@ export default function UserMenu() {
       {open && (
         <div
           role="menu"
-          className={`absolute ${alignRight ? "right-0" : "left-0"} mt-2 w-64 rounded-2xl bg-white border border-brand-300/30 shadow-soft p-2 z-50`}
+          className={`absolute ${alignRight ? "right-0" : "left-0"} mt-2 w-64 max-w-[calc(100vw-24px)] rounded-2xl bg-white border border-brand-300/30 shadow-soft p-2 z-50`}
         >
           {status === "authenticated" ? (
             <>
-              {/* üst: isim & email */}
+              {/* top: name & email */}
               <div className="px-3 py-2">
                 <p className="text-sm font-medium text-text-primary truncate">
                   {session?.user?.name || session?.user?.email}
@@ -109,7 +111,7 @@ export default function UserMenu() {
                 )}
               </div>
               <div className="my-1 h-px bg-brand-300/30" />
-              {/* alt: logout */}
+              {/* bottom: logout */}
               <button
                 onClick={() => signOut({ callbackUrl: `/${locale}` })}
                 className="w-full text-left rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"
@@ -119,7 +121,7 @@ export default function UserMenu() {
               </button>
             </>
           ) : (
-            // login yoksa: sadece Sign in (Google chooser için prompt ekli)
+            // not authed: only Sign in (with Google chooser)
             <button
               onClick={() => signIn("google", { callbackUrl: `/${locale}`, prompt: "select_account" })}
               className="w-full text-left rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"

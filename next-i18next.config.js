@@ -1,8 +1,8 @@
-/** @type {import('next-i18next').UserConfig} */
+// next-i18next.config.js
 module.exports = {
   i18n: {
-    defaultLocale: 'de',          // ← tek karar
-    locales: ['tr', 'en', 'de', 'ro'],
+    locales: ["de", "en", "tr", "ro"],
+    defaultLocale: "de",
+    localeDetection: false,
   },
-  localeDetection: true
 };
