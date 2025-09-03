@@ -4,10 +4,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { getServerSession } from "next-auth";
+import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { dbConnect } from "@/lib/mongodb";
+import { Exercise as ExerciseModel } from "@/lib/mongoose-models";
+import type { Session } from "next-auth";
 
 type Exercise = {
   id: string;
@@ -130,15 +133,19 @@ export default function ExercisesPage({ exercises }: Props) {
   );
 }
 
-// ——————————————————————————————————————————
-// SADECE GİRİŞ YAPANLAR GÖRSÜN: GSSP + i18n yükle
 export const getServerSideProps: GetServerSideProps<Props> = async (
   ctx: GetServerSidePropsContext
 ) => {
-  const session = await getServerSession(ctx.req, ctx.res, authOptions);
+  const session = (await getServerSession(
+    ctx.req as any,
+    ctx.res as any,
+    authOptions as any
+  )) as Session | null;
+
   const locale = ctx.locale ?? "de";
 
-  if (!session) {
+  // (İstersen giriş zorunluluğunu koru; yoksa bu bloğu kaldır)
+  if (!session?.user?.email) {
     return {
       redirect: {
         destination: `/${locale}/login?callbackUrl=${encodeURIComponent(
@@ -149,36 +156,54 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
     };
   }
 
-  // — Şimdilik statik örnekler; projedeki mevcut görseller kullanıldı
-  const exercises: Exercise[] = [
-    {
-      id: "neck-mob",
-      title: "Boyun Mobilizasyonu",
-      beforeImg: "/services.jpg",
-      afterImg: "/ale-dashboard.jpg",
-      description:
-        "Omurga hizası korunarak yavaş fleksiyon/ekstansiyon ve yanal eğimler. Nefesle ritim tutarak yapın.",
-      youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-    {
-      id: "shoulder-opener",
-      title: "Omuz Açıcı",
-      beforeImg: "/services.jpg",
-      afterImg: "/hero.jpg",
-      description:
-        "Skapula stabil tutulurken band ile kontrollü dış rotasyon. Dirsek gövdeye yakın, omuzlar gevşek.",
-      youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-    {
-      id: "core-activation",
-      title: "Core Aktivasyonu",
-      beforeImg: "/ale-dashboard.jpg",
-      afterImg: "/services.jpg",
-      description:
-        "Diyafram nefesiyle hafif core bracing’i eşleştirerek başlangıç seviyesi stabilizasyon çalışması.",
-      youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-  ];
+  await dbConnect();
+
+  const docs = await ExerciseModel.find({})
+    .sort({ createdAt: -1 })
+    .lean<
+      Array<{
+        _id: any;
+        title: string;
+        description?: string;
+        media?: Array<
+          | { type: "image"; url: string }
+          | { type: "video"; url: string }
+          | { type: "text"; content: string }
+        >;
+      }>
+    >();
+
+  const toPageExercise = (d: any): Exercise => {
+    const media = Array.isArray(d.media) ? d.media : [];
+
+    const images = media.filter((m: any) => m.type === "image");
+    const texts = media.filter((m: any) => m.type === "text");
+    const videos = media.filter((m: any) => m.type === "video");
+
+    // fallback görseller (public klasöründeki mevcut görseller)
+    const beforeImg = images[0]?.url || "/services.jpg";
+    const afterImg = images[1]?.url || "/ale-dashboard.jpg";
+
+    const description =
+      d.description ||
+      texts[0]?.content ||
+      "Açıklama yakında.";
+
+    // ❗undefined yerine null dönüyoruz
+    const youtube =
+      videos.find((v: any) => /youtu(\.be|be\.com)/i.test(v.url))?.url || null;
+
+    return {
+      id: String(d._id),
+      title: d.title,
+      beforeImg,
+      afterImg,
+      description,
+      youtube, // string | null
+    };
+  };
+
+  const exercises: Exercise[] = docs.map(toPageExercise);
 
   return {
     props: {
