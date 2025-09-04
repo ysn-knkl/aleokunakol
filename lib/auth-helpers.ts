@@ -36,3 +36,10 @@ export function assertRole(user: { role?: string }, roles: Role[]) {
         throw err;
     }
 }
+
+export async function requireAdmin(req: any, res: any) {
+    const user = await requireSession(req, res);
+    if (!user) return null; // 401
+    assertRole(user, ["admin"]); // 403 atabilir
+    return user;
+}
