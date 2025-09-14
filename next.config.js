@@ -5,7 +5,7 @@ const nextConfig = {
     locales: ["de", "en", "tr", "ro"],
   },
   images: {
-    domains: ["via.placeholder.com"], // ✅ placeholder domaini eklendi
+    domains: ["res.cloudinary.com","via.placeholder.com"], // ✅ placeholder domaini eklendi
   },
 };
 

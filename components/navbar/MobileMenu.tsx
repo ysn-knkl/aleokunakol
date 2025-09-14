@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -21,9 +21,12 @@ export default function MobileMenu({
 }) {
   const { t } = useTranslation("common");
   const { data: session, status } = useSession();
+  const isAdmin = Boolean((session?.user as any)?.role === "admin");
   const { locale = "de" } = useRouter();
 
   const to = (hash: string) => `/${locale}${hash}`;
+
+  const [offerOpen, setOfferOpen] = useState(false);
 
   return (
     <div className="fixed inset-0 z-[60] md:hidden">
@@ -32,7 +35,7 @@ export default function MobileMenu({
         className="absolute inset-0 bg-black/10 backdrop-blur-md"
         onClick={onClose}
       />
-      <div className="relative mx-4 mt-20 rounded-2xl border border-brand-300/30 bg-white shadow-xl p-6 space-y-6">
+      <div className="relative mx-4 mt-20 rounded-2xl border border-brand-300/30 bg-white shadow-xl p-6 space-y-6 max-h-[80vh] overflow-y-auto">
         {status === "authenticated" && (
           <div className="rounded-xl border border-brand-300/30 bg-surface-50 px-3 py-2">
             <p className="text-sm font-medium text-text-primary truncate">
@@ -55,38 +58,47 @@ export default function MobileMenu({
             {t("nav.about")}
           </Link>
 
-          <div className="rounded-xl px-3 py-3">
-            <div className="text-lg font-medium mb-2">{t("nav.offer")}</div>
-            <div className="grid">
-              <Link
-                href={to("#angebot-1")}
-                className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                onClick={onClose}
-              >
-                • QRI – Laserunterstützte Reflexintegration
-              </Link>
-              <Link
-                href={to("#angebot-2")}
-                className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                onClick={onClose}
-              >
-                • Primitive Reflex – Değerlendirme
-              </Link>
-              <Link
-                href={to("#angebot-3")}
-                className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                onClick={onClose}
-              >
-                • Duyusal Düzenleme ve Postür
-              </Link>
-              <Link
-                href={to("#angebot-4")}
-                className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                onClick={onClose}
-              >
-                • Aile Danışmanlığı & Takip
-              </Link>
-            </div>
+          <div className="rounded-xl">
+            <button
+              type="button"
+              className="w-full flex justify-between items-center px-3 py-3 text-lg font-medium hover:bg-surface-100"
+              onClick={() => setOfferOpen(!offerOpen)}
+            >
+              {t("nav.offer")}
+              <span>{offerOpen ? "−" : "+"}</span>
+            </button>
+            {offerOpen && (
+              <div className="grid">
+                <Link
+                  href={to("#angebot-1")}
+                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
+                  onClick={onClose}
+                >
+                  • QRI – Laserunterstützte Reflexintegration
+                </Link>
+                <Link
+                  href={to("#angebot-2")}
+                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
+                  onClick={onClose}
+                >
+                  • Primitive Reflex – Değerlendirme
+                </Link>
+                <Link
+                  href={to("#angebot-3")}
+                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
+                  onClick={onClose}
+                >
+                  • Duyusal Düzenleme ve Postür
+                </Link>
+                <Link
+                  href={to("#angebot-4")}
+                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
+                  onClick={onClose}
+                >
+                  • Aile Danışmanlığı & Takip
+                </Link>
+              </div>
+            )}
           </div>
 
           <Link
@@ -111,6 +123,16 @@ export default function MobileMenu({
               onClick={onClose}
             >
               {t("nav.exercises", "Egzersizler")}
+            </Link>
+          )}
+
+          {isAdmin && (
+            <Link
+              href={`/${locale}/admin`}
+              className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
+              onClick={onClose}
+            >
+              Admin Panel
             </Link>
           )}
 

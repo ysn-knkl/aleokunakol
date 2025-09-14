@@ -1,30 +1,64 @@
-// pages/exercises.tsx
-import type { GetServerSideProps, GetServerSidePropsContext } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import * as React from "react";
+import type { GetServerSideProps, NextPage } from "next";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import type { Session } from "next-auth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { dbConnect } from "@/lib/mongodb";
-import { Exercise as ExerciseModel } from "@/lib/mongoose-models";
-import type { Session } from "next-auth";
+import Head from "next/head";
+import { useTranslation } from "next-i18next";
 
-type Exercise = {
-  id: string;
-  title: string;
-  beforeImg: string;
-  afterImg: string;
-  description: string;
-  youtube?: string;
+
+type MediaItem =
+  | { type: "image"; url: string }
+  | { type: "video"; url: string }
+  | { type: "text"; content: string };
+
+type AssignedExercise = {
+  assignmentId: string;
+  schedule: { sets?: number; reps?: number; days?: string[] };
+  startAt?: string | null;
+  endAt?: string | null;
+  status: string;
+  notes: string;
+  createdAt: string;
+  exercise: {
+    id: string;
+    title: string;
+    slug?: string;
+    level?: string;
+    description?: string;
+    bodyParts: string[];
+    tags: string[];
+    media: MediaItem[];
+  };
 };
 
-type Props = { exercises: Exercise[] };
-
-export default function ExercisesPage({ exercises }: Props) {
+const ExercisesPage: NextPage = () => {
   const { t } = useTranslation("common");
+  const [items, setItems] = React.useState<AssignedExercise[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+  const [open, setOpen] = React.useState<AssignedExercise | null>(null);
+
+  const load = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      // 🔴 KRİTİK: SADECE ATANANLAR
+      const r = await fetch("/api/me/assignments").then((x) => x.json());
+      if (!r?.ok) setError(r?.error || "Hata");
+      else setItems(r.data || []);
+    } catch (e: any) {
+      setError(e?.message || "Hata");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  React.useEffect(() => {
+    load();
+  }, []);
 
   return (
     <>
@@ -34,181 +68,115 @@ export default function ExercisesPage({ exercises }: Props) {
       </Head>
 
       <Navbar />
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-2xl font-semibold">Egzersizlerim</h1>
+          <button onClick={load} className="px-3 py-2 rounded-lg border">Yenile</button>
+        </div>
 
-      {/* Fixed navbar altında boşluk */}
-      <main className="pt-28 pb-16">
-        {/* Üst başlık bloğu */}
-        <section className="container-x">
-          <div className="rounded-2xl bg-gradient-to-r from-brand-50 to-surface-50 border border-brand-300/30 p-6 md:p-8 shadow-soft">
-            <h1 className="text-3xl md:text-4xl font-bold text-text-primary tracking-tight">
-              {t("exercises.title", "Egzersizler")}
-            </h1>
-            <p className="mt-3 text-text-secondary max-w-3xl">
-              {t(
-                "exercises.lead",
-                "Kişisel programınıza eşlik eden görseller ve kısa açıklamalar. Lütfen tempo, tekrar ve set sayılarını size verilen plana göre uygulayın."
-              )}
-            </p>
-          </div>
-        </section>
-
-        {/* Kartlar */}
-        <section className="container-x mt-10">
-          <div className="grid gap-8 sm:gap-10 md:grid-cols-2 xl:grid-cols-3">
-            {exercises.map((ex) => (
-              <article
-                key={ex.id}
-                className="group rounded-2xl border border-brand-300/30 bg-white shadow-soft overflow-hidden transition hover:shadow-lg"
-              >
-                {/* Görseller */}
-                <div className="grid grid-cols-2">
-                  {/* BEFORE */}
-                  <div className="relative aspect-[4/3] border-r border-brand-300/20">
-                    <Image
-                      src={ex.beforeImg}
-                      alt={`${ex.title} — ${t("exercises.labels.before", "Önce")}`}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 20vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <span className="absolute left-2 top-2 rounded-md bg-black/55 text-white text-[11px] px-2 py-1 tracking-wide">
-                      {t("exercises.labels.before", "ÖNCE")}
-                    </span>
-                  </div>
-                  {/* AFTER */}
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={ex.afterImg}
-                      alt={`${ex.title} — ${t("exercises.labels.after", "Sonra")}`}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 20vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <span className="absolute left-2 top-2 rounded-md bg-black/55 text-white text-[11px] px-2 py-1 tracking-wide">
-                      {t("exercises.labels.after", "SONRA")}
-                    </span>
+        {loading ? (
+          <div className="text-text-secondary">Yükleniyor…</div>
+        ) : error ? (
+          <div className="text-red-600">Hata: {error}</div>
+        ) : items.length === 0 ? (
+          <div className="text-text-secondary">Henüz sana atanmış bir egzersiz bulunmuyor.</div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {items.map((a) => {
+              const img = (a.exercise.media || []).find((m) => m.type === "image") as { type: "image"; url: string } | undefined;
+              return (
+                <div key={a.assignmentId} className="rounded-2xl border shadow-soft overflow-hidden bg-white flex flex-col">
+                  {img?.url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={img.url} alt={a.exercise.title} className="w-full h-40 object-cover" />
+                  ) : (
+                    <div className="w-full h-40 bg-slate-100 flex items-center justify-center text-slate-500 text-sm">Görsel yok</div>
+                  )}
+                  <div className="p-4 flex-1 flex flex-col">
+                    <div className="text-sm text-text-secondary mb-1">{a.exercise.level || "level ?"}</div>
+                    <div className="font-medium">{a.exercise.title}</div>
+                    <div className="text-xs text-text-secondary mt-1">
+                      {a.schedule?.sets ? `${a.schedule.sets} set` : "-"} •{" "}
+                      {a.schedule?.reps ? `${a.schedule.reps} tekrar` : "-"} •{" "}
+                      {Array.isArray(a.schedule?.days) ? a.schedule.days.join(", ") : "-"}
+                    </div>
+                    <div className="mt-auto pt-3">
+                      <button className="w-full px-3 py-2 rounded-lg border hover:bg-surface-50" onClick={() => setOpen(a)}>
+                        Detay
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                {/* İçerik */}
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold text-text-primary">{ex.title}</h3>
-
-                  <div className="mt-3 rounded-xl bg-surface-50 border border-brand-300/30 p-4">
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                      {ex.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between">
-                    {ex.youtube ? (
-                      <a
-                        href={ex.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-outline text-sm"
-                      >
-                        {t("exercises.video.watch", "YouTube’da izle")}
-                      </a>
-                    ) : (
-                      <span className="text-text-muted text-sm">
-                        {t("exercises.video.soon", "Video yakında")}
-                      </span>
-                    )}
-
-                    {/* Hafif “chip” */}
-                    <span className="rounded-full border border-brand-300/30 bg-surface-50 px-3 py-1 text-[12px] text-text-secondary">
-                      {t("exercises.chip.guided", "Rehberli hareket")}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            ))}
+              );
+            })}
           </div>
-        </section>
-      </main>
+        )}
 
+        {/* Detay Modal */}
+        {open && (
+          <div className="fixed inset-0 z-50">
+            <div className="absolute inset-0 bg-black/30" onClick={() => setOpen(null)} />
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-6">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-lg font-semibold">{open.exercise.title}</h3>
+                <button className="px-3 py-1 rounded border" onClick={() => setOpen(null)}>Kapat</button>
+              </div>
+              <div className="mt-4 grid gap-3">
+                <div className="text-sm text-text-secondary">
+                  {open.exercise.level || "-"}{" • "}
+                  {open.exercise.bodyParts?.length ? open.exercise.bodyParts.join(", ") : "-"}
+                </div>
+                {open.exercise.description ? <p className="text-sm">{open.exercise.description}</p> : null}
+                {open.exercise.media?.some((m) => m.type === "text") ? (
+                  <div className="rounded-lg border p-3 bg-surface-50">
+                    {(open.exercise.media.find((m) => m.type === "text") as any)?.content}
+                  </div>
+                ) : null}
+                {open.exercise.media?.some((m) => m.type === "video") ? (
+                  <a
+                    className="inline-block px-3 py-2 rounded-lg border hover:bg-surface-50 text-sm"
+                    href={(open.exercise.media.find((m) => m.type === "video") as any)?.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Videoyu Aç
+                  </a>
+                ) : null}
+                <div className="text-xs text-text-secondary">
+                  Plan: {(open.schedule?.sets ? `${open.schedule.sets} set` : "-") +
+                    " • " + (open.schedule?.reps ? `${open.schedule.reps} tekrar` : "-") +
+                    " • " + (Array.isArray(open.schedule?.days) ? open.schedule.days.join(", ") : "-")}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
       <Footer />
+
     </>
   );
-}
+};
 
-export const getServerSideProps: GetServerSideProps<Props> = async (
-  ctx: GetServerSidePropsContext
-) => {
+export default ExercisesPage;
+
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = (await getServerSession(
     ctx.req as any,
     ctx.res as any,
     authOptions as any
   )) as Session | null;
 
-  const locale = ctx.locale ?? "de";
-
-  // (İstersen giriş zorunluluğunu koru; yoksa bu bloğu kaldır)
   if (!session?.user?.email) {
+    const locale = ctx.locale || "de";
     return {
       redirect: {
-        destination: `/${locale}/login?callbackUrl=${encodeURIComponent(
-          `/${locale}/exercises`
-        )}`,
+        destination: `/${locale}/login?callbackUrl=/exercises`,
         permanent: false,
       },
     };
   }
 
-  await dbConnect();
-
-  const docs = await ExerciseModel.find({})
-    .sort({ createdAt: -1 })
-    .lean<
-      Array<{
-        _id: any;
-        title: string;
-        description?: string;
-        media?: Array<
-          | { type: "image"; url: string }
-          | { type: "video"; url: string }
-          | { type: "text"; content: string }
-        >;
-      }>
-    >();
-
-  const toPageExercise = (d: any): Exercise => {
-    const media = Array.isArray(d.media) ? d.media : [];
-
-    const images = media.filter((m: any) => m.type === "image");
-    const texts = media.filter((m: any) => m.type === "text");
-    const videos = media.filter((m: any) => m.type === "video");
-
-    // fallback görseller (public klasöründeki mevcut görseller)
-    const beforeImg = images[0]?.url || "/services.jpg";
-    const afterImg = images[1]?.url || "/ale-dashboard.jpg";
-
-    const description =
-      d.description ||
-      texts[0]?.content ||
-      "Açıklama yakında.";
-
-    // ❗undefined yerine null dönüyoruz
-    const youtube =
-      videos.find((v: any) => /youtu(\.be|be\.com)/i.test(v.url))?.url || null;
-
-    return {
-      id: String(d._id),
-      title: d.title,
-      beforeImg,
-      afterImg,
-      description,
-      youtube, // string | null
-    };
-  };
-
-  const exercises: Exercise[] = docs.map(toPageExercise);
-
-  return {
-    props: {
-      exercises,
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
+  return { props: {} };
 };

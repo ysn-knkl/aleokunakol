@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "cloudinary": "^2.7.0",
     "mongodb": "^6.19.0",
     "mongoose": "^8.18.0",
     "next": "latest",

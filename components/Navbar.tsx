@@ -15,8 +15,9 @@ import { Links, MobileMenu, UserMenu } from "./navbar/index";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation("common");
-  const { status } = useSession();
+  const { data: session, status } = useSession();
   const isAuthed = status === "authenticated";
+  const isAdmin = Boolean((session?.user as any)?.role === "admin");
   const { locale = "de" } = useRouter();
 
   const [scrolled, setScrolled] = useState(false);
@@ -80,7 +81,7 @@ const Navbar: React.FC = () => {
                 <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
                   {t("nav.cta")}
                 </Link>
-                <UserMenu />
+                <UserMenu isAdmin={isAdmin} locale={locale} />
                 <LanguageSwitcher />
               </div>
 
@@ -101,7 +102,7 @@ const Navbar: React.FC = () => {
                 onClose={() => setOpenMobile(false)}
                 onOpenPrivacy={() => setShowPrivacy(true)}
                 onOpenImpressum={() => setShowImpressum(true)}
-                UserMenu={<UserMenu />}
+                UserMenu={<UserMenu mobile={true} isAdmin={isAdmin} locale={locale} />}
                 LanguageSwitcher={<LanguageSwitcher />}
                 isAuthed={isAuthed}
               />

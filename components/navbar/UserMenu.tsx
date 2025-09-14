@@ -3,16 +3,20 @@ import { useEffect, useRef, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
-export default function UserMenu() {
+type Props = { isAdmin?: boolean; locale?: string; mobile?: boolean };
+export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }: Props) {
   const { data: session, status } = useSession();
   const { t } = useTranslation("common");
   const router = useRouter();
-  const locale = (router.locale as string) || "de";
+  const locale = (localeProp as string) || (router.locale as string) || "de";
 
   const [open, setOpen] = useState(false);
   const [alignRight, setAlignRight] = useState(true);
   const rootRef = useRef<HTMLDivElement | null>(null);
+
+  const isAdminFinal = typeof isAdmin === "boolean" ? isAdmin : Boolean((session?.user as any)?.role === "admin");
 
   // Outside click → close
   useEffect(() => {
@@ -84,14 +88,37 @@ export default function UserMenu() {
         )}
       </button>
 
-      {/* Mobile trigger: only Sign in / Sign out text button */}
-      <button
-        onClick={handleMobileClick}
-        className="md:hidden rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition"
-        aria-label={status === "authenticated" ? t("auth.signOut", "Sign out") : t("auth.signIn", "Sign in")}
-      >
-        {status === "authenticated" ? t("auth.signOut", "Sign out") : t("auth.signIn", "Sign in")}
-      </button>
+      {/* Mobile actions */}
+      <div className="md:hidden">
+        {status === "authenticated" ? (
+          <div className="flex flex-col">
+            {isAdminFinal && !mobile && (
+              <Link
+                href={{ pathname: "/admin" }}
+                locale={locale}
+                className="rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition"
+              >
+                Admin Panel
+              </Link>
+            )}
+            <button
+              onClick={handleMobileClick}
+              className="rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition text-left"
+              aria-label={t("auth.signOut", "Sign out")}
+            >
+              {t("auth.signOut", "Sign out")}
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={handleMobileClick}
+            className="rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition"
+            aria-label={t("auth.signIn", "Sign in")}
+          >
+            {t("auth.signIn", "Sign in")}
+          </button>
+        )}
+      </div>
 
       {/* Desktop dropdown */}
       {open && (
@@ -111,6 +138,16 @@ export default function UserMenu() {
                 )}
               </div>
               <div className="my-1 h-px bg-brand-300/30" />
+              {isAdminFinal && (
+                <Link
+                  href={{ pathname: "/admin" }}
+                  locale={locale}
+                  className="block w-full rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"
+                  role="menuitem"
+                >
+                  Admin Panel
+                </Link>
+              )}
               {/* bottom: logout */}
               <button
                 onClick={() => signOut({ callbackUrl: `/${locale}` })}
