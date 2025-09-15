@@ -69,6 +69,7 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
   return (
     <div className="relative" ref={rootRef}>
       {/* Desktop trigger */}
+      {/*
       <button
         data-trigger="user-desktop"
         onClick={() => setOpen((v) => !v)}
@@ -89,7 +90,8 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
         )}
       </button>
 
-      {/* Mobile actions (component her iki yerde de kullanılabildiği için md:hidden) */}
+      {/* Mobile actions (DISABLED for public launch) */}
+      {/*
       <div className="md:hidden">
         {status === "authenticated" ? (
           <div className="flex flex-col">
@@ -119,8 +121,10 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
           </button>
         )}
       </div>
+      */}
 
-      {/* Desktop dropdown */}
+      {/* Desktop dropdown (DISABLED for public launch) */}
+      {/*
       {open && (
         <div
           role="menu"
@@ -128,7 +132,6 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
         >
           {status === "authenticated" ? (
             <>
-              {/* top: name & email */}
               <div className="px-3 py-2">
                 <p className="text-sm font-medium text-text-primary truncate">
                   {session?.user?.name || session?.user?.email}
@@ -150,7 +153,6 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
                 </Link>
               )}
 
-              {/* bottom: logout */}
               <button
                 onClick={() => {
                   setOpen(false);
@@ -164,7 +166,6 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
               </button>
             </>
           ) : (
-            // not authed: only Sign in (with Google chooser)
             <button
               onClick={() => {
                 setOpen(false);
@@ -179,6 +180,7 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
           )}
         </div>
       )}
+      */}
     </div>
   );
 }
