@@ -8,6 +8,11 @@ import React from "react";
  */
 export default function CalendlyPopup() {
   const url = process.env.NEXT_PUBLIC_CALENDLY_URL!;
+
+  if (!url) {
+    return <p className="text-center text-red-500">Calendly URL missing</p>;
+  }
+
   return (
     <div className="container-x">
       <div

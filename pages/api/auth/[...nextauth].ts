@@ -1,4 +1,6 @@
-import NextAuth, { type NextAuthOptions } from "next-auth";
+// pages/api/auth/[...nextauth].ts
+import NextAuth from "next-auth";
+import type { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { dbConnect } from "@/lib/mongodb";
 import { User } from "@/lib/mongoose-models";
@@ -15,9 +17,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-
   callbacks: {
-    /** JWT içine role yaz — middleware buradan okur */
     async jwt({ token, user }) {
       if (user?.email) {
         await dbConnect();
@@ -28,22 +28,17 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-
-    /** Session içine de role koy — client tarafı için kullanışlı */
     async session({ session, token }) {
       if (session?.user) {
         (session.user as any).role = (token as any).role;
       }
       return session;
     },
-
-    /** İlk login: kullanıcıyı Mongo'ya yaz/güncelle */
     async signIn({ user }) {
       if (!user?.email) return false;
       await dbConnect();
       const email = user.email.toLowerCase();
       const isAdmin = admins.includes(email);
-
       await User.findOneAndUpdate(
         { email },
         {

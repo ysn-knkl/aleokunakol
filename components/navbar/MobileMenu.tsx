@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { useTranslation } from "next-i18next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -24,9 +24,10 @@ export default function MobileMenu({
   const isAdmin = Boolean((session?.user as any)?.role === "admin");
   const { locale = "de" } = useRouter();
 
-  const to = (hash: string) => `/${locale}${hash}`;
-
-  const [offerOpen, setOfferOpen] = useState(false);
+  const hrefHash = (hash: string) => ({
+    pathname: "/",
+    hash: hash.replace(/^#/, ""),
+  });
 
   return (
     <div className="fixed inset-0 z-[60] md:hidden">
@@ -51,65 +52,22 @@ export default function MobileMenu({
 
         <nav className="grid gap-2 text-text-primary">
           <Link
-            href={to("#about")}
+            href={hrefHash("#about")}
             className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
             onClick={onClose}
           >
             {t("nav.about")}
           </Link>
 
-          <div className="rounded-xl">
-            <button
-              type="button"
-              className="w-full flex justify-between items-center px-3 py-3 text-lg font-medium hover:bg-surface-100"
-              onClick={() => setOfferOpen(!offerOpen)}
-            >
-              {t("nav.offer")}
-              <span>{offerOpen ? "−" : "+"}</span>
-            </button>
-            {offerOpen && (
-              <div className="grid">
-                <Link
-                  href={to("#angebot-1")}
-                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                  onClick={onClose}
-                >
-                  • QRI – Laserunterstützte Reflexintegration
-                </Link>
-                <Link
-                  href={to("#angebot-2")}
-                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                  onClick={onClose}
-                >
-                  • Primitive Reflex – Değerlendirme
-                </Link>
-                <Link
-                  href={to("#angebot-3")}
-                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                  onClick={onClose}
-                >
-                  • Duyusal Düzenleme ve Postür
-                </Link>
-                <Link
-                  href={to("#angebot-4")}
-                  className="rounded-lg px-3 py-2 hover:bg-surface-100 text-base"
-                  onClick={onClose}
-                >
-                  • Aile Danışmanlığı & Takip
-                </Link>
-              </div>
-            )}
-          </div>
-
           <Link
-            href={to("#services")}
+            href={hrefHash("#services")}
             className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
             onClick={onClose}
           >
             {t("nav.services")}
           </Link>
           <Link
-            href={to("#contact")}
+            href={hrefHash("#contact")}
             className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
             onClick={onClose}
           >
@@ -118,7 +76,8 @@ export default function MobileMenu({
 
           {isAuthed && (
             <Link
-              href={`/${locale}/exercises`}
+              href={{ pathname: "/exercises" }}
+              locale={locale}
               className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
               onClick={onClose}
             >
@@ -128,7 +87,8 @@ export default function MobileMenu({
 
           {isAdmin && (
             <Link
-              href={`/${locale}/admin`}
+              href={{ pathname: "/admin" }}
+              locale={locale}
               className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
               onClick={onClose}
             >
@@ -158,7 +118,7 @@ export default function MobileMenu({
 
         <div className="pt-1">
           <Link
-            href={to("#contact")}
+            href={hrefHash("#contact")}
             className="btn-primary w-full justify-center"
             onClick={onClose}
           >

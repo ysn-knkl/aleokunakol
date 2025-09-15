@@ -1,7 +1,4 @@
 {
-  "lastUpdated": "Güncelleme: 2025",
-  "phone": "Telefon:",
-  "email": "E-Posta:",
   "seo": {
     "title": "QRI Reflex | Refleks Entegrasyonu",
     "description": "Refleks terapisi, QRI, aromaterapi ve daha fazlası",
@@ -10,149 +7,205 @@
   "nav": {
     "about": "Hakkımda",
     "services": "Hizmetler",
-    "offer": "Angebot",
     "contact": "İletişim",
     "privacy": "Gizlilik",
-    "impressum": "Impressum",
-    "cta": "Randevu Al"
+    "impressum": "Künye",
+    "exercises": "Egzersizler",
+    "admin": "Yönetim",
+    "cta": "Randevu al",
+    "skipToContent": "İçeriğe geç",
+    "primary": "Ana gezinme",
+    "logoAlt": "QRI Reflex Logosu",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "userMenu": "Kullanıcı menüsü"
+  },
+  "auth": {
+    "signInTitle": "Giriş yap",
+    "continueWithGoogle": "Google ile devam et",
+    "signIn": "Giriş yap",
+    "signOut": "Çıkış yap"
+  },
+  "common": {
+    "loading": "Yükleniyor…",
+    "error": "Hata",
+    "close": "Kapat",
+    "refresh": "Yenile",
+    "noRecords": "Kayıt yok.",
+    "select": "Seçiniz",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "cancel": "Vazgeç",
+    "save": "Kaydet"
   },
   "hero": {
-    "title": "Çocuklar için güçlü bir başlangıç",
-    "lead": "QRI, refleks entegrasyonu ve duyusal düzenleme ile daha sakin bir beden ve zihin.",
-    "cta": "Randevu Al"
+    "title": "Sorun çocuğun değil—sinir sistemi desteğe ihtiyaç duyuyor.",
+    "lead": "Refleks entegrasyonu, aromaterapi ve PEMF ile çocuğunu yeniden dengeye getir.",
+    "cta": "Randevu al"
   },
   "about": {
     "title": "Hakkımda",
-    "body": "Çocuklara refleks entegrasyonu ile destek veren bir fizyoterapistim. Değerlendirme, kişisel program ve aile danışmanlığı ile ilerlerim."
+    "imageAlt": "Portre",
+    "badges": ["QRI • PEMF • Aromaterapi", "Fizyoterapist"],
+    "highlights": [
+      "10+ yıl çocuklar ve ailelerle",
+      "Refleks entegrasyonu & nazik dokunuş",
+      "Gündelik hayata uygun, sevgi dolu rehberlik"
+    ],
+    "body": "On yılı aşkın süredir fizyoterapist olarak, engelli ve gelişimsel gecikmesi olan çocuklarla çalışıyorum. Bu yıllarda geleneksel yöntemlerin hem gücünü hem de sınırlarını gördüm.\n\nYoğun Therasuit çalışmalarında, iki-beş hafta boyunca her gün üç saatimi tek bir çocukla geçirirdim. Bazen tüm emek ve özenime rağmen ilerleme çok yavaştı ya da hiç olmadı. Çocuklar \"Bacaklarımı uzatıyorum!\" dese de dizlerinin hafif bükülü kaldığını görürdüm. Onların hayal kırıklığı benimkini yansıtıyordu. Bir şey eksikti.\n\nMerak ve şefkat beni alışılmışın ötesine taşıdı. Bonnie Brandes'in Symphony of Reflexes kitabını ve ilkel reflekslerin entegrasyonunu keşfettim. 2019'da Madrid'de QRI eğitimi aldım; her şey değişti.\n\nQRI'yi seanslara dâhil ettiğimde sonuçlar belirgindi. Çocuklar daha hızlı ve özgüvenle ilerledi; yeni beceriler bir anda öğrenildiği için değil, bedendeki gerilim nihayet çözüldüğü için. Soğuk lazer uyarımı ve refleks entegrasyonu; sinir sistemini düzenlemeye, kortizol ve adrenalini sakinleştirmeye ve zaten içlerinde olan hareket kalıplarını açığa çıkarmaya yardım etti.\n\nBugün QRI'yi fizyoterapinin temel araçlarıyla birleştiriyorum: hareket, egzersiz ve nazik dokunuş. Kimi çocuklara bedenle rehberlik yeterli; kimileri için QRI eksik parçayı tamamlıyor. Hedefim aynı: sinir sistemini yeterince sakinleştirmek ki çocuk kendini güvende hissedip büyüsün.\n\nŞifalanma anlamakla başlar, doğru araçlarla sürer ve bağ içinde açılır. Her seansa bunu getiriyorum."
   },
   "services": {
     "title": "Refleks Entegrasyonu ile",
     "imageAlt": "Refleks terapisi",
     "bullets": [
-      "Davranışsal zorluklar azalır",
-      "Odaklanma ve öğrenme artar",
-      "Motor beceriler gelişir",
-      "Uyku düzeni desteklenir",
-      "Özgüven güçlenir"
+      "Daha fazla sakinlik, odak ve duygusal denge—baskısız",
+      "Öğrenme kapasitesinde artış—beyin sistemlerinin olgunlaşmasıyla",
+      "Evde uygulanabilir, basit ve eğlenceli egzersizler",
+      "Zorlayıcı durumlar için araçlar ve netlik",
+      "10+ yıllık deneyim ve yürekle"
     ]
   },
-  "offer": {
-    "title": "Angebot",
-    "blocks": [
-      {
-        "title": "QRI – Lazer Destekli Refleks Entegrasyonu",
-        "bullets": [
-          "Davranışsal zorluklar azalır",
-          "Odaklanma artar",
-          "Motor beceriler gelişir",
-          "Uyku desteklenir",
-          "Özgüven güçlenir"
-        ]
-      },
-      {
-        "title": "Primitive Refleks – Değerlendirme ve Program",
-        "bullets": [
-          "Refleks değerlendirmesi",
-          "Kişisel egzersiz planı",
-          "Ev protokolleri",
-          "Aile eğitimi",
-          "İlerleme izleme"
-        ]
-      },
-      {
-        "title": "Duyusal Düzenleme ve Postür",
-        "bullets": [
-          "Duyusal stratejiler",
-          "Solunum ve core",
-          "Koordinasyon",
-          "Ortam uyarlamaları",
-          "Beden farkındalığı"
-        ]
-      },
-      {
-        "title": "Aile Danışmanlığı & Takip",
-        "bullets": [
-          "Seans dışı takip",
-          "Pratik uygulamalar",
-          "Okul işbirliği",
-          "Periyodik kontrol",
-          "Hedef odaklı ilerleme"
-        ]
-      }
+  "services2": {
+    "imageAlt": "Refleks terapisi",
+    "bullets": [
+      "Çok şey denedin—ama çocuğun bir türlü ilerlemiyor.",
+      "Çabaladığını görüyorsun ama yine de olmuyor—zor, duygusal, çatışmalı.",
+      "Ben de bir terapist olarak aynısını yaşadım. QRI ile çalışınca kırılma noktası geldi."
     ]
   },
-  "contact": {
-    "title": "İletişim & Randevu",
-    "reviewsTitle": "Yorumlar"
-  },
-  "privacy": {
-    "title": "Gizlilik Politikası",
-    "body1": "Randevu ve iletişim süreçlerinde paylaşılan bilgiler yalnızca hizmet sunumu amacıyla ve mevzuata uygun biçimde işlenir.",
-    "li1": "Takip amaçlı çerez kullanmıyoruz.",
-    "li2": "Veriler üçüncü kişilerle paylaşılmaz.",
-    "li3": "Erişim, düzeltme, silme haklarına sahipsiniz.",
-    "contact": "Veri sorumlusu: QRI Reflex Therapie • info@qri-therapie.at"
-  },
-  "impressum": {
-    "title": "Impressum",
-    "legalLine": "Informationspflicht laut §5 E-Commerce Gesetz, §14 UGB, §63 GewO und §25 Mediengesetz.",
-    "profession": "Physiotherapeutin",
-    "subject": "Unternehmensgegenstand",
-    "subjectText": "Physiotherapie und Reflexintegration",
-    "membership": "Mitgliedschaften",
-    "membershipText": "Mitglied der Wirtschaftskammer Wien",
-    "law": "Berufsrechtliche Vorschriften",
-    "lawText": "Gewerbeordnung 1994 – abrufbar unter www.ris.bka.gv.at",
-    "disclaimer": "Haftungsausschluss",
-    "disclaimerText": "Externe bağlantıların içeriğinden sorumluluk kabul edilmez; sorumluluk ilgili işletmecilere aittir.",
-    "copyright": "Urheberrecht",
-    "copyrightText": "Bu sitedeki içerikler telif hakkına tabidir.",
-    "name": "Alexandra Oana Okunakol",
-    "addressLines": [
-      "Argentinierstrasse 50",
-      "1040 Wien",
-      "Österreich"
-    ],
-    "emailAddress": "info@aleokunakol.com",
-    "phoneNumber": "+43 (660) 573 36 20"
-  },
-  "footer": {
-    "title": "QRI Reflex Therapie",
-    "description": "Refleks entegrasyonu ve düzenleyici terapi yaklaşımları.",
-    "contactTitle": "İletişim",
-    "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Wien",
-      "email": "info@qri-therapie.at",
-      "phone": "+43 660 1234567"
-    },
-    "quickLinksTitle": "Hızlı Bağlantılar",
-    "links": {
-      "about": "Hakkımda",
-      "services": "Hizmetler",
-      "contact": "Randevu"
-    },
-    "location": "Viyana, Avusturya"
-  },
-  "calendly": {
-    "consent": {
-      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
-      "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
-      "allow": "Zustimmen und öffnen",
-      "moreInfo": "Mehr erfahren"
-    }
+  "services3": {
+    "title": "“İstese yapar”",
+    "imageAlt": "Refleks terapisi",
+    "bullets": [
+      "Çoğu kez hayır—çünkü sinir sistemi hayatta kalma modunda.",
+      "Entegre olmamış ilkel refleksler çocuğu beyin sapında tutar—ne mantık, ne odak, ne de “Hadi toparlan.”",
+      "Tembellik gibi görünen şey çoğu zaman bedensel aşırı yüklenmedir.",
+      "Her seansta kendime sorarım:",
+      "Fazla mı istiyorum? Çocuk bunu fizyolojik olarak yapabilir mi? Yapamıyorsa sorun çocukta değil, beklenti erkendir.",
+      "Küçük Prens’in dediği gibi:",
+      "Birinden ancak yapabileceğini istemelisin."
+    ]
   },
   "infoCards": {
+    "title": "Neden doğru yerdesin",
     "card1": {
-      "title": "QRI Lazer Cihazı",
-      "description": "Hassas, düşük seviyeli lazer ile refleks entegrasyonunu güvenli ve konforlu şekilde destekler."
+      "title": "Hızlı semptom çözümleri değil, kökten çözüm arıyorsun.",
+      "description": "Çocuğunun neden zorlandığını anlamak ve sinir sistemini gerçekten desteklemek istiyorsun."
     },
     "card2": {
-      "title": "Seans Uygulaması",
-      "description": "Çocuğun ritmine uygun, kısa ve oyunlaştırılmış uygulamalarla sakinlik ve odaklanmayı artırır."
+      "title": "Ailenize uyan doğal yöntemler istiyorsun.",
+      "description": "Vakit alan terapiler yerine etkili, nazik, esnek ve çocuğuna keyif veren bir yol."
     },
     "card3": {
-      "title": "Duyusal Düzenleme",
-      "description": "Baş ve gövde bölgesine yumuşak uyarılar vererek beden farkındalığı ve gevşemeyi teşvik eder."
+      "title": "Kendine ve çocuğuna güveni yeniden hissetmek istiyorsun.",
+      "description": "Sorumluluk almaya hazırsın; net ve şefkatli bir rehbere ihtiyacın var. Bunun için buradayım."
     }
-  }
+  },
+  "motherChildCard": {
+    "title": "Ebeveynlerin dileği—çocukların sessiz umudu",
+    "imageAlt": "Anne ve çocuk",
+    "labels": { "mother": "Ebeveynler ister …", "child": "Peki çocuk?" },
+    "leftTitle": "Ebeveynler ister …",
+    "left": [
+      { "title": "Evde huzur, odak ve uyum", "description": "Çocuğun sakinleşsin, odaklansın, keyifle öğrensin—günlük kavgalar bitsin." },
+      { "title": "Netlik ve seçenekler", "description": "Gerçek ihtiyacı anlamak ve uygulanabilir yollar bulmak." },
+      { "title": "Hayatlarına uyan çözümler", "description": "Ek yük değil; basit ve doğal araçlar." }
+    ],
+    "rightTitle": "Peki çocuk?",
+    "rightContent": {
+      "desc": "Söyleyemese de çocuğun ister …",
+      "sp1": "Kendi bedeninde güven.",
+      "sp2": "Şunu soran biri:",
+      "sp3": "“Gerçekten neye ihtiyacın var?”—“Neden böylesin?” değil."
+    },
+    "right": [
+      { "title": "Anlaşılmak", "description": "Sürekli düzeltme olmadan." },
+      { "title": "Görülmek", "description": "Ne hissettiğiyle—sadece (henüz) yapamadıklarıyla değil." },
+      { "title": "Kendi hızında büyümek", "description": "Baskı ve kıyas olmadan." }
+    ]
+  },
+  "packages": {
+    "title": "Hemen benimle çalış!",
+    "subtitle": "Seni ve çocuğunu daha fazla rahatlık, daha iyi regülasyon ve yeni gelişim adımlarına götürüyorum.",
+    "smallPrint": "Fiyatlara hazırlık ve takip dâhil. Detaylar bireysel konuşulur.",
+    "sessionPacks": [
+      { "title": "Seans Paketi • 7 randevu", "price": "770 €", "desc": "İlk değişimleri görmek ve refleks entegrasyonunu tanımak için ideal." },
+      { "title": "Seans Paketi • 9 randevu", "price": "990 €", "desc": "Sürekli eşlik ve derin entegrasyon için." },
+      { "title": "Seans Paketi • 11 randevu", "price": "1.200 €", "desc": "Maksimum destek için tam paket." }
+    ],
+    "intensive": {
+      "title": "Yoğun Hafta",
+      "price": "1.550 €",
+      "desc": "Günde iki seansla güçlü bir beyin desteği.",
+      "note": "Gelişimi hedefli desteklemek için 4–6 ayda bir önerilir."
+    }
+  },
+  "contact": { "title": "İletişim & Randevu", "reviewsTitle": "Yorumlar" },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "body1": "Randevu ve iletişim sırasında paylaşılan bilgiler yalnızca hizmet amacıyla ve yasaya uygun kullanılır.",
+    "li1": "İzleme çerezi kullanmıyoruz.",
+    "li2": "Veriler üçüncü kişilerle paylaşılmaz.",
+    "li3": "Verilerinize erişme, düzeltme ve silme hakkınız var.",
+    "contact": "Sorumlu: QRI Reflex Therapy • info@qri-therapie.at"
+  },
+  "impressum": {
+    "title": "Künye",
+    "legalLine": "Avusturya mevzuatınca zorunlu bilgiler.",
+    "profession": "Fizyoterapist",
+    "subject": "Faaliyet konusu",
+    "subjectText": "Fizyoterapi ve refleks entegrasyonu",
+    "membership": "Üyelikler",
+    "membershipText": "Viyana Ticaret Odası üyesi",
+    "law": "Mesleki düzenlemeler",
+    "lawText": "Gewerbeordnung 1994 – www.ris.bka.gv.at",
+    "disclaimer": "Sorumluluk reddi",
+    "disclaimerText": "Harici bağlantıların içeriğinden sorumlu değiliz; sorumluluk işletmecilerine aittir.",
+    "copyright": "Telif",
+    "copyrightText": "Bu sitedeki içerikler telif hakkıyla korunur."
+  },
+  "footer": {
+    "title": "QRI Reflex Terapi",
+    "description": "Refleks entegrasyonu ve düzenleyici yaklaşımlar.",
+    "contactTitle": "İletişim",
+    "contact": {
+      "address": "Argentinierstraße 18/3, 1040 Viyana",
+      "email": "info@aleokunakol.com",
+      "phone": "+43 660 5733620"
+    },
+    "quickLinksTitle": "Hızlı Bağlantılar",
+    "links": { "about": "Hakkımda", "services": "Hizmetler", "contact": "Randevu" },
+    "location": "Viyana, Avusturya",
+    "copyright": "© {{year}} QRI Reflex. Tüm hakları saklıdır."
+  },
+  "exercises": {
+    "title": "Egzersizlerim",
+    "empty": "Henüz sana atanmış bir egzersiz yok.",
+    "noImage": "Görsel yok",
+    "levelUnknown": "Seviye ?",
+    "set": "set",
+    "rep": "tekrar",
+    "details": "Detay",
+    "openVideo": "Videoyu aç",
+    "plan": "Plan"
+  },
+  "uploader": {
+    "pickOrDrop": "Dosya seç / sürükle-bırak",
+    "ariaLabel": "Dosya yükle",
+    "supported": "Desteklenen türler",
+    "upload": "Yükle",
+    "progress": "Yükleme durumu"
+  },
+  "days": { "mon": "Pzt", "tue": "Sal", "wed": "Çar", "thu": "Per", "fri": "Cum", "sat": "Cts", "sun": "Paz" },
+  "levels": { "easy": "kolay", "medium": "orta", "hard": "zor" },
+  "calendly": {
+    "consent": {
+      "title": "Randevu bileşenini göstermeye izin ver",
+      "body": "Calendly üçüncü taraf bir hizmettir; çerez ayarlayabilir veya dış bağlantı kurabilir. Onaylarsanız pencere açılır.",
+      "allow": "İzin ver ve aç",
+      "moreInfo": "Daha fazla bilgi"
+    }
+  },
+  "lastUpdated": "Güncellendi: 2025",
+  "phone": "Telefon:"
 }

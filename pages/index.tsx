@@ -1,6 +1,19 @@
-import { Navbar, Hero, About, Services, Contact, Footer, Angebot, InfoCard, MotherChildCard } from "../components";
+// pages/index.tsx
+import {
+  Navbar,
+  Hero,
+  About,
+  Services,
+  Contact,
+  Footer,
+  InfoCard,
+  MotherChildCard,
+  Services2,
+  Services3,
+  OfferPackages,
+} from "../components";
 
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { NextSeo } from "next-seo";
@@ -18,14 +31,17 @@ export default function Home() {
           description: t("seo.description"),
         }}
       />
+
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Services />
-        <Angebot />
         <InfoCard />
+        <Services2 />
+        <Services3 />
         <MotherChildCard />
+        <About />
+        <OfferPackages />
         <Contact />
         <Footer />
       </main>
@@ -33,8 +49,11 @@ export default function Home() {
   );
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? "de", ["common"])),
-  },
-});
+export const getStaticProps: GetStaticProps = async ({ locale = "de" }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+    revalidate: 60, // opsiyonel: her 60 sn'de yeniden üretim
+  };
+};

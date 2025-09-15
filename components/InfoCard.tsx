@@ -23,7 +23,8 @@ const InfoCards: React.FC = () => {
     ];
 
     return (
-        <div className="w-3/4 mx-auto">
+        <div className="w-3/4 mx-auto space-y-16">
+            <h2 className="title">{t('infoCards.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {cards.map((card, index) => (
                     <div

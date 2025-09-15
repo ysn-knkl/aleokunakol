@@ -7,7 +7,7 @@ export default class MyDocument extends Document<{ locale?: string }> {
   }
 
   render() {
-    const locale = this.props.locale || 'de';
+    const locale = (this.props as any).__NEXT_DATA__?.locale || "de";
     return (
       <Html lang={locale}>
         <Head />

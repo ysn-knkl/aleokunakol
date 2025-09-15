@@ -6,6 +6,7 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 type Props = { isAdmin?: boolean; locale?: string; mobile?: boolean };
+
 export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }: Props) {
   const { data: session, status } = useSession();
   const { t } = useTranslation("common");
@@ -16,7 +17,8 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
   const [alignRight, setAlignRight] = useState(true);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  const isAdminFinal = typeof isAdmin === "boolean" ? isAdmin : Boolean((session?.user as any)?.role === "admin");
+  const isAdminFinal =
+    typeof isAdmin === "boolean" ? isAdmin : Boolean((session?.user as any)?.role === "admin");
 
   // Outside click → close
   useEffect(() => {
@@ -44,7 +46,7 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
     const viewportW = window.innerWidth;
     const menuW = 260; // px
     const spaceRight = viewportW - rect.right;
-    setAlignRight(spaceRight >= menuW + 8); // enough space on the right → anchor right edge
+    setAlignRight(spaceRight >= menuW + 8);
   }, [open]);
 
   const initials =
@@ -60,22 +62,21 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
     if (status === "authenticated") {
       signOut({ callbackUrl: `/${locale}` });
     } else {
-      // force account chooser
       signIn("google", { callbackUrl: `/${locale}`, prompt: "select_account" });
     }
   };
 
   return (
     <div className="relative" ref={rootRef}>
-      {/* Desktop trigger: badge (initials if authed, generic if not) */}
+      {/* Desktop trigger */}
       <button
         data-trigger="user-desktop"
         onClick={() => setOpen((v) => !v)}
         className="hidden md:grid h-9 w-9 md:h-10 md:w-10 place-items-center rounded-full bg-surface-200 text-text-secondary hover:bg-surface-100 transition"
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label="User menu"
-        title="User menu"
+        aria-label={t("nav.userMenu", "Benutzer-Menü")}
+        title={t("nav.userMenu", "Benutzer-Menü")}
       >
         {status === "authenticated" && initials ? (
           <span className="h-9 w-9 md:h-10 md:w-10 rounded-full bg-brand-700/90 text-white grid place-items-center font-semibold">
@@ -88,17 +89,16 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
         )}
       </button>
 
-      {/* Mobile actions */}
+      {/* Mobile actions (component her iki yerde de kullanılabildiği için md:hidden) */}
       <div className="md:hidden">
         {status === "authenticated" ? (
           <div className="flex flex-col">
             {isAdminFinal && !mobile && (
               <Link
-                href={{ pathname: "/admin" }}
-                locale={locale}
+                href={`/${locale}/admin`}
                 className="rounded-xl px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-surface-100 transition"
               >
-                Admin Panel
+                {t("nav.admin", "Admin Panel")}
               </Link>
             )}
             <button
@@ -138,21 +138,27 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
                 )}
               </div>
               <div className="my-1 h-px bg-brand-300/30" />
+
               {isAdminFinal && (
                 <Link
-                  href={{ pathname: "/admin" }}
-                  locale={locale}
+                  href={`/${locale}/admin`}
                   className="block w-full rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"
                   role="menuitem"
+                  onClick={() => setOpen(false)}
                 >
-                  Admin Panel
+                  {t("nav.admin", "Admin Panel")}
                 </Link>
               )}
+
               {/* bottom: logout */}
               <button
-                onClick={() => signOut({ callbackUrl: `/${locale}` })}
+                onClick={() => {
+                  setOpen(false);
+                  signOut({ callbackUrl: `/${locale}` });
+                }}
                 className="w-full text-left rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"
                 role="menuitem"
+                aria-label={t("auth.signOut", "Sign out")}
               >
                 {t("auth.signOut", "Sign out")}
               </button>
@@ -160,9 +166,13 @@ export default function UserMenu({ isAdmin, locale: localeProp, mobile = false }
           ) : (
             // not authed: only Sign in (with Google chooser)
             <button
-              onClick={() => signIn("google", { callbackUrl: `/${locale}`, prompt: "select_account" })}
+              onClick={() => {
+                setOpen(false);
+                signIn("google", { callbackUrl: `/${locale}`, prompt: "select_account" });
+              }}
               className="w-full text-left rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-100 hover:text-text-primary"
               role="menuitem"
+              aria-label={t("auth.signIn", "Sign in")}
             >
               {t("auth.signIn", "Sign in")}
             </button>

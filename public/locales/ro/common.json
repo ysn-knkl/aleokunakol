@@ -1,149 +1,211 @@
 {
-  "lastUpdated": "Actualizat: 2025",
-  "phone": "Telefon:",
   "seo": {
-    "title": "QRI Reflex | Integrarea Reflexelor",
+    "title": "QRI Reflex | Integrarea reflexelor",
     "description": "Terapie reflexă, QRI, aromaterapie și altele",
     "siteName": "QRI Reflex"
   },
   "nav": {
     "about": "Despre mine",
     "services": "Servicii",
-    "offer": "Ofertă",
     "contact": "Contact",
     "privacy": "Confidențialitate",
     "impressum": "Impressum",
-    "cta": "Programează-te"
+    "exercises": "Exerciții",
+    "admin": "Admin",
+    "cta": "Programează o ședință",
+    "skipToContent": "Sari la conținut",
+    "primary": "Navigare principală",
+    "logoAlt": "Logo QRI Reflex",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "userMenu": "Meniu utilizator"
+  },
+  "auth": {
+    "signInTitle": "Autentificare",
+    "continueWithGoogle": "Continuă cu Google",
+    "signIn": "Autentificare",
+    "signOut": "Deconectare"
+  },
+  "common": {
+    "loading": "Se încarcă…",
+    "error": "Eroare",
+    "close": "Închide",
+    "refresh": "Reîmprospătează",
+    "noRecords": "Nu există înregistrări.",
+    "select": "Selectează",
+    "edit": "Editează",
+    "delete": "Șterge",
+    "cancel": "Anulează",
+    "save": "Salvează"
   },
   "hero": {
-    "title": "Un început puternic pentru copii",
-    "lead": "QRI combină integrarea reflexelor și reglarea senzorială pentru un corp și o minte mai calme.",
-    "cta": "Programează-te"
+    "title": "Copilul tău nu este problema – sistemul lui nervos are nevoie de sprijin.",
+    "lead": "Cu integrarea reflexelor, aromaterapie și PEMF, îți ajuți copilul să revină în echilibru.",
+    "cta": "Programează acum"
   },
   "about": {
     "title": "Despre mine",
-    "body": "Sunt fizioterapeută și sprijin copiii prin integrarea reflexelor. Lucrez cu evaluări, programe personalizate și consiliere pentru familii."
+    "imageAlt": "Portret",
+    "badges": ["QRI • PEMF • Aromaterapie", "Fizioterapeut"],
+    "highlights": [
+      "Peste 10 ani alături de copii și părinți",
+      "Integrarea reflexelor & atingere blândă",
+      "Îndrumare practică și caldă pentru viața de zi cu zi"
+    ],
+    "body": "De peste un deceniu lucrez ca fizioterapeut, sprijinind copii cu dizabilități și întârzieri de dezvoltare. În acest timp am văzut atât magia, cât și limitele metodelor tradiționale.\n\nÎn munca intensivă Therasuit petreceam câte trei ore pe zi, două până la cinci săptămâni, cu un singur copil. Uneori, în ciuda efortului, progresul era lent sau inexistent. Copiii îmi spuneau că fac exact ce cer – „Întind picioarele!” – dar genunchii rămâneau ușor îndoiți. Frustrarea lor o simțeam și eu. Lipsea ceva.\n\nCuriozitatea și compasiunea m-au dus dincolo de convențional. Am descoperit cartea Symphony of Reflexes (Bonnie Brandes) și o nouă dimensiune: integrarea reflexelor primitive. În 2019 am urmat formarea QRI la Madrid. Asta a schimbat totul.\n\nCând am început să includ QRI în sesiuni, rezultatele au fost clare. Copiii au progresat mai repede și cu mai multă încredere – nu pentru că au învățat brusc abilități noi, ci pentru că tensiunea din corp a cedat. Stimularea cu laser rece și integrarea reflexelor au ajutat la reglarea sistemului nervos și la eliberarea tiparelor de mișcare deja existente.\n\nAstăzi combin QRI cu instrumentele de bază ale fizioterapiei: mișcare, exerciții și atingere blândă. Pentru unii copii ghidarea corporală e suficientă; pentru alții QRI este piesa lipsă. Ținta mea rămâne aceeași: să liniștim sistemul nervos pentru ca ei să se simtă în siguranță să crească.\n\nVindecarea începe cu înțelegerea, continuă cu instrumentele potrivite și se desfășoară în relație. Asta aduc în fiecare sesiune."
   },
   "services": {
-    "title": "Cu Integrarea Reflexelor",
+    "title": "Cu integrarea reflexelor",
     "imageAlt": "Terapie reflexă",
     "bullets": [
-      "Dificultățile de comportament scad",
-      "Concentrarea și învățarea se îmbunătățesc",
-      "Abilitățile motorii se dezvoltă",
-      "Somnul este susținut",
-      "Încrederea în sine crește"
+      "Mai mult calm, concentrare și echilibru emoțional—fără presiune",
+      "Îmbunătățirea învățării—prin maturizarea sistemelor cerebrale",
+      "Exerciții simple acasă—jucăușe și practice",
+      "Unelte & claritate pentru provocările zilnice",
+      "Experiență și inimă—peste 10 ani alături de copii speciali"
     ]
   },
-  "offer": {
-    "title": "Ofertă",
-    "blocks": [
-      {
-        "title": "QRI – Integrarea Reflexelor asistată de laser",
-        "bullets": [
-          "Dificultățile de comportament scad",
-          "Concentrarea se îmbunătățește",
-          "Abilitățile motorii se dezvoltă",
-          "Somnul este susținut",
-          "Încrederea în sine crește"
-        ]
-      },
-      {
-        "title": "Reflexe primitive – Evaluare și program",
-        "bullets": [
-          "Evaluarea reflexelor",
-          "Plan de exerciții personalizat",
-          "Protocoale pentru acasă",
-          "Educația familiei",
-          "Monitorizarea progresului"
-        ]
-      },
-      {
-        "title": "Reglare senzorială și postură",
-        "bullets": [
-          "Strategii senzoriale",
-          "Respirație și core",
-          "Coordonare",
-          "Adaptări ale mediului",
-          "Conștientizarea corpului"
-        ]
-      },
-      {
-        "title": "Consilierea familiei & Monitorizare",
-        "bullets": [
-          "Monitorizare între ședințe",
-          "Aplicații practice",
-          "Colaborare cu școala",
-          "Verificări periodice",
-          "Progres orientat pe obiective"
-        ]
-      }
+  "services2": {
+    "imageAlt": "Terapie reflexă",
+    "bullets": [
+      "Ai încercat multe—dar copilul nu avansează cum trebuie.",
+      "Vezi efortul, dar tot nu merge—rămâne dificil, emoțional, conflictual.",
+      "Am trăit și eu asta ca terapeut. Abia cu QRI a venit schimbarea."
     ]
   },
-  "contact": {
-    "title": "Contact & Programări",
-    "reviewsTitle": "Recenzii"
+  "services3": {
+    "title": "„Ar putea, dacă ar vrea”",
+    "imageAlt": "Terapie reflexă",
+    "bullets": [
+      "De multe ori nu—pentru că sistemul nervos e în modul supraviețuire.",
+      "Reflexele primitive neintegrate țin copiii în trunchiul cerebral—fără logică, fără focus, fără „Hai, concentrează-te”.",
+      "Ceea ce pare încăpățânare e adesea supraîncărcare corporală.",
+      "Îmi pun mereu întrebarea:",
+      "Cer prea mult? Poate copilul—fiziologic—să facă asta? Dacă nu, copilul nu greșește; cerința e prea devreme.",
+      "Cum spune Micul Prinț:",
+      "Să ceri de la cineva doar ceea ce poate cu adevărat."
+    ]
   },
+  "infoCards": {
+    "title": "De ce ești în locul potrivit",
+    "card1": {
+      "title": "Cauți soluții la rădăcină, nu plasturi rapizi.",
+      "description": "Vrei să înțelegi de ce copilul se retrage, se enervează sau nu se poate concentra și să îl sprijini cu adevărat."
+    },
+    "card2": {
+      "title": "Vrei metode naturale care se potrivesc familiei tale.",
+      "description": "În loc de terapii consumatoare de timp, vrei ceva eficient, blând, flexibil—și plăcut pentru copil."
+    },
+    "card3": {
+      "title": "Vrei să redobândești încrederea în tine și în copil.",
+      "description": "Ești gata să-ți asumi, dar ai nevoie de ghidare clară și empatică. Asta îți ofer."
+    }
+  },
+  "motherChildCard": {
+    "title": "Ce își doresc părinții—și ce speră în tăcere copiii",
+    "imageAlt": "Mamă și copil",
+    "labels": { "mother": "Părinții își doresc …", "child": "Iar copilul?" },
+    "leftTitle": "Părinții își doresc …",
+    "left": [
+      { "title": "Liniște, concentrare și armonie acasă", "description": "Să se liniștească, să se concentreze mai bine și să învețe cu bucurie—fără lupte zilnice." },
+      { "title": "Claritate & opțiuni de acțiune", "description": "Să înțeleagă ce are cu adevărat nevoie copilul și căi concrete de ajutor." },
+      { "title": "Soluții potrivite vieții lor", "description": "Instrumente simple și naturale care chiar funcționează în fiecare zi." }
+    ],
+    "rightTitle": "Iar copilul?",
+    "rightContent": {
+      "desc": "Chiar dacă nu o poate spune—copilul își dorește …",
+      "sp1": "Siguranță în propriul corp.",
+      "sp2": "Pe cineva care întreabă:",
+      "sp3": "„De ce ai nevoie cu adevărat?”—nu „De ce ești așa?”"
+    },
+    "right": [
+      { "title": "Să fie înțeles", "description": "Fără corecții permanente." },
+      { "title": "Să fie văzut", "description": "Pentru ce simte—nu doar pentru ce (încă) nu poate." },
+      { "title": "Să crească în ritmul propriu", "description": "Fără presiune sau comparații." }
+    ]
+  },
+  "packages": {
+    "title": "Lucrează cu mine acum!",
+    "subtitle": "Te însoțesc pe tine și copilul tău către mai multă ușurință, reglare mai bună și pași noi în dezvoltare.",
+    "smallPrint": "Prețuri cu pregătire și follow-up incluse. Detalii stabilite individual.",
+    "sessionPacks": [
+      { "title": "Pachet • 7 ședințe", "price": "770 €", "desc": "Ideal pentru primele schimbări și a cunoaște integrarea reflexelor." },
+      { "title": "Pachet • 9 ședințe", "price": "990 €", "desc": "Pentru însoțire continuă și integrare mai profundă." },
+      { "title": "Pachet • 11 ședințe", "price": "1.200 €", "desc": "Pachet complet pentru sprijin maxim." }
+    ],
+    "intensive": {
+      "title": "Săptămână intensivă",
+      "price": "1.550 €",
+      "desc": "Două ședințe pe zi pentru un impuls puternic.",
+      "note": "Recomandat la 4–6 luni pentru susținere țintită."
+    }
+  },
+  "contact": { "title": "Contact & Programări", "reviewsTitle": "Recenzii" },
   "privacy": {
     "title": "Politica de confidențialitate",
-    "body1": "Informațiile împărtășite în timpul proceselor de programare și contact sunt utilizate exclusiv pentru furnizarea serviciilor și în conformitate cu legea.",
-    "li1": "Nu folosim cookie-uri de urmărire.",
+    "body1": "Informațiile partajate la programare și contact sunt folosite doar pentru furnizarea serviciilor, conform legii.",
+    "li1": "Nu folosim cookie-uri de tracking.",
     "li2": "Datele nu sunt partajate cu terți.",
-    "li3": "Aveți dreptul de acces, rectificare și ștergere a datelor.",
-    "contact": "Operator de date: QRI Reflex Therapy • info@qri-therapie.at"
+    "li3": "Ai dreptul de acces, rectificare și ștergere.",
+    "contact": "Operator: QRI Reflex Therapy • info@qri-therapie.at"
   },
   "impressum": {
     "title": "Impressum",
-    "legalLine": "Obligația de informare conform §5 Legea comerțului electronic, §14 UGB, §63 GewO și §25 Legea mass-media.",
+    "legalLine": "Informații obligatorii conform legislației austriece.",
     "profession": "Fizioterapeut",
     "subject": "Obiectul activității",
-    "subjectText": "Fizioterapie și Integrarea Reflexelor",
-    "membership": "Apartenențe",
-    "membershipText": "Membru al Camerei de Comerț din Viena",
+    "subjectText": "Fizioterapie și integrarea reflexelor",
+    "membership": "Afilieri",
+    "membershipText": "Membru al Camerei de Comerț Viena",
     "law": "Reglementări profesionale",
-    "lawText": "Legea comerțului din 1994 – disponibilă pe www.ris.bka.gv.at",
-    "disclaimer": "Declinarea responsabilității",
-    "disclaimerText": "Nu ne asumăm răspunderea pentru conținutul linkurilor externe; responsabilitatea aparține exclusiv operatorilor acestora.",
+    "lawText": "Gewerbeordnung 1994 – www.ris.bka.gv.at",
+    "disclaimer": "Declinare de răspundere",
+    "disclaimerText": "Nu ne asumăm răspunderea pentru linkuri externe; operatorii lor sunt responsabili.",
     "copyright": "Drepturi de autor",
-    "copyrightText": "Conținutul acestui site este protejat prin drepturi de autor."
+    "copyrightText": "Conținutul acestui site este protejat."
   },
   "footer": {
     "title": "QRI Reflex Therapy",
-    "description": "Integrarea reflexelor și abordări de terapie de reglare.",
+    "description": "Integrarea reflexelor și abordări de reglare.",
     "contactTitle": "Contact",
     "contact": {
       "address": "Argentinierstraße 18/3, 1040 Viena",
-      "email": "info@qri-therapie.at",
-      "phone": "+43 660 1234567"
+      "email": "info@aleokunakol.com",
+      "phone": "+43 660 5733620"
     },
     "quickLinksTitle": "Linkuri rapide",
-    "links": {
-      "about": "Despre mine",
-      "services": "Servicii",
-      "contact": "Programare"
-    },
-    "location": "Viena, Austria"
+    "links": { "about": "Despre mine", "services": "Servicii", "contact": "Programări" },
+    "location": "Viena, Austria",
+    "copyright": "© {{year}} QRI Reflex. Toate drepturile rezervate."
   },
+  "exercises": {
+    "title": "Exercițiile mele",
+    "empty": "Încă nu ți-au fost alocate exerciții.",
+    "noImage": "Fără imagine",
+    "levelUnknown": "Nivel ?",
+    "set": "set",
+    "rep": "repetare",
+    "details": "Detalii",
+    "openVideo": "Deschide video",
+    "plan": "Plan"
+  },
+  "uploader": {
+    "pickOrDrop": "Alege fișier / trage și plasează",
+    "ariaLabel": "Încarcă fișier",
+    "supported": "Tipuri acceptate",
+    "upload": "Încarcă",
+    "progress": "Progres încărcare"
+  },
+  "days": { "mon": "Lu", "tue": "Ma", "wed": "Mi", "thu": "Jo", "fri": "Vi", "sat": "Sâ", "sun": "Du" },
+  "levels": { "easy": "ușor", "medium": "mediu", "hard": "greu" },
   "calendly": {
     "consent": {
-      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
-      "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
-      "allow": "Zustimmen und öffnen",
-      "moreInfo": "Mehr erfahren"
+      "title": "Permite afișarea widget-ului de programare",
+      "body": "Calendly este un serviciu terț și poate seta cookie-uri sau conexiuni externe. Dacă accepți, se va deschide fereastra de programare.",
+      "allow": "Permite și deschide",
+      "moreInfo": "Află mai multe"
     }
   },
-  "infoCards": {
-    "card1": {
-      "title": "Dispozitivul laser QRI",
-      "description": "Susține integrarea reflexelor în mod blând și sigur, cu tehnologie laser de nivel redus."
-    },
-    "card2": {
-      "title": "Aplicare în ședință",
-      "description": "Rutine scurte, ludice, adaptate ritmului copilului pentru mai mult calm și focus."
-    },
-    "card3": {
-      "title": "Reglare senzorială",
-      "description": "Stimulare blândă craniană și corporală pentru relaxare și conștientizarea corpului."
-    }
-  }
+  "lastUpdated": "Actualizat: 2025",
+  "phone": "Telefon:"
 }
