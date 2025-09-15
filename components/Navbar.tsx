@@ -12,6 +12,7 @@ import PrivacyContent from "./legal/PrivacyContent";
 
 // parçalar
 import { Links, MobileMenu, UserMenu } from "./navbar/index";
+import ButtonCTA from "./common/ButtonCTA";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation("common");
@@ -91,14 +92,9 @@ const Navbar: React.FC = () => {
 
               {/* Desktop sağ */}
               <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
-                <Link
-                  href={{ pathname: "/", hash: "contact" }}
-                  locale={locale}
-                  className="btn-primary whitespace-nowrap"
-                  aria-label={t("nav.cta", "Termin buchen")}
-                >
+                <ButtonCTA href="/#contact" size="md" variant="outline" ariaLabel={t("nav.cta")}>
                   {t("nav.cta")}
-                </Link>
+                </ButtonCTA>
                 <UserMenu isAdmin={isAdmin} locale={locale} />
                 <LanguageSwitcher />
               </div>

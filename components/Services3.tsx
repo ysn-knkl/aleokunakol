@@ -10,7 +10,10 @@ const Services3: React.FC = () => {
   const bullets = Array.isArray(rawBullets) ? (rawBullets as string[]) : [];
 
   return (
-    <section id="services-3" className="section">
+    <section id="services-3" className="relative section bg-white">
+      {/* alt geçiş */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-700/40 via-white/0 to-white" />
+
       <div className="container-x grid gap-10 md:grid-cols-2 items-center">
         <div>
           <h2 className="title">{t("services3.title")}</h2>

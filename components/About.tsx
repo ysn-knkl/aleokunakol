@@ -21,7 +21,7 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="bg-surface-100/60">
-      <div className="container-x grid gap-10 lg:grid-cols-[420px,1fr] pt-16 pb-24">
+      <div className="container-x grid gap-8 lg:grid-cols-[420px,1fr] pt-16">
         {/* SOL: Profil / sticky kart */}
         <aside className="lg:sticky lg:top-28 self-start">
           <div className="rounded-2xl border border-brand-300/30 bg-white shadow-soft overflow-hidden">

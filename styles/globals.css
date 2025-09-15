@@ -68,4 +68,37 @@ body {
   .prose-legal a {
     @apply text-brand-700 underline underline-offset-2 hover:opacity-90;
   }
+  .section-pad {
+    padding-block: clamp(3rem, 6vw, 6rem);
+  } /* py */
+  .section-narrow {
+    padding-block: clamp(2.5rem, 4vw, 4.5rem);
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-text-primary;
+  }
+  .section-sub {
+    @apply mt-3 text-base md:text-lg text-text-secondary;
+  }
+
+  /* Arka plan katmanları (ışık/doku dengesi) */
+  .bg-layer-0 {
+    background-color: var(--surface-0);
+  } /* beyaz/ana yüzey */
+  .bg-layer-1 {
+    background-color: var(--surface-1);
+  } /* hafif gri/mavi */
+  .bg-layer-2 {
+    background-color: var(--surface-2);
+  } /* bir ton daha koyu */
+
+  /* Dekoratif yumuşak gradient aura (opsiyonel) */
+  .aura-top {
+    background: radial-gradient(
+      60% 80% at 50% 0%,
+      color-mix(in oklab, var(--brand-400) 10%, transparent) 0%,
+      transparent 65%
+    );
+  }
 }

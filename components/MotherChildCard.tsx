@@ -13,7 +13,11 @@ const MotherChildCard: React.FC = () => {
   const imageAlt = t("motherChildCard.imageAlt");
 
   return (
-    <section className="bg-surface-100" aria-labelledby="mother-child-title">
+    <section className="bg-[#fff7f5] relative section" aria-labelledby="mother-child-title">
+
+      {/* üst geçiş */}
+      <div className="absolute -top-12 inset-x-0 h-12 bg-gradient-to-b from-white to-[#fff7f5]" />
+
       <div className="container-x px-4 py-12 md:py-16">
         <h2 id="mother-child-title" className="title text-center">
           {title}

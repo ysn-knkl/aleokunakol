@@ -10,9 +10,9 @@ const Services2: React.FC = () => {
   const bullets = Array.isArray(rawBullets) ? (rawBullets as string[]) : [];
 
   return (
-    <section id="services-2" className="section bg-surface-100">
+    <section id="services2" className="section bg-white">
       <div className="container-x grid gap-10 md:grid-cols-2 items-center">
-        <div className="relative h-72 md:h-[420px] rounded-xl2 overflow-hidden border border-brand-300/30 shadow-soft">
+        <div className="relative h-72 md:h-[420px] rounded-2xl overflow-hidden border border-brand-300/30 shadow-soft">
           <Image
             src="/mother-child.jpg"
             alt={t("services2.imageAlt")}
@@ -22,7 +22,7 @@ const Services2: React.FC = () => {
         </div>
         <ul className="mt-6 space-y-3 text-text-secondary text-lg">
           {bullets.map((bullet, idx) => (
-            <li key={idx}>{bullet}</li>
+            <li key={idx}>• {bullet}</li>
           ))}
         </ul>
       </div>

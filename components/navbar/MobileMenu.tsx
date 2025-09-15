@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import ButtonCTA from "../common/ButtonCTA";
 
 export default function MobileMenu({
   onClose,
@@ -117,13 +118,9 @@ export default function MobileMenu({
         </nav>
 
         <div className="pt-1">
-          <Link
-            href={hrefHash("#contact")}
-            className="btn-primary w-full justify-center"
-            onClick={onClose}
-          >
+          <ButtonCTA href="/#contact" size="md" variant="outline" ariaLabel={t("nav.cta")}>
             {t("nav.cta")}
-          </Link>
+          </ButtonCTA>
         </div>
 
         <div className="flex items-center justify-between">
