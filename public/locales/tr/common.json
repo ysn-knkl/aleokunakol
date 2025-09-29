@@ -37,34 +37,6 @@
     "delete": "Sil",
     "cancel": "Vazgeç",
     "save": "Kaydet"
-    "impressum": "Künye",
-    "exercises": "Egzersizler",
-    "admin": "Yönetim",
-    "cta": "Randevu al",
-    "skipToContent": "İçeriğe geç",
-    "primary": "Ana gezinme",
-    "logoAlt": "QRI Reflex Logosu",
-    "openMenu": "Menüyü aç",
-    "closeMenu": "Menüyü kapat",
-    "userMenu": "Kullanıcı menüsü"
-  },
-  "auth": {
-    "signInTitle": "Giriş yap",
-    "continueWithGoogle": "Google ile devam et",
-    "signIn": "Giriş yap",
-    "signOut": "Çıkış yap"
-  },
-  "common": {
-    "loading": "Yükleniyor…",
-    "error": "Hata",
-    "close": "Kapat",
-    "refresh": "Yenile",
-    "noRecords": "Kayıt yok.",
-    "select": "Seçiniz",
-    "edit": "Düzenle",
-    "delete": "Sil",
-    "cancel": "Vazgeç",
-    "save": "Kaydet"
   },
   "hero": {
     "title": "Sorun çocuğun değil—sinir sistemi desteğe ihtiyaç duyuyor.",
@@ -204,7 +176,10 @@
       "note": "Gelişimi hedefli desteklemek için 4–6 ayda bir önerilir."
     }
   },
-  "contact": { "title": "İletişim & Randevu", "reviewsTitle": "Yorumlar" },
+  "contact": {
+    "title": "İletişim & Randevu",
+    "reviewsTitle": "Yorumlar"
+  },
   "privacy": {
     "title": "Gizlilik Politikası",
     "body1": "Randevu ve iletişim sırasında paylaşılan bilgiler yalnızca hizmet amacıyla ve yasaya uygun kullanılır.",

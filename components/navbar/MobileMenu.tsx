@@ -1,66 +1,137 @@
+import { ReactNode, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-type LinksProps = {
+export default function MobileMenu({
+  onClose,
+  onOpenPrivacy,
+  onOpenImpressum,
+  UserMenu,
+  LanguageSwitcher,
+  isAuthed,
+}: {
+  onClose: () => void;
+  onOpenPrivacy: () => void;
+  onOpenImpressum: () => void;
+  UserMenu: ReactNode;
+  LanguageSwitcher: ReactNode;
   isAuthed: boolean;
-};
-
-export default function Links({ isAuthed }: LinksProps) {
+}) {
   const { t } = useTranslation("common");
-  const { locale = "de", asPath } = useRouter();
+  const { data: session, status } = useSession();
+  const isAdmin = Boolean((session?.user as any)?.role === "admin");
+  const { locale = "de" } = useRouter();
+  const router = useRouter();
+  const boxRef = useRef<HTMLDivElement>(null);
 
-  // hash linkleri her zaman anasayfaya yönlendir (locale otomatik korunur)
+  // route değiştiğinde kapan
+  useEffect(() => {
+    const handler = () => onClose();
+    router.events.on("routeChangeStart", handler);
+    return () => router.events.off("routeChangeStart", handler);
+  }, [router.events, onClose]);
+
+  // dış tık kapan
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [onClose]);
+
+  const to = (hash: string) => `/${locale}${hash}`;
+
   const hrefHash = (hash: string) => ({
     pathname: "/",
     hash: hash.replace(/^#/, ""),
   });
 
-  const isActive = (hash: string) => asPath.endsWith(hash);
-
-  const base = "nav-link inline-flex items-center rounded-xl px-2 py-1.5 transition";
-  const active = "text-text-primary";
-  const normal = "text-text-secondary hover:text-text-primary";
-
   return (
-    <>
-      <Link
-        href={hrefHash("#about")}
-        locale={locale}
-        className={`${base} ${isActive("#about") ? active : normal}`}
-        aria-current={isActive("#about") ? "page" : undefined}
+    <div className="fixed inset-0 z-[60] md:hidden">
+      <div
+        ref={boxRef}
+        className="relative mx-4 mt-20 rounded-2xl border border-brand-300/30 bg-white shadow-xl p-6 space-y-6 max-h-[80vh] overflow-y-auto"
       >
-        {t("nav.about", "Über Mich")}
-      </Link>
+        {status === "authenticated" && (
+          <div className="rounded-xl border border-brand-300/30 bg-surface-50 px-3 py-2">
+            <p className="text-sm font-medium text-text-primary truncate">
+              {session?.user?.name || session?.user?.email}
+            </p>
+            {session?.user?.email && (
+              <p className="text-xs text-text-muted truncate">
+                {session.user.email}
+              </p>
+            )}
+          </div>
+        )}
 
-      <Link
-        href={hrefHash("#packages")}
-        locale={locale}
-        className={`${base} ${isActive("#packages") ? active : normal}`}
-        aria-current={isActive("#services") ? "page" : undefined}
-      >
-        {t("nav.services", "Leistungen")}
-      </Link>
+        <nav className="grid gap-2 text-text-primary">
+          <Link href={hrefHash("#about")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
+            {t("nav.about")}
+          </Link>
+          <Link href={hrefHash("#packages")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
+            {t("nav.services")}
+          </Link>
+          <Link href={hrefHash("#contact")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
+            {t("nav.contact")}
+          </Link>
 
-      <Link
-        href={hrefHash("#contact")}
-        locale={locale}
-        className={`${base} ${isActive("#contact") ? active : normal}`}
-        aria-current={isActive("#contact") ? "page" : undefined}
-      >
-        {t("nav.contact", "Termin")}
-      </Link>
+          {isAuthed && (
+            <Link
+              href={{ pathname: "/exercises" }}
+              locale={locale}
+              className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
+            >
+              {t("nav.exercises", "Egzersizler")}
+            </Link>
+          )}
 
-      {isAuthed && (
-        <Link
-          href={{ pathname: "/exercises" }}
-          locale={locale}
-          className={`${base} ${asPath.includes("/exercises") ? active : normal}`}
-          aria-current={asPath.includes("/exercises") ? "page" : undefined}
-        >
-          {t("nav.exercises", "Übungen")}
-        </Link>
-      )}
-    </>
+          {isAdmin && (
+            <Link
+              href={{ pathname: "/admin" }}
+              locale={locale}
+              className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
+            >
+              Admin Panel
+            </Link>
+          )}
+
+          <button
+            onClick={() => {
+              onOpenPrivacy();
+              onClose();
+            }}
+            className="rounded-xl px-3 py-3 text-lg text-left font-medium hover:bg-surface-100"
+          >
+            {t("nav.privacy")}
+          </button>
+          <button
+            onClick={() => {
+              onOpenImpressum();
+              onClose();
+            }}
+            className="rounded-xl px-3 py-3 text-lg text-left font-medium hover:bg-surface-100"
+          >
+            {t("nav.impressum")}
+          </button>
+        </nav>
+
+        <div className="pt-1">
+          <Link href={to("#contact")} className="btn-primary w-full justify-center">
+            {t("nav.cta")}
+          </Link>
+        </div>
+
+        <div className="flex items-center justify-between">
+          {UserMenu}
+          {LanguageSwitcher}
+        </div>
+      </div>
+    </div>
   );
 }
