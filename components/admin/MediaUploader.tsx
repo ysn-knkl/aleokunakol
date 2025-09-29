@@ -1,11 +1,12 @@
 // components/admin/MediaUploader.tsx
 import * as React from "react";
+import { useTranslation } from "next-i18next";
 
 type Props = {
   onUploaded: (urls: string[]) => void;   // yüklenen dosyaların secure_url listesi
   multiple?: boolean;
   accept?: string; // "image/*,video/*" vb.
-  buttonLabel?: string;
+  buttonLabel?: string; // varsa bu, i18n üstüne yazılır
 };
 
 type Signing = {
@@ -21,8 +22,10 @@ export default function MediaUploader({
   onUploaded,
   multiple = true,
   accept = "image/*,video/*",
-  buttonLabel = "Dosya seç / sürükle-bırak",
+  buttonLabel,
 }: Props) {
+  const { t } = useTranslation("common");
+
   const [dragOver, setDragOver] = React.useState(false);
   const [uploading, setUploading] = React.useState(false);
   const [progress, setProgress] = React.useState<number>(0);
@@ -84,7 +87,7 @@ export default function MediaUploader({
 
       onUploaded(urls);
     } catch (err: any) {
-      alert(err?.message || "Yükleme hatası");
+      alert(err?.message || t("common.error", "Hata"));
     } finally {
       setUploading(false);
       setProgress(0);
@@ -103,6 +106,8 @@ export default function MediaUploader({
     }
   };
 
+  const label = buttonLabel ?? t("uploader.pickOrDrop", "Dosya seç / sürükle-bırak");
+
   return (
     <div>
       <div
@@ -117,17 +122,27 @@ export default function MediaUploader({
           dragOver ? "border-black bg-surface-50" : "border-brand-300/50",
         ].join(" ")}
         onClick={() => inputRef.current?.click()}
-        aria-label="Dosya yükle"
+        aria-label={t("uploader.ariaLabel", "Dosya yükle")}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            inputRef.current?.click();
+          }
+        }}
       >
         <div className="flex items-center justify-between gap-3">
           <div>
-            <div className="font-medium"> {buttonLabel} </div>
+            <div className="font-medium">{label}</div>
             <div className="text-xs text-text-secondary">
-              Desteklenen türler: {accept}
+              {t("uploader.supported", "Desteklenen türler")}: {accept}
             </div>
           </div>
           <div className="shrink-0">
-            <span className="px-3 py-1 rounded-lg border">{uploading ? "Yükleniyor…" : "Yükle"}</span>
+            <span className="px-3 py-1 rounded-lg border">
+              {uploading ? t("common.loading", "Yükleniyor…") : t("uploader.upload", "Yükle")}
+            </span>
           </div>
         </div>
         <input
@@ -141,7 +156,7 @@ export default function MediaUploader({
       </div>
 
       {uploading && (
-        <div className="mt-2 w-full h-2 rounded bg-surface-50">
+        <div className="mt-2 w-full h-2 rounded bg-surface-50" aria-label={t("uploader.progress", "Yükleme durumu")}>
           <div
             className="h-2 rounded bg-black transition-all"
             style={{ width: `${progress}%` }}

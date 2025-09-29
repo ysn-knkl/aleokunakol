@@ -1,11 +1,13 @@
 // components/exercises/ExerciseModal.tsx
 import * as React from "react";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import type { ExerciseDoc, MediaItem } from "./ExerciseCard";
 
 function getYoutubeId(url: string) {
-  const m =
-    url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{6,})/i);
+  const m = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{6,})/i
+  );
   return m?.[1];
 }
 
@@ -16,6 +18,8 @@ type Props = {
 };
 
 export default function ExerciseModal({ open, exercise, onClose }: Props) {
+  const { t } = useTranslation("common");
+
   React.useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -44,18 +48,26 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
       <button
         className="absolute inset-0 bg-black/40 backdrop-blur-sm"
         onClick={onClose}
-        aria-label="Kapat"
+        aria-label={t("common.close", "Kapat")}
       />
       <div className="absolute inset-0 grid place-items-center p-4">
-        <div className="relative w-full max-w-4xl rounded-2xl bg-white border border-brand-300/30 shadow-xl">
+        <div
+          className="relative w-full max-w-4xl rounded-2xl bg-white border border-brand-300/30 shadow-xl"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="exercise-modal-title"
+        >
           <div className="flex items-center justify-between p-4 border-b border-brand-300/30">
-            <h3 className="text-lg md:text-xl font-semibold text-text-primary">
+            <h3
+              id="exercise-modal-title"
+              className="text-lg md:text-xl font-semibold text-text-primary"
+            >
               {exercise.title}
             </h3>
             <button
               className="h-9 w-9 grid place-items-center rounded-full border border-brand-300/30"
               onClick={onClose}
-              aria-label="Kapat"
+              aria-label={t("common.close", "Kapat")}
             >
               ✕
             </button>
@@ -64,13 +76,13 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
           <div className="grid md:grid-cols-2 gap-6 p-4 md:p-6">
             {/* Medya tarafı */}
             <div className="space-y-3">
-              {/* Kapak / video öncelik */}
+              {/* Video öncelik, yoksa kapak */}
               {ytId ? (
                 <div className="aspect-video rounded-xl overflow-hidden border border-brand-300/30">
                   <iframe
                     className="h-full w-full"
                     src={`https://www.youtube.com/embed/${ytId}`}
-                    title="Exercise Video"
+                    title={t("exercise.videoTitle", "Egzersiz Videosu")}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
@@ -87,7 +99,7 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
                 </div>
               ) : (
                 <div className="aspect-[4/3] rounded-xl border border-brand-300/30 grid place-items-center text-text-muted">
-                  Medya yok
+                  {t("exercise.noMedia", "Medya yok")}
                 </div>
               )}
 
@@ -101,7 +113,7 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
                     >
                       <Image
                         src={img.url}
-                        alt={`thumb-${i}`}
+                        alt={`${t("exercise.thumbnail", "Küçük görsel")} ${i + 1}`}
                         fill
                         sizes="25vw"
                         className="object-cover"
@@ -123,7 +135,7 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
               <div className="flex flex-wrap gap-2">
                 {exercise.level && (
                   <span className="rounded-full border border-brand-300/30 bg-surface-50 px-3 py-1 text-[12px] text-text-secondary">
-                    Seviye: {exercise.level}
+                    {t("exercise.level", "Seviye")}: {exercise.level}
                   </span>
                 )}
                 {(exercise.bodyParts || []).map((b) => (
@@ -134,12 +146,12 @@ export default function ExerciseModal({ open, exercise, onClose }: Props) {
                     {b}
                   </span>
                 ))}
-                {(exercise.tags || []).map((t) => (
+                {(exercise.tags || []).map((tag) => (
                   <span
-                    key={t}
+                    key={tag}
                     className="rounded-full border border-brand-300/30 bg-surface-50 px-3 py-1 text-[12px] text-text-secondary"
                   >
-                    #{t}
+                    #{tag}
                   </span>
                 ))}
               </div>

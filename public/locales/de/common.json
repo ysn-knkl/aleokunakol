@@ -1,6 +1,4 @@
 {
-  "lastUpdated": "Aktualisiert: 2025",
-  "phone": "Telefon:",
   "seo": {
     "title": "QRI Reflex | Reflexintegration",
     "description": "Reflextherapie, QRI, Aromatherapie und mehr",
@@ -9,76 +7,174 @@
   "nav": {
     "about": "Über Mich",
     "services": "Leistungen",
-    "offer": "Angebot",
     "contact": "Kontakt",
     "privacy": "Datenschutz",
     "impressum": "Impressum",
-    "cta": "Termin Buchen"
+    "exercises": "Übungen",
+    "admin": "Adminbereich",
+    "cta": "Termin buchen",
+    "skipToContent": "Zum Inhalt springen",
+    "primary": "Hauptnavigation",
+    "logoAlt": "QRI Reflex Logo",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "userMenu": "Benutzer-Menü"
+  },
+  "auth": {
+    "signInTitle": "Anmelden",
+    "continueWithGoogle": "Mit Google fortfahren",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden"
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "error": "Fehler",
+    "close": "Schließen",
+    "refresh": "Aktualisieren",
+    "noRecords": "Keine Einträge.",
+    "select": "Bitte wählen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
   },
   "hero": {
-    "title": "Ein starker Start für Kinder",
-    "lead": "QRI kombiniert Reflexintegration und sensorische Regulation für einen ruhigeren Körper und Geist.",
-    "cta": "Termin Buchen"
+    "title": "Dein Kind ist nicht das Problem – sein Nervensystem braucht Unterstützung.",
+    "lead": "Mit Reflexintegration, Aromatherapie und PEMF bringst du dein Kind wieder in Balance.",
+    "cta": "Termin buchen"
   },
   "about": {
     "title": "Über Mich",
-    "body": "Ich bin Physiotherapeutin und unterstütze Kinder durch Reflexintegration. Ich arbeite mit Bewertungen, individuellen Programmen und Familienberatung."
+    "imageAlt": "Porträt",
+    "badges": [
+      "QRI • PEMF • Aromatherapie",
+      "Physiotherapeutin"
+    ],
+    "highlights": [
+      "10+ Jahre mit Kindern & Eltern",
+      "Reflexintegration & sanfte Berührung",
+      "Alltagstaugliche, liebevolle Begleitung"
+    ],
+    "body": "Seit über einem Jahrzehnt arbeite ich als Physiotherapeutin und begleite Kinder mit Behinderungen und Entwicklungsverzögerungen. In diesen Jahren habe ich sowohl die Magie – als auch die Grenzen – traditioneller Methoden erlebt.\n\nIn meiner intensiven Therasuit-Arbeit verbrachte ich täglich drei Stunden über einen Zeitraum von zwei bis fünf Wochen ausschließlich mit einem Kind. Doch manchmal, trotz aller Mühe und Hingabe, verlief der Fortschritt langsam oder blieb ganz aus. Ich erinnere mich an Kinder, die mir sagten, sie würden genau das tun, was ich verlangte – „Ich strecke doch meine Beine!“ – und dennoch konnte ich sehen, dass ihre Knie noch leicht gebeugt waren. Ihre Frustration spiegelte meine eigene wider. Es fehlte etwas.\n\nDiese Neugier und Mitgefühl führten mich dazu, über das Konventionelle hinauszublicken. Ich entdeckte ein Buch – Symphony of Reflexes von Bonnie Brandes – das mir eine ganz neue Dimension eröffnete: die Integration primitiver Reflexe. 2019 nahm ich an einer Quantum Reflex Integration (QRI) Ausbildung in Madrid teil. Dieser Moment veränderte alles.\n\nAls ich begann, QRI in meine Therapiesitzungen zu integrieren, waren die Ergebnisse unübersehbar. Die Kinder machten schneller Fortschritte – selbstbewusster. Nicht, weil sie plötzlich neue Fähigkeiten erwarben, sondern weil die Anspannung in ihrem Körper endlich nachließ. Ich konnte direkt beobachten, wie Kaltlaser-Stimulation und Reflexintegration dazu beitrugen, das Nervensystem zu regulieren, den Cortisol- und Adrenalinspiegel zu beruhigen und Bewegungsmuster freizusetzen, die bereits in ihnen angelegt waren.\n\nHeute kombiniere ich QRI mit den grundlegenden Werkzeugen der Physiotherapie: Bewegung, Übungen und sanfte Berührung. Für manche Kinder reicht körperliche Anleitung allein. Für andere bringt QRI das fehlende Puzzlestück. In jedem Fall bleibt mein Ziel dasselbe: das Nervensystem des Kindes so weit zu beruhigen, dass es sich sicher genug fühlt, um zu wachsen.\n\nIch glaube, Heilung beginnt mit Verstehen, setzt sich mit den richtigen Werkzeugen fort und entfaltet sich in der Gegenwart von Verbindung. Genau das bringe ich in jede Sitzung, jeden Kurs und jeden Moment dieser Arbeit ein."
   },
   "services": {
     "title": "Mit Reflexintegration",
     "imageAlt": "Reflextherapie",
     "bullets": [
-      "Verhaltensprobleme nehmen ab",
-      "Konzentration und Lernen verbessern sich",
-      "Motorische Fähigkeiten entwickeln sich",
-      "Schlafrhythmus wird unterstützt",
-      "Selbstvertrauen wächst"
+      "Mehr Ruhe, bessere Konzentration und emotionales Gleichgewicht – ohne Druck oder Überforderung",
+      "Verbesserung der Lernfähigkeit – durch gezielte Reifung des Gehirnsystems",
+      "Einfache Übungen für Zuhause – kindgerecht, spielerisch und alltagstauglich",
+      "Du bekommst Werkzeuge & Klarheit – für einen gelasseneren Umgang mit herausfordernden Situationen",
+      "Von einer Expertin mit Herz und Erfahrung – seit über 10 Jahren an der Seite besonderer Kinder"
     ]
   },
-  "offer": {
-    "title": "Angebot",
-    "blocks": [
+  "services2": {
+    "imageAlt": "Reflextherapie",
+    "bullets": [
+      "Du hast schon so viel versucht – aber dein Kind kommt einfach nicht richtig voran.",
+      "Du siehst, dass dein Kind sich bemüht, aber trotzdem klappt es nicht – es bleibt anstrengend, emotional, konfliktreich.",
+      "Genau das habe ich auch als Therapeutin erlebt. Ich habe Kinder intensiv begleitet – 3 Stunden täglich, Woche für Woche – und trotzdem sind sie stecken geblieben. Erst als ich mit Quantum Reflex Integration gearbeitet habe, kam die Wende."
+    ]
+  },
+  "services3": {
+    "title": "„Er könnte, wenn er wollte“",
+    "imageAlt": "Reflextherapie",
+    "bullets": [
+      "Nein. Meistens kann er noch gar nicht – weil sein Nervensystem im Überlebensmodus steckt.",
+      "Frühkindliche Reflexe, die nicht integriert sind, halten viele Kinder fest im Stammhirn. Da gibt’s kein logisches Denken, kein Konzentrieren, kein „Jetzt reiß dich mal zusammen“.",
+      "Was du als Trotz oder Faulheit wahrnimmst, ist oft reine Überforderung im Körper.",
+      "Ich frage mich in jeder Therapiesitzung:",
+      "Will ich gerade zu viel? Kann das Kind das überhaupt – physiologisch? Und wenn nicht: dann ist nicht das Kind falsch. Sondern der Anspruch zu früh.",
+      "Oder wie der kleine Prinz sagt:",
+      "Man darf von jemandem nur verlangen, was er auch leisten kann."
+    ]
+  },
+  "infoCards": {
+    "title": "Warum du hier genau richtig bist",
+    "card1": {
+      "title": "Du suchst keine schnelle Symptombehandlung, sondern eine nachhaltige Lösung an der Wurzel.",
+      "description": "Du willst verstehen, warum dein Kind sich zurückzieht, wütend wird oder sich nicht konzentrieren kann und suchst eine Methode, die das Nervensystem und die Entwicklung deines Kindes wirklich unterstützt."
+    },
+    "card2": {
+      "title": "Du willst dein Kind liebevoll begleiten mit natürlichen Methoden, die in euren Alltag passen.",
+      "description": "Statt weiterer zeitintensiver Therapien wünschst du dir etwas, das wirkt, aber auch zu euch als Familie passt: körperorientiert, sanft, flexibel – und mit echtem Spaß für dein Kind."
+    },
+    "card3": {
+      "title": "Du willst als Elternteil wieder mehr Vertrauen in dich und dein Kind spüren.",
+      "description": "Du bist bereit, Verantwortung zu übernehmen, aber du brauchst jemanden, der dir den Weg zeigt – verständlich, strukturiert und mitfühlend. Genau dafür bin ich da."
+    }
+  },
+  "motherChildCard": {
+    "title": "Was Eltern sich wünschen – und was Kinder still hoffen",
+    "imageAlt": "Mutter und Kind",
+    "labels": {
+      "mother": "Eltern wünschen sich …",
+      "child": "Und das Kind?"
+    },
+    "leftTitle": "Eltern wünschen sich …",
+    "left": [
       {
-        "title": "QRI – Laserunterstützte Reflexintegration",
-        "bullets": [
-          "Verhaltensprobleme nehmen ab",
-          "Konzentration verbessert sich",
-          "Motorische Fähigkeiten entwickeln sich",
-          "Schlaf wird unterstützt",
-          "Selbstvertrauen wächst"
-        ]
+        "title": "Ruhe, Konzentration und Harmonie im Alltag",
+        "description": "Sie wünschen sich, dass ihr Kind zur Ruhe kommt, sich besser konzentrieren kann, wieder mit Freude lernt – und dass die täglichen Kämpfe aufhören."
       },
       {
-        "title": "Primitive Reflex – Bewertung und Programm",
-        "bullets": [
-          "Reflexbewertung",
-          "Individueller Übungsplan",
-          "Hausprotokolle",
-          "Familienaufklärung",
-          "Fortschrittskontrolle"
-        ]
+        "title": "Klarheit & Handlungsmöglichkeiten",
+        "description": "Sie wollen verstehen, was ihr Kind wirklich braucht – und endlich konkrete, umsetzbare Wege finden, es zu unterstützen."
       },
       {
-        "title": "Sensorische Regulation und Haltung",
-        "bullets": [
-          "Sensorische Strategien",
-          "Atmung und Core",
-          "Koordination",
-          "Umweltanpassungen",
-          "Körperbewusstsein"
-        ]
+        "title": "Lösungen, die zu ihrem Leben passen",
+        "description": "Sie wünschen sich keine zusätzlichen Belastungen, sondern einfache, natürliche Werkzeuge, die in ihren Alltag passen und wirklich wirken."
+      }
+    ],
+    "rightTitle": "Und das Kind?",
+    "rightContent": {
+      "desc": "Auch wenn es das nicht sagen kann – dein Kind wünscht sich …",
+      "sp1": "Es sehnt sich nach Sicherheit im eigenen Körper.",
+      "sp2": "Nach jemandem, der fragt:",
+      "sp3": "„Was brauchst du wirklich?“ – statt „Warum bist du so?“"
+    },
+    "right": [
+      {
+        "title": "Endlich verstanden werden",
+        "description": "Ohne ständige Korrektur."
       },
       {
-        "title": "Familienberatung & Nachbetreuung",
-        "bullets": [
-          "Nachverfolgung außerhalb der Sitzungen",
-          "Praktische Anwendungen",
-          "Schulkooperation",
-          "Regelmäßige Kontrollen",
-          "Zielorientierter Fortschritt"
-        ]
+        "title": "Endlich gesehen werden",
+        "description": "Für das, was es fühlt – nicht nur für das, was es (noch) nicht kann."
+      },
+      {
+        "title": "Endlich im eigenen Tempo wachsen dürfen",
+        "description": "Ohne Druck oder Vergleiche."
       }
     ]
+  },
+  "packages": {
+    "title": "Arbeite jetzt mit mir!",
+    "subtitle": "Ich begleite dich und dein Kind auf dem Weg zu mehr Leichtigkeit, besserer Regulation und neuen Entwicklungsschritten. Damit du genau das findest, was zu euch passt, habe ich verschiedene Pakete vorbereitet.",
+    "smallPrint": "Preise inkl. Vor- und Nachbereitung. Details werden individuell besprochen.",
+    "sessionPacks": [
+      {
+        "title": "Sitzungs-Paket • 7 Termine",
+        "price": "770 €",
+        "desc": "Ideal, um erste Veränderungen zu erleben und die Reflexintegration kennenzulernen."
+      },
+      {
+        "title": "Sitzungs-Paket • 9 Termine",
+        "price": "990 €",
+        "desc": "Für kontinuierliche Begleitung und tiefere Integration – mehr Zeit, um Fortschritte zu festigen."
+      },
+      {
+        "title": "Sitzungs-Paket • 11 Termine",
+        "price": "1.200 €",
+        "desc": "Das Rundum-Paket, um deinem Kind maximale Unterstützung auf seinem Weg zu geben."
+      }
+    ],
+    "intensive": {
+      "title": "Intensive Woche",
+      "price": "1.550 €",
+      "desc": "Mit zwei Sitzungen pro Tag geben wir dem Gehirn einen kraftvollen Boost.",
+      "note": "Empfehlung: ca. alle 4–6 Monate, um die Entwicklung gezielt zu unterstützen."
+    }
   },
   "contact": {
     "title": "Kontakt & Termin",
@@ -90,7 +186,7 @@
     "li1": "Wir verwenden keine Tracking-Cookies.",
     "li2": "Daten werden nicht an Dritte weitergegeben.",
     "li3": "Sie haben das Recht auf Zugriff, Berichtigung und Löschung Ihrer Daten.",
-    "contact": "Verantwortlicher: QRI Reflex Therapie • info@qri-therapie.at"
+    "contact": "Verantwortlich: QRI Reflex Therapie • info@qri-therapie.at"
   },
   "impressum": {
     "title": "Impressum",
@@ -108,13 +204,13 @@
     "copyrightText": "Die Inhalte dieser Website sind urheberrechtlich geschützt."
   },
   "footer": {
-    "title": "QRI Reflex Therapie",
+    "title": "QRI Reflex Integration",
     "description": "Reflexintegration und regulative Therapieansätze.",
     "contactTitle": "Kontakt",
     "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Wien",
-      "email": "info@qri-therapie.at",
-      "phone": "+43 660 1234567"
+      "address": "Argentinierstraße 50/1/4-5, 1040 Wien",
+      "email": "info@aleokunakol.com",
+      "phone": "+43 660 5733620"
     },
     "quickLinksTitle": "Schnellzugriff",
     "links": {
@@ -122,28 +218,51 @@
       "services": "Leistungen",
       "contact": "Termin"
     },
-    "location": "Wien, Österreich"
+    "location": "Wien, Österreich",
+    "copyright": "© {{year}} QRI Reflex. Alle Rechte vorbehalten."
+  },
+  "exercises": {
+    "title": "Meine Übungen",
+    "empty": "Dir wurden noch keine Übungen zugewiesen.",
+    "noImage": "Kein Bild",
+    "levelUnknown": "Level ?",
+    "set": "Satz",
+    "rep": "Wiederholung",
+    "details": "Details",
+    "openVideo": "Video öffnen",
+    "plan": "Plan"
+  },
+  "uploader": {
+    "pickOrDrop": "Datei auswählen / ziehen & ablegen",
+    "ariaLabel": "Datei hochladen",
+    "supported": "Unterstützte Typen",
+    "upload": "Hochladen",
+    "progress": "Upload-Status"
+  },
+  "days": {
+    "mon": "Mo",
+    "tue": "Di",
+    "wed": "Mi",
+    "thu": "Do",
+    "fri": "Fr",
+    "sat": "Sa",
+    "sun": "So"
+  },
+  "levels": {
+    "easy": "leicht",
+    "medium": "mittel",
+    "hard": "schwer"
   },
   "calendly": {
     "consent": {
-      "title": "Erlauben Sie die Anzeige des Termin-Widgets",
+      "title": "Anzeige des Termin-Widgets erlauben",
       "body": "Calendly ist ein Drittanbieterdienst und kann Cookies setzen bzw. eine Verbindung herstellen. Wenn Sie zustimmen, wird das Terminfenster geöffnet.",
       "allow": "Zustimmen und öffnen",
       "moreInfo": "Mehr erfahren"
     }
   },
-  "infoCards": {
-    "card1": {
-      "title": "QRI-Lasergerät",
-      "description": "Unterstützt die Reflexintegration sanft und sicher mit Low-Level-Lasertechnologie."
-    },
-    "card2": {
-      "title": "Anwendung in der Sitzung",
-      "description": "Kurze, spielerische Abläufe im Rhythmus des Kindes – für mehr Ruhe und Fokus."
-    },
-    "card3": {
-      "title": "Sensorische Regulation",
-      "description": "Sanfte Stimulation von Kopf und Körper zur Förderung von Entspannung und Körperwahrnehmung."
-    }
-  }
+  "lastUpdated": "Aktualisiert: 2025",
+  "phone": "Telefon",
+  "email": "E-Mail",
+  "phoneNumber" : "+436605733620"
 }

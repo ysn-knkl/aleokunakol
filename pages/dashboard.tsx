@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { getServerSession } from "next-auth";
+import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { signOut } from "next-auth/react";
 
@@ -20,4 +20,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return { redirect: { destination: `/${ctx.locale ?? "de"}/login`, permanent: false } };
   }
   return { props: {} };
-};
+}; 

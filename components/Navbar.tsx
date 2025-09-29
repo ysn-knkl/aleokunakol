@@ -11,14 +11,17 @@ import ImpressumContent from "./legal/ImpressumContent";
 import PrivacyContent from "./legal/PrivacyContent";
 
 // parçalar
-import { Links, MobileMenu, UserMenu } from "./navbar/index";
+import Links from "./navbar/Links";
+import MobileMenu from "./navbar/MobileMenu";
+import UserMenu from "./navbar/UserMenu";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation("common");
   const { data: session, status } = useSession();
   const isAuthed = status === "authenticated";
   const isAdmin = Boolean((session?.user as any)?.role === "admin");
-  const { locale = "de" } = useRouter();
+  const router = useRouter();
+  const locale = (router.locale as string) || "de";
 
   const [scrolled, setScrolled] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
@@ -33,6 +36,20 @@ const Navbar: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const onOpenImpressum = () => setShowImpressum(true);
+    const onOpenPrivacy = () => setShowPrivacy(true);
+
+    window.addEventListener("open-impressum", onOpenImpressum as EventListener);
+    window.addEventListener("open-privacy", onOpenPrivacy as EventListener);
+
+    return () => {
+      window.removeEventListener("open-impressum", onOpenImpressum as EventListener);
+      window.removeEventListener("open-privacy", onOpenPrivacy as EventListener);
+    };
+  }, []);
+
+  // mobil menü açıkken body scroll kilidi
+  useEffect(() => {
     if (!openMobile) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -41,9 +58,25 @@ const Navbar: React.FC = () => {
     };
   }, [openMobile]);
 
+  const openPrivacy = () => setShowPrivacy(true);
+  const openImpressum = () => setShowImpressum(true);
+
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 pointer-events-none">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-3 focus:py-2 focus:rounded-md focus:bg-white focus:shadow"
+      >
+        {t("nav.skipToContent", "Zum Inhalt springen")}
+      </a>
+
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 ${
+          openMobile ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+        role="navigation"
+        aria-label={t("nav.primary", "Hauptnavigation")}
+      >
         <div className="container-x">
           <div
             className={[
@@ -55,11 +88,11 @@ const Navbar: React.FC = () => {
             ].join(" ")}
           >
             <div className="flex items-center justify-between">
-              {/* LOGO: her zaman anasayfa + #hero */}
-              <Link href={`/${locale}#hero`} className="flex items-center gap-3 shrink-0">
+              {/* LOGO */}
+              <Link href={{ pathname: "/", hash: "hero" }} locale={locale} className="flex items-center gap-3 shrink-0">
                 <Image
                   src="/logo-ale.png"
-                  alt="QRI Reflex Logo"
+                  alt={t("nav.logoAlt", "QRI Reflex Logo")}
                   width={120}
                   height={36}
                   className="h-8 w-auto md:h-10"
@@ -69,11 +102,7 @@ const Navbar: React.FC = () => {
 
               {/* Desktop orta linkler */}
               <div className="hidden md:flex flex-1 items-center justify-center gap-6">
-                <Links
-                  onOpenPrivacy={() => setShowPrivacy(true)}
-                  onOpenImpressum={() => setShowImpressum(true)}
-                  isAuthed={isAuthed}
-                />
+                <Links isAuthed={isAuthed} />
               </div>
 
               {/* Desktop sağ */}
@@ -81,7 +110,12 @@ const Navbar: React.FC = () => {
                 <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
                   {t("nav.cta")}
                 </Link>
-                <UserMenu isAdmin={isAdmin} locale={locale} />
+                <UserMenu
+                  isAdmin={isAdmin}
+                  locale={locale}
+                  onOpenPrivacy={openPrivacy}
+                  onOpenImpressum={openImpressum}
+                />
                 <LanguageSwitcher />
               </div>
 
@@ -89,23 +123,33 @@ const Navbar: React.FC = () => {
               <button
                 onClick={() => setOpenMobile((v) => !v)}
                 className="md:hidden text-text-secondary hover:text-text-primary"
-                aria-label="Menü"
+                aria-label={openMobile ? t("nav.closeMenu", "Menü schließen") : t("nav.openMenu", "Menü öffnen")}
                 aria-expanded={openMobile}
                 aria-controls="mobile-menu"
               >
-                {openMobile ? "✕" : "☰"}
+                <span aria-hidden>{openMobile ? "✕" : "☰"}</span>
               </button>
             </div>
 
             {openMobile && (
-              <MobileMenu
-                onClose={() => setOpenMobile(false)}
-                onOpenPrivacy={() => setShowPrivacy(true)}
-                onOpenImpressum={() => setShowImpressum(true)}
-                UserMenu={<UserMenu mobile={true} isAdmin={isAdmin} locale={locale} />}
-                LanguageSwitcher={<LanguageSwitcher />}
-                isAuthed={isAuthed}
-              />
+              <div id="mobile-menu">
+                <MobileMenu
+                  onClose={() => setOpenMobile(false)}
+                  onOpenPrivacy={openPrivacy}
+                  onOpenImpressum={openImpressum}
+                  UserMenu={
+                    <UserMenu
+                      mobile
+                      isAdmin={isAdmin}
+                      locale={locale}
+                      onOpenPrivacy={openPrivacy}
+                      onOpenImpressum={openImpressum}
+                    />
+                  }
+                  LanguageSwitcher={<LanguageSwitcher />}
+                  isAuthed={isAuthed}
+                />
+              </div>
             )}
           </div>
         </div>
@@ -113,7 +157,7 @@ const Navbar: React.FC = () => {
 
       {/* Modals */}
       <Modal
-        title={t("impressum.title")}
+        title={t("impressum.title", "Impressum")}
         open={showImpressum}
         onClose={() => setShowImpressum(false)}
       >
@@ -121,7 +165,7 @@ const Navbar: React.FC = () => {
       </Modal>
 
       <Modal
-        title={t("privacy.title")}
+        title={t("privacy.title", "Datenschutz")}
         open={showPrivacy}
         onClose={() => setShowPrivacy(false)}
       >

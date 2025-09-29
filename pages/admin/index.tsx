@@ -5,11 +5,15 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import * as React from "react";
 import AdminShell from "@/components/admin/AdminShell";
 import MediaUploader from "@/components/admin/MediaUploader";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 type UserRow = { _id: string; email: string; name?: string; role: string };
 type ExerciseRow = { _id: string; title: string };
 
 const AdminPage: NextPage = () => {
+  const { t } = useTranslation("common");
+
   // State
   const [users, setUsers] = React.useState<UserRow[]>([]);
   const [exercises, setExercises] = React.useState<ExerciseRow[]>([]);
@@ -57,12 +61,12 @@ const AdminPage: NextPage = () => {
   };
 
   const deleteAssignment = async (id: string) => {
-    if (!confirm("Bu atamayı silmek istediğine emin misin?")) return;
+    if (!confirm(t("admin.confirmDeleteAssignment", "Bu atamayı silmek istediğine emin misin?"))) return;
     const r = await fetch(`/api/admin/assignments?id=${encodeURIComponent(id)}`, { method: "DELETE" }).then((x) =>
       x.json()
     );
     if (!r?.ok) {
-      alert(r?.error || "Hata");
+      alert(r?.error || t("common.error", "Hata"));
       return;
     }
     setAssignments((list) => list.filter((a: any) => String(a._id) !== String(id)));
@@ -88,21 +92,21 @@ const AdminPage: NextPage = () => {
 
   // arama debounce
   React.useEffect(() => {
-    const t = setTimeout(() => fetchUsers(query), 300);
-    return () => clearTimeout(t);
+    const tmr = setTimeout(() => fetchUsers(query), 300);
+    return () => clearTimeout(tmr);
   }, [query]);
 
   const dayOptions = React.useMemo(
     () => [
-      { key: "mon", label: "Mon" },
-      { key: "tue", label: "Tue" },
-      { key: "wed", label: "Wed" },
-      { key: "thu", label: "Thu" },
-      { key: "fri", label: "Fri" },
-      { key: "sat", label: "Sat" },
-      { key: "sun", label: "Sun" },
+      { key: "mon", label: t("days.mon", "Pzt") },
+      { key: "tue", label: t("days.tue", "Sal") },
+      { key: "wed", label: t("days.wed", "Çar") },
+      { key: "thu", label: t("days.thu", "Per") },
+      { key: "fri", label: t("days.fri", "Cum") },
+      { key: "sat", label: t("days.sat", "Cts") },
+      { key: "sun", label: t("days.sun", "Paz") },
     ],
-    []
+    [t]
   );
 
   const toggleDay = (d: string) => {
@@ -111,7 +115,7 @@ const AdminPage: NextPage = () => {
 
   const assign = async () => {
     if (!selectedUser || !selectedExercise) {
-      alert("Kullanıcı ve egzersiz seçin.");
+      alert(t("admin.selectUserAndExercise", "Kullanıcı ve egzersiz seçin."));
       return;
     }
     setLoadingAssign(true);
@@ -126,11 +130,10 @@ const AdminPage: NextPage = () => {
     }).then((r) => r.json());
     setLoadingAssign(false);
     if (res.ok) {
-      alert("Atama başarılı ✅");
-      // Drawer açıksa otomatik yenile
+      alert(t("admin.assignSuccess", "Atama başarılı ✅"));
       if (assignmentsOpen && selectedUser) fetchAssignments(selectedUser);
     } else {
-      alert(res.error || "Hata");
+      alert(res.error || t("common.error", "Hata"));
     }
   };
 
@@ -159,7 +162,7 @@ const AdminPage: NextPage = () => {
       body: JSON.stringify(payload),
     }).then((r) => r.json());
     setCrudLoading(false);
-    if (!res.ok) return alert(res.error || "Hata");
+    if (!res.ok) return alert(res.error || t("common.error", "Hata"));
     setShowModal(null);
     await refreshExercises();
   };
@@ -172,19 +175,19 @@ const AdminPage: NextPage = () => {
       body: JSON.stringify({ id, ...payload }),
     }).then((r) => r.json());
     setCrudLoading(false);
-    if (!res.ok) return alert(res.error || "Hata");
+    if (!res.ok) return alert(res.error || t("common.error", "Hata"));
     setShowModal(null);
     await refreshExercises();
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Bu egzersizi silmek istediğine emin misin?")) return;
+    if (!confirm(t("admin.confirmDeleteExercise", "Bu egzersizi silmek istediğine emin misin?"))) return;
     setCrudLoading(true);
     const res = await fetch(`/api/exercises/delete?id=${encodeURIComponent(id)}`, { method: "DELETE" }).then((r) =>
       r.json()
     );
     setCrudLoading(false);
-    if (!res.ok) return alert(res.error || "Hata");
+    if (!res.ok) return alert(res.error || t("common.error", "Hata"));
     await refreshExercises();
   };
 
@@ -193,18 +196,19 @@ const AdminPage: NextPage = () => {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Sol: Atama alanı */}
         <div className="rounded-2xl border border-brand-300/30 bg-white shadow-soft p-6">
-          <h2 className="text-xl font-semibold mb-4">Egzersiz Atama</h2>
+          <h2 className="text-xl font-semibold mb-4">{t("admin.assign.title", "Egzersiz Atama")}</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             {/* User seçimi */}
             <div>
-              <label className="block text-sm mb-1 text-text-secondary">Kullanıcı</label>
+              <label className="block text-sm mb-1 text-text-secondary">{t("admin.assign.user", "Kullanıcı")}</label>
               <select
                 value={selectedUser}
                 onChange={(e) => setSelectedUser(e.target.value)}
                 className="w-full rounded-lg border px-3 py-2"
+                aria-label={t("admin.assign.user", "Kullanıcı")}
               >
-                <option value="">Seçiniz</option>
+                <option value="">{t("common.select", "Seçiniz")}</option>
                 {users.map((u) => (
                   <option key={u._id} value={u._id}>
                     {u.email}
@@ -215,13 +219,14 @@ const AdminPage: NextPage = () => {
 
             {/* Egzersiz seçimi */}
             <div>
-              <label className="block text-sm mb-1 text-text-secondary">Egzersiz</label>
+              <label className="block text-sm mb-1 text-text-secondary">{t("admin.assign.exercise", "Egzersiz")}</label>
               <select
                 value={selectedExercise}
                 onChange={(e) => setSelectedExercise(e.target.value)}
                 className="w-full rounded-lg border px-3 py-2"
+                aria-label={t("admin.assign.exercise", "Egzersiz")}
               >
-                <option value="">Seçiniz</option>
+                <option value="">{t("common.select", "Seçiniz")}</option>
                 {exercises.map((x) => (
                   <option key={x._id} value={x._id}>
                     {x.title}
@@ -233,7 +238,7 @@ const AdminPage: NextPage = () => {
             {/* Program */}
             <div className="grid md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm mb-1 text-text-secondary">Set</label>
+                <label className="block text-sm mb-1 text-text-secondary">{t("admin.assign.sets", "Set")}</label>
                 <input
                   type="number"
                   min={1}
@@ -243,7 +248,7 @@ const AdminPage: NextPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1 text-text-secondary">Tekrar</label>
+                <label className="block text-sm mb-1 text-text-secondary">{t("admin.assign.reps", "Tekrar")}</label>
                 <input
                   type="number"
                   min={1}
@@ -253,14 +258,17 @@ const AdminPage: NextPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1 text-text-secondary">Günler</label>
+                <label className="block text-sm mb-1 text-text-secondary">{t("admin.assign.days", "Günler")}</label>
                 <div className="flex flex-wrap gap-2">
                   {dayOptions.map((d) => (
                     <button
                       key={d.key}
                       type="button"
                       onClick={() => toggleDay(d.key)}
-                      className={`px-3 py-1 rounded-lg border ${days.includes(d.key) ? "bg-black text-white" : ""}`}
+                      className={`px-3 py-1 rounded-lg border ${
+                        days.includes(d.key) ? "bg-black text-white" : ""
+                      }`}
+                      aria-pressed={days.includes(d.key)}
                     >
                       {d.label}
                     </button>
@@ -274,8 +282,9 @@ const AdminPage: NextPage = () => {
                 onClick={assign}
                 disabled={loadingAssign}
                 className="btn-outline bg-black text-white px-4 py-2 rounded-lg disabled:opacity-50"
+                aria-label={t("admin.assign.submit", "Ata")}
               >
-                {loadingAssign ? "Atanıyor..." : "Ata"}
+                {loadingAssign ? t("admin.assign.submitting", "Atanıyor...") : t("admin.assign.submit", "Ata")}
               </button>
             </div>
           </div>
@@ -284,10 +293,11 @@ const AdminPage: NextPage = () => {
         {/* Sağ: Kullanıcılar tablosu */}
         <div className="rounded-2xl border border-brand-300/30 bg-white shadow-soft p-6">
           <div className="flex items-center justify-between gap-3 mb-4">
-            <h2 className="text-xl font-semibold">Kullanıcılar</h2>
+            <h2 className="text-xl font-semibold">{t("admin.users.title", "Kullanıcılar")}</h2>
             <input
               className="border rounded-lg px-3 py-2 w-full max-w-[240px]"
-              placeholder="Ara (email, ad)"
+              placeholder={t("admin.users.searchPlaceholder", "Ara (email, ad)") as string}
+              aria-label={t("admin.users.searchPlaceholder", "Ara (email, ad)")}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -297,9 +307,9 @@ const AdminPage: NextPage = () => {
             <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="text-left text-text-secondary">
-                  <th className="py-2 pr-3">Email</th>
-                  <th className="py-2 pr-3">Ad</th>
-                  <th className="py-2 pr-3">Rol</th>
+                  <th className="py-2 pr-3">{t("admin.users.email", "Email")}</th>
+                  <th className="py-2 pr-3">{t("admin.users.name", "Ad")}</th>
+                  <th className="py-2 pr-3">{t("admin.users.role", "Rol")}</th>
                   <th className="py-2 pr-3">ID</th>
                 </tr>
               </thead>
@@ -307,13 +317,13 @@ const AdminPage: NextPage = () => {
                 {loadingUsers ? (
                   <tr>
                     <td colSpan={4} className="py-6 text-center text-text-muted">
-                      Yükleniyor…
+                      {t("common.loading", "Yükleniyor…")}
                     </td>
                   </tr>
                 ) : users.length === 0 ? (
                   <tr>
                     <td colSpan={4} className="py-6 text-center text-text-muted">
-                      Kayıt bulunamadı.
+                      {t("common.noRecords", "Kayıt bulunamadı.")}
                     </td>
                   </tr>
                 ) : (
@@ -338,7 +348,7 @@ const AdminPage: NextPage = () => {
 
           {selectedUser && (
             <div className="mt-4 text-xs text-text-secondary">
-              Seçili kullanıcı: <span className="font-mono">{selectedUser}</span>
+              {t("admin.users.selectedUser", "Seçili kullanıcı")}: <span className="font-mono">{selectedUser}</span>
             </div>
           )}
         </div>
@@ -349,37 +359,39 @@ const AdminPage: NextPage = () => {
             <div className="absolute inset-0 bg-black/30" onClick={() => setAssignmentsOpen(false)} />
             <div className="absolute right-0 top-0 h-full w-full max-w-xl bg-white shadow-2xl p-6 overflow-y-auto">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold">Atanan Egzersizler</h3>
+                <h3 className="text-lg font-semibold">{t("admin.assignments.title", "Atanan Egzersizler")}</h3>
                 <button className="px-3 py-1 rounded border" onClick={() => setAssignmentsOpen(false)}>
-                  Kapat
+                  {t("common.close", "Kapat")}
                 </button>
               </div>
 
               {selectedUser && (
                 <div className="mb-3 text-xs text-text-secondary">
-                  Kullanıcı ID: <span className="font-mono">{selectedUser}</span>
+                  {t("admin.users.userId", "Kullanıcı ID")}: <span className="font-mono">{selectedUser}</span>
                 </div>
               )}
 
               <div className="mb-4">
                 <button className="px-3 py-2 rounded border" onClick={() => fetchAssignments(selectedUser)}>
-                  Yenile
+                  {t("common.refresh", "Yenile")}
                 </button>
               </div>
 
               {loadingAssignments ? (
-                <div className="text-sm text-text-secondary">Yükleniyor…</div>
+                <div className="text-sm text-text-secondary">{t("common.loading", "Yükleniyor…")}</div>
               ) : assignments.length === 0 ? (
-                <div className="text-sm text-text-secondary">Bu kullanıcıya henüz egzersiz atanmamış.</div>
+                <div className="text-sm text-text-secondary">
+                  {t("admin.assignments.empty", "Bu kullanıcıya henüz egzersiz atanmamış.")}
+                </div>
               ) : (
                 <ul className="space-y-3">
                   {assignments.map((a: any) => (
                     <li key={a._id} className="border rounded-xl p-4 flex items-start justify-between gap-3">
                       <div>
-                        <div className="font-medium">{a.exercise?.title || "Silinmiş egzersiz"}</div>
+                        <div className="font-medium">{a.exercise?.title || t("admin.assignments.deleted", "Silinmiş egzersiz")}</div>
                         <div className="text-xs text-text-secondary mt-1">
-                          {(a.schedule?.sets ? a.schedule.sets + " set" : "-")} •{" "}
-                          {(a.schedule?.reps ? a.schedule.reps + " tekrar" : "-")} •{" "}
+                          {(a.schedule?.sets ? a.schedule.sets + " " + t("exercises.set", "set") : "-")} •{" "}
+                          {(a.schedule?.reps ? a.schedule.reps + " " + t("exercises.rep", "tekrar") : "-")} •{" "}
                           {Array.isArray(a.schedule?.days) ? a.schedule.days.join(", ") : "-"}
                         </div>
                       </div>
@@ -387,7 +399,7 @@ const AdminPage: NextPage = () => {
                         onClick={() => deleteAssignment(a._id)}
                         className="px-2 py-1 rounded border hover:bg-surface-50"
                       >
-                        Sil
+                        {t("common.delete", "Sil")}
                       </button>
                     </li>
                   ))}
@@ -400,7 +412,7 @@ const AdminPage: NextPage = () => {
         {/* Egzersiz Yönetimi (CRUD) – mevcut yapın korunarak */}
         <div className="rounded-2xl border border-brand-300/30 bg-white shadow-soft p-6 lg:col-span-2">
           <div className="flex items-center justify-between gap-3 mb-4">
-            <h2 className="text-xl font-semibold">Egzersiz Yönetimi</h2>
+            <h2 className="text-xl font-semibold">{t("admin.exercises.title", "Egzersiz Yönetimi")}</h2>
             <button
               onClick={() => {
                 setEditing({
@@ -419,7 +431,7 @@ const AdminPage: NextPage = () => {
               }}
               className="px-3 py-2 rounded-lg border"
             >
-              Yeni egzersiz
+              {t("admin.exercises.new", "Yeni egzersiz")}
             </button>
           </div>
 
@@ -427,19 +439,19 @@ const AdminPage: NextPage = () => {
             <table className="w-full text-sm min-w-[720px]">
               <thead>
                 <tr className="text-left text-text-secondary">
-                  <th className="py-2 pr-3">Başlık</th>
-                  <th className="py-2 pr-3">Seviye</th>
-                  <th className="py-2 pr-3">Etiketler</th>
-                  <th className="py-2 pr-3">Bölge</th>
+                  <th className="py-2 pr-3">{t("admin.exercises.columns.title", "Başlık")}</th>
+                  <th className="py-2 pr-3">{t("admin.exercises.columns.level", "Seviye")}</th>
+                  <th className="py-2 pr-3">{t("admin.exercises.columns.tags", "Etiketler")}</th>
+                  <th className="py-2 pr-3">{t("admin.exercises.columns.body", "Bölge")}</th>
                   <th className="py-2 pr-3">Slug</th>
-                  <th className="py-2">İşlemler</th>
+                  <th className="py-2">{t("admin.exercises.columns.actions", "İşlemler")}</th>
                 </tr>
               </thead>
               <tbody>
                 {exercisesFull.length === 0 ? (
                   <tr>
                     <td colSpan={6} className="py-6 text-center text-text-muted">
-                      Kayıt yok.
+                      {t("common.noRecords", "Kayıt yok.")}
                     </td>
                   </tr>
                 ) : (
@@ -453,13 +465,13 @@ const AdminPage: NextPage = () => {
                       <td className="py-2">
                         <div className="flex items-center gap-2">
                           <button onClick={() => openEdit(x)} className="px-2 py-1 rounded border hover:bg-surface-50">
-                            Düzenle
+                            {t("common.edit", "Düzenle")}
                           </button>
                           <button
                             onClick={() => handleDelete(String(x._id || x.id))}
                             className="px-2 py-1 rounded border hover:bg-surface-50"
                           >
-                            Sil
+                            {t("common.delete", "Sil")}
                           </button>
                         </div>
                       </td>
@@ -476,13 +488,13 @@ const AdminPage: NextPage = () => {
               <div className="absolute inset-0 bg-black/30" onClick={() => setShowModal(null)} />
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl w-full max-w-3xl p-6">
                 <h3 className="text-lg font-semibold mb-4">
-                  {showModal === "create" ? "Yeni Egzersiz" : "Egzersizi Düzenle"}
+                  {showModal === "create" ? t("admin.exercises.createTitle", "Yeni Egzersiz") : t("admin.exercises.editTitle", "Egzersizi Düzenle")}
                 </h3>
 
                 <div className="grid gap-3">
                   <input
                     className="border rounded-lg px-3 py-2"
-                    placeholder="Başlık"
+                    placeholder={t("admin.exercises.form.title", "Başlık") as string}
                     value={editing?.title || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, title: e.target.value }))}
                   />
@@ -494,7 +506,7 @@ const AdminPage: NextPage = () => {
                   />
                   <textarea
                     className="border rounded-lg px-3 py-2"
-                    placeholder="Açıklama"
+                    placeholder={t("admin.exercises.form.description", "Açıklama") as string}
                     rows={3}
                     value={editing?.description || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, description: e.target.value }))}
@@ -505,19 +517,19 @@ const AdminPage: NextPage = () => {
                       value={editing?.level || "easy"}
                       onChange={(e) => setEditing((s: any) => ({ ...s, level: e.target.value }))}
                     >
-                      <option value="easy">easy</option>
-                      <option value="medium">medium</option>
-                      <option value="hard">hard</option>
+                      <option value="easy">{t("levels.easy", "easy")}</option>
+                      <option value="medium">{t("levels.medium", "medium")}</option>
+                      <option value="hard">{t("levels.hard", "hard")}</option>
                     </select>
                     <input
                       className="border rounded-lg px-3 py-2"
-                      placeholder="Etiketler (virgül ile)"
+                      placeholder={t("admin.exercises.form.tags", "Etiketler (virgül ile)") as string}
                       value={editing?.tags || ""}
                       onChange={(e) => setEditing((s: any) => ({ ...s, tags: e.target.value }))}
                     />
                     <input
                       className="border rounded-lg px-3 py-2"
-                      placeholder="Bölge (virgül ile)"
+                      placeholder={t("admin.exercises.form.body", "Bölge (virgül ile)") as string}
                       value={editing?.bodyParts || ""}
                       onChange={(e) => setEditing((s: any) => ({ ...s, bodyParts: e.target.value }))}
                     />
@@ -525,7 +537,7 @@ const AdminPage: NextPage = () => {
 
                   <input
                     className="border rounded-lg px-3 py-2"
-                    placeholder="Görseller (virgül ile URL)"
+                    placeholder={t("admin.exercises.form.images", "Görseller (virgül ile URL)") as string}
                     value={editing?.images || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, images: e.target.value }))}
                   />
@@ -533,13 +545,13 @@ const AdminPage: NextPage = () => {
 
                   <input
                     className="border rounded-lg px-3 py-2"
-                    placeholder="YouTube/Video URL"
+                    placeholder={t("admin.exercises.form.video", "YouTube/Video URL") as string}
                     value={editing?.youtube || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, youtube: e.target.value }))}
                   />
                   <textarea
                     className="border rounded-lg px-3 py-2"
-                    placeholder="Metin içeriği (opsiyonel)"
+                    placeholder={t("admin.exercises.form.text", "Metin içeriği (opsiyonel)") as string}
                     rows={2}
                     value={editing?.text || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, text: e.target.value }))}
@@ -548,7 +560,7 @@ const AdminPage: NextPage = () => {
 
                 <div className="mt-4 flex justify-end gap-2">
                   <button className="px-3 py-2 rounded-lg border" onClick={() => setShowModal(null)}>
-                    Vazgeç
+                    {t("common.cancel", "Vazgeç")}
                   </button>
                   <button
                     className="px-3 py-2 rounded-lg border bg-black text-white disabled:opacity-50"
@@ -579,7 +591,7 @@ const AdminPage: NextPage = () => {
                       return handleUpdate(editing.id, payload);
                     }}
                   >
-                    Kaydet
+                    {t("common.save", "Kaydet")}
                   </button>
                 </div>
               </div>
@@ -609,5 +621,10 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     };
   }
-  return { props: {} };
+
+  return {
+    props: {
+      ...(await serverSideTranslations(ctx.locale ?? "de", ["common"])),
+    },
+  };
 };
