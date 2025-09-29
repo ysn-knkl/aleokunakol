@@ -11,8 +11,9 @@ import ImpressumContent from "./legal/ImpressumContent";
 import PrivacyContent from "./legal/PrivacyContent";
 
 // parçalar
-import { Links, MobileMenu, UserMenu } from "./navbar/index";
-import ButtonCTA from "./common/ButtonCTA";
+import Links from "./navbar/Links";
+import MobileMenu from "./navbar/MobileMenu";
+import UserMenu from "./navbar/UserMenu";
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation("common");
@@ -34,6 +35,19 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onOpenImpressum = () => setShowImpressum(true);
+    const onOpenPrivacy = () => setShowPrivacy(true);
+
+    window.addEventListener("open-impressum", onOpenImpressum as EventListener);
+    window.addEventListener("open-privacy", onOpenPrivacy as EventListener);
+
+    return () => {
+      window.removeEventListener("open-impressum", onOpenImpressum as EventListener);
+      window.removeEventListener("open-privacy", onOpenPrivacy as EventListener);
+    };
+  }, []);
+
   // mobil menü açıkken body scroll kilidi
   useEffect(() => {
     if (!openMobile) return;
@@ -43,6 +57,9 @@ const Navbar: React.FC = () => {
       document.body.style.overflow = prev;
     };
   }, [openMobile]);
+
+  const openPrivacy = () => setShowPrivacy(true);
+  const openImpressum = () => setShowImpressum(true);
 
   return (
     <>
@@ -54,7 +71,8 @@ const Navbar: React.FC = () => {
       </a>
 
       <nav
-        className="fixed inset-x-0 top-0 z-50 pointer-events-none"
+        className={`fixed inset-x-0 top-0 z-50 ${openMobile ? "pointer-events-auto" : "pointer-events-none"
+          }`}
         role="navigation"
         aria-label={t("nav.primary", "Hauptnavigation")}
       >
@@ -69,7 +87,7 @@ const Navbar: React.FC = () => {
             ].join(" ")}
           >
             <div className="flex items-center justify-between">
-              {/* LOGO: ana sayfa + #hero */}
+              {/* LOGO */}
               <Link href={{ pathname: "/", hash: "hero" }} locale={locale} className="flex items-center gap-3 shrink-0">
                 <Image
                   src="/logo-ale.png"
@@ -83,18 +101,14 @@ const Navbar: React.FC = () => {
 
               {/* Desktop orta linkler */}
               <div className="hidden md:flex flex-1 items-center justify-center gap-6">
-                <Links
-                  onOpenPrivacy={() => setShowPrivacy(true)}
-                  onOpenImpressum={() => setShowImpressum(true)}
-                  isAuthed={isAuthed}
-                />
+                <Links isAuthed={isAuthed} />
               </div>
 
               {/* Desktop sağ */}
               <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
-                <ButtonCTA href="/#contact" size="md" variant="outline" ariaLabel={t("nav.cta")}>
+                <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
                   {t("nav.cta")}
-                </ButtonCTA>
+                </Link>
                 <UserMenu isAdmin={isAdmin} locale={locale} />
                 <LanguageSwitcher />
               </div>
@@ -107,7 +121,7 @@ const Navbar: React.FC = () => {
                 aria-expanded={openMobile}
                 aria-controls="mobile-menu"
               >
-                <span aria-hidden>{openMobile ? "✕" : "☰"}</span>
+                <span aria-hidden><span aria-hidden>{openMobile ? "✕" : "☰"}</span></span>
               </button>
             </div>
 
@@ -115,9 +129,17 @@ const Navbar: React.FC = () => {
               <div id="mobile-menu">
                 <MobileMenu
                   onClose={() => setOpenMobile(false)}
-                  onOpenPrivacy={() => setShowPrivacy(true)}
-                  onOpenImpressum={() => setShowImpressum(true)}
-                  UserMenu={<UserMenu mobile isAdmin={isAdmin} locale={locale} />}
+                  onOpenPrivacy={openPrivacy}
+                  onOpenImpressum={openImpressum}
+                  UserMenu={
+                    <UserMenu
+                      mobile
+                      isAdmin={isAdmin}
+                      locale={locale}
+                      onOpenPrivacy={openPrivacy}
+                      onOpenImpressum={openImpressum}
+                    />
+                  }
                   LanguageSwitcher={<LanguageSwitcher />}
                   isAuthed={isAuthed}
                 />

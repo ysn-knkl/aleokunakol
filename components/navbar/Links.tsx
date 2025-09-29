@@ -3,12 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 type LinksProps = {
-  onOpenPrivacy: () => void;
-  onOpenImpressum: () => void;
   isAuthed: boolean;
 };
 
-export default function Links({ onOpenPrivacy, onOpenImpressum, isAuthed }: LinksProps) {
+export default function Links({ isAuthed }: LinksProps) {
   const { t } = useTranslation("common");
   const { locale = "de", asPath } = useRouter();
 
@@ -36,9 +34,9 @@ export default function Links({ onOpenPrivacy, onOpenImpressum, isAuthed }: Link
       </Link>
 
       <Link
-        href={hrefHash("#services")}
+        href={hrefHash("#packages")}
         locale={locale}
-        className={`${base} ${isActive("#services") ? active : normal}`}
+        className={`${base} ${isActive("#packages") ? active : normal}`}
         aria-current={isActive("#services") ? "page" : undefined}
       >
         {t("nav.services", "Leistungen")}
@@ -63,13 +61,6 @@ export default function Links({ onOpenPrivacy, onOpenImpressum, isAuthed }: Link
           {t("nav.exercises", "Übungen")}
         </Link>
       )}
-
-      <button onClick={onOpenPrivacy} className={`${base} ${normal}`} type="button">
-        {t("nav.privacy", "Datenschutz")}
-      </button>
-      <button onClick={onOpenImpressum} className={`${base} ${normal}`} type="button">
-        {t("nav.impressum", "Impressum")}
-      </button>
     </>
   );
 }

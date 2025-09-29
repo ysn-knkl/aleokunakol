@@ -7,6 +7,8 @@ import { DefaultSeo } from "next-seo";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import nextI18NextConfig from "../next-i18next.config";
+import BackToTop from "@/components/common/BackToTop";
+import WhatsAppButton from "@/components/common/WhatsAppButton";
 
 const LOCALE_TO_OG: Record<string, string> = {
   de: "de_AT",
@@ -81,6 +83,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     <SessionProvider session={session}>
       <AppSeo />
       <Component {...pageProps} />
+      <BackToTop />
+      <WhatsAppButton />
     </SessionProvider>
   );
 }

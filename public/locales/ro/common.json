@@ -20,12 +20,6 @@
     "closeMenu": "Închide meniul",
     "userMenu": "Meniu utilizator"
   },
-  "auth": {
-    "signInTitle": "Autentificare",
-    "continueWithGoogle": "Continuă cu Google",
-    "signIn": "Autentificare",
-    "signOut": "Deconectare"
-  },
   "common": {
     "loading": "Se încarcă…",
     "error": "Eroare",
@@ -36,7 +30,22 @@
     "edit": "Editează",
     "delete": "Șterge",
     "cancel": "Anulează",
-    "save": "Salvează"
+    "save": "Salvează",
+    "exercises": "Exerciții",
+    "admin": "Admin",
+    "cta": "Programează o ședință",
+    "skipToContent": "Sari la conținut",
+    "primary": "Navigare principală",
+    "logoAlt": "Logo QRI Reflex",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "userMenu": "Meniu utilizator"
+  },
+  "auth": {
+    "signInTitle": "Autentificare",
+    "continueWithGoogle": "Continuă cu Google",
+    "signIn": "Autentificare",
+    "signOut": "Deconectare"
   },
   "hero": {
     "title": "Copilul tău nu este problema – sistemul lui nervos are nevoie de sprijin.",
@@ -46,7 +55,10 @@
   "about": {
     "title": "Despre mine",
     "imageAlt": "Portret",
-    "badges": ["QRI • PEMF • Aromaterapie", "Fizioterapeut"],
+    "badges": [
+      "QRI • PEMF • Aromaterapie",
+      "Fizioterapeut"
+    ],
     "highlights": [
       "Peste 10 ani alături de copii și părinți",
       "Integrarea reflexelor & atingere blândă",
@@ -104,12 +116,24 @@
   "motherChildCard": {
     "title": "Ce își doresc părinții—și ce speră în tăcere copiii",
     "imageAlt": "Mamă și copil",
-    "labels": { "mother": "Părinții își doresc …", "child": "Iar copilul?" },
+    "labels": {
+      "mother": "Părinții își doresc …",
+      "child": "Iar copilul?"
+    },
     "leftTitle": "Părinții își doresc …",
     "left": [
-      { "title": "Liniște, concentrare și armonie acasă", "description": "Să se liniștească, să se concentreze mai bine și să învețe cu bucurie—fără lupte zilnice." },
-      { "title": "Claritate & opțiuni de acțiune", "description": "Să înțeleagă ce are cu adevărat nevoie copilul și căi concrete de ajutor." },
-      { "title": "Soluții potrivite vieții lor", "description": "Instrumente simple și naturale care chiar funcționează în fiecare zi." }
+      {
+        "title": "Liniște, concentrare și armonie acasă",
+        "description": "Să se liniștească, să se concentreze mai bine și să învețe cu bucurie—fără lupte zilnice."
+      },
+      {
+        "title": "Claritate & opțiuni de acțiune",
+        "description": "Să înțeleagă ce are cu adevărat nevoie copilul și căi concrete de ajutor."
+      },
+      {
+        "title": "Soluții potrivite vieții lor",
+        "description": "Instrumente simple și naturale care chiar funcționează în fiecare zi."
+      }
     ],
     "rightTitle": "Iar copilul?",
     "rightContent": {
@@ -119,9 +143,18 @@
       "sp3": "„De ce ai nevoie cu adevărat?”—nu „De ce ești așa?”"
     },
     "right": [
-      { "title": "Să fie înțeles", "description": "Fără corecții permanente." },
-      { "title": "Să fie văzut", "description": "Pentru ce simte—nu doar pentru ce (încă) nu poate." },
-      { "title": "Să crească în ritmul propriu", "description": "Fără presiune sau comparații." }
+      {
+        "title": "Să fie înțeles",
+        "description": "Fără corecții permanente."
+      },
+      {
+        "title": "Să fie văzut",
+        "description": "Pentru ce simte—nu doar pentru ce (încă) nu poate."
+      },
+      {
+        "title": "Să crească în ritmul propriu",
+        "description": "Fără presiune sau comparații."
+      }
     ]
   },
   "packages": {
@@ -129,9 +162,21 @@
     "subtitle": "Te însoțesc pe tine și copilul tău către mai multă ușurință, reglare mai bună și pași noi în dezvoltare.",
     "smallPrint": "Prețuri cu pregătire și follow-up incluse. Detalii stabilite individual.",
     "sessionPacks": [
-      { "title": "Pachet • 7 ședințe", "price": "770 €", "desc": "Ideal pentru primele schimbări și a cunoaște integrarea reflexelor." },
-      { "title": "Pachet • 9 ședințe", "price": "990 €", "desc": "Pentru însoțire continuă și integrare mai profundă." },
-      { "title": "Pachet • 11 ședințe", "price": "1.200 €", "desc": "Pachet complet pentru sprijin maxim." }
+      {
+        "title": "Pachet • 7 ședințe",
+        "price": "770 €",
+        "desc": "Ideal pentru primele schimbări și a cunoaște integrarea reflexelor."
+      },
+      {
+        "title": "Pachet • 9 ședințe",
+        "price": "990 €",
+        "desc": "Pentru însoțire continuă și integrare mai profundă."
+      },
+      {
+        "title": "Pachet • 11 ședințe",
+        "price": "1.200 €",
+        "desc": "Pachet complet pentru sprijin maxim."
+      }
     ],
     "intensive": {
       "title": "Săptămână intensivă",
@@ -165,16 +210,20 @@
     "copyrightText": "Conținutul acestui site este protejat."
   },
   "footer": {
-    "title": "QRI Reflex Therapy",
+    "title": "QRI Reflex Integration",
     "description": "Integrarea reflexelor și abordări de reglare.",
     "contactTitle": "Contact",
     "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Viena",
+      "address": "Argentinierstraße 50/1/4-5, 1040 Wien",
       "email": "info@aleokunakol.com",
       "phone": "+43 660 5733620"
     },
     "quickLinksTitle": "Linkuri rapide",
-    "links": { "about": "Despre mine", "services": "Servicii", "contact": "Programări" },
+    "links": {
+      "about": "Despre mine",
+      "services": "Servicii",
+      "contact": "Programări"
+    },
     "location": "Viena, Austria",
     "copyright": "© {{year}} QRI Reflex. Toate drepturile rezervate."
   },
@@ -196,8 +245,20 @@
     "upload": "Încarcă",
     "progress": "Progres încărcare"
   },
-  "days": { "mon": "Lu", "tue": "Ma", "wed": "Mi", "thu": "Jo", "fri": "Vi", "sat": "Sâ", "sun": "Du" },
-  "levels": { "easy": "ușor", "medium": "mediu", "hard": "greu" },
+  "days": {
+    "mon": "Lu",
+    "tue": "Ma",
+    "wed": "Mi",
+    "thu": "Jo",
+    "fri": "Vi",
+    "sat": "Sâ",
+    "sun": "Du"
+  },
+  "levels": {
+    "easy": "ușor",
+    "medium": "mediu",
+    "hard": "greu"
+  },
   "calendly": {
     "consent": {
       "title": "Permite afișarea widget-ului de programare",
@@ -207,5 +268,7 @@
     }
   },
   "lastUpdated": "Actualizat: 2025",
-  "phone": "Telefon:"
+  "phone": "Telefon",
+  "email": "E-Mail",
+  "phoneNumber" : "+436605733620"
 }

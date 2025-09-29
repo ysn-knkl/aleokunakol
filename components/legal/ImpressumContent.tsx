@@ -13,7 +13,7 @@ export default function ImpressumContent() {
       <p>{t("impressum.legalLine")}</p>
 
       <address className="not-italic">
-        <strong>{t("impressum.name")}</strong>
+        <strong>Alexandra Oana Okunakol</strong>
         <br />
         {t("impressum.profession")}
         <br />
@@ -23,15 +23,15 @@ export default function ImpressumContent() {
             <br />
           </span>
         ))}
-        <strong>{t("email")}</strong>{" "}
-        <a href={`mailto:${t("impressum.emailAddress")}`}>
-          {t("impressum.emailAddress")}
-        </a>
+        <strong>{t("email")} :</strong>
+        <span>
+          {t("footer.contact.email")}
+        </span>
         <br />
-        <strong>{t("phone")}</strong>{" "}
-        <a href={`tel:${t("impressum.phoneNumber")}`}>
-          {t("impressum.phoneNumber")}
-        </a>
+        <strong>{t("phone")} :</strong>{" "}
+        <span >
+          {t("footer.contact.phone")}
+        </span>
       </address>
 
       <h3>{t("impressum.subject")}</h3>
