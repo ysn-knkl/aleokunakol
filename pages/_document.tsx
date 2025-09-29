@@ -1,3 +1,4 @@
+// pages/_document.tsx
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 
 export default class MyDocument extends Document<{ locale?: string }> {
@@ -10,7 +11,10 @@ export default class MyDocument extends Document<{ locale?: string }> {
     const locale = (this.props as any).__NEXT_DATA__?.locale || "de";
     return (
       <Html lang={locale}>
-        <Head />
+        <Head>
+          {/* favicon buraya eklenir */}
+          <link rel="icon" href="/favicon.png" sizes="any" />
+        </Head>
         <body className="bg-base">
           <Main />
           <NextScript />
