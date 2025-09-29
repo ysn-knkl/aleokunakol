@@ -10,10 +10,7 @@ const Services3: React.FC = () => {
   const bullets = Array.isArray(rawBullets) ? (rawBullets as string[]) : [];
 
   return (
-    <section id="services-3" className="relative section bg-white">
-      {/* alt geçiş */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-700/40 via-white/0 to-white" />
-
+    <section id="services-3" className="section">
       <div className="container-x grid gap-10 md:grid-cols-2 items-center">
         <div>
           <h2 className="title">{t("services3.title")}</h2>
@@ -25,7 +22,7 @@ const Services3: React.FC = () => {
         </div>
         <div className="relative h-72 md:h-[420px] rounded-xl2 overflow-hidden border border-brand-300/30 shadow-soft">
           <Image
-            src="/mother-child.jpg"
+            src="/reflex-integration-2.jpg"
             alt={t("services3.imageAlt")}
             fill
             style={{ objectFit: "cover" }}

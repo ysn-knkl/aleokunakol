@@ -21,9 +21,9 @@ const Hero: React.FC = () => {
         </h1>
         <p className="lead mt-4 max-w-2xl mx-auto">{t('hero.lead')}</p>
         <div className="mt-10 flex items-center justify-center">
-          <ButtonCTA href="#contact" size="lg" variant="solid" ariaLabel={t("hero.cta")}>
-            {t("hero.cta")}
-          </ButtonCTA>
+          <a href="#contact" className="btn-primary mt-8">
+            {t('hero.cta')}
+          </a>
         </div>
       </div>
     </section>

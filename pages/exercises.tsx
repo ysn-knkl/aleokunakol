@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { GetServerSideProps, NextPage } from "next";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { authOptions } from "./api/auth/[...nextauth]"; // relative path
 import type { Session } from "next-auth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -61,7 +61,14 @@ const ExercisesPage: NextPage = () => {
   }, []);
 
   return (
-    <>
+    <section id="exercises" className="relative min-h-screen flex flex-col">
+      {/* background image */}
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+      />
+      {/* gradient overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-700/40 via-white/0 to-white" />
+
       <Head>
         <title>
           {t("nav.exercises", "Übungen")} • {t("brand.name", "QRI")}
@@ -70,7 +77,9 @@ const ExercisesPage: NextPage = () => {
       </Head>
 
       <Navbar />
-      <div className="max-w-5xl mx-auto px-4 py-8">
+
+      <div className="flex-1  container-x py-8 mt-24">
+
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-semibold">
             {t("exercises.title", "Egzersizlerim")}
@@ -236,7 +245,7 @@ const ExercisesPage: NextPage = () => {
       </div>
 
       <Footer showMaps={false} />
-    </>
+    </section>
   );
 };
 
@@ -253,7 +262,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const locale = ctx.locale || "de";
     return {
       redirect: {
-        destination: `/${locale}/login?callbackUrl=/exercises`,
+        destination: `/${locale}/login?callbackUrl=/${locale}/exercises`,
         permanent: false,
       },
     };

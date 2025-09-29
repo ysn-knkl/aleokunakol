@@ -1,9 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { useTranslation } from "next-i18next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import ButtonCTA from "../common/ButtonCTA";
 
 export default function MobileMenu({
   onClose,
@@ -24,6 +23,28 @@ export default function MobileMenu({
   const { data: session, status } = useSession();
   const isAdmin = Boolean((session?.user as any)?.role === "admin");
   const { locale = "de" } = useRouter();
+  const router = useRouter();
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  // route değiştiğinde kapan
+  useEffect(() => {
+    const handler = () => onClose();
+    router.events.on("routeChangeStart", handler);
+    return () => router.events.off("routeChangeStart", handler);
+  }, [router.events, onClose]);
+
+  // dış tık kapan
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (boxRef.current && !boxRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [onClose]);
+
+  const to = (hash: string) => `/${locale}${hash}`;
 
   const hrefHash = (hash: string) => ({
     pathname: "/",
@@ -32,12 +53,10 @@ export default function MobileMenu({
 
   return (
     <div className="fixed inset-0 z-[60] md:hidden">
-      <button
-        aria-label="Kapat"
-        className="absolute inset-0 bg-black/10 backdrop-blur-md"
-        onClick={onClose}
-      />
-      <div className="relative mx-4 mt-20 rounded-2xl border border-brand-300/30 bg-white shadow-xl p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+      <div
+        ref={boxRef}
+        className="relative mx-4 mt-20 rounded-2xl border border-brand-300/30 bg-white shadow-xl p-6 space-y-6 max-h-[80vh] overflow-y-auto"
+      >
         {status === "authenticated" && (
           <div className="rounded-xl border border-brand-300/30 bg-surface-50 px-3 py-2">
             <p className="text-sm font-medium text-text-primary truncate">
@@ -52,26 +71,13 @@ export default function MobileMenu({
         )}
 
         <nav className="grid gap-2 text-text-primary">
-          <Link
-            href={hrefHash("#about")}
-            className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
-            onClick={onClose}
-          >
+          <Link href={hrefHash("#about")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
             {t("nav.about")}
           </Link>
-
-          <Link
-            href={hrefHash("#services")}
-            className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
-            onClick={onClose}
-          >
+          <Link href={hrefHash("#packages")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
             {t("nav.services")}
           </Link>
-          <Link
-            href={hrefHash("#contact")}
-            className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
-            onClick={onClose}
-          >
+          <Link href={hrefHash("#contact")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
             {t("nav.contact")}
           </Link>
 
@@ -80,7 +86,6 @@ export default function MobileMenu({
               href={{ pathname: "/exercises" }}
               locale={locale}
               className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
-              onClick={onClose}
             >
               {t("nav.exercises", "Egzersizler")}
             </Link>
@@ -91,7 +96,6 @@ export default function MobileMenu({
               href={{ pathname: "/admin" }}
               locale={locale}
               className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
-              onClick={onClose}
             >
               Admin Panel
             </Link>
@@ -118,9 +122,9 @@ export default function MobileMenu({
         </nav>
 
         <div className="pt-1">
-          <ButtonCTA href="/#contact" size="md" variant="outline" ariaLabel={t("nav.cta")}>
+          <Link href={to("#contact")} className="btn-primary w-full justify-center">
             {t("nav.cta")}
-          </ButtonCTA>
+          </Link>
         </div>
 
         <div className="flex items-center justify-between">
@@ -128,14 +132,6 @@ export default function MobileMenu({
           {LanguageSwitcher}
         </div>
       </div>
-
-      <button
-        onClick={onClose}
-        aria-label="Kapat"
-        className="absolute right-4 top-4 h-10 w-10 grid place-items-center rounded-full bg-white/80 border border-brand-300/30 text-text-primary shadow-sm"
-      >
-        ✕
-      </button>
     </div>
   );
 }

@@ -46,7 +46,10 @@
   "about": {
     "title": "Über Mich",
     "imageAlt": "Porträt",
-    "badges": ["QRI • PEMF • Aromatherapie", "Physiotherapeutin"],
+    "badges": [
+      "QRI • PEMF • Aromatherapie",
+      "Physiotherapeutin"
+    ],
     "highlights": [
       "10+ Jahre mit Kindern & Eltern",
       "Reflexintegration & sanfte Berührung",
@@ -131,9 +134,18 @@
       "sp3": "„Was brauchst du wirklich?“ – statt „Warum bist du so?“"
     },
     "right": [
-      { "title": "Endlich verstanden werden", "description": "Ohne ständige Korrektur." },
-      { "title": "Endlich gesehen werden", "description": "Für das, was es fühlt – nicht nur für das, was es (noch) nicht kann." },
-      { "title": "Endlich im eigenen Tempo wachsen dürfen", "description": "Ohne Druck oder Vergleiche." }
+      {
+        "title": "Endlich verstanden werden",
+        "description": "Ohne ständige Korrektur."
+      },
+      {
+        "title": "Endlich gesehen werden",
+        "description": "Für das, was es fühlt – nicht nur für das, was es (noch) nicht kann."
+      },
+      {
+        "title": "Endlich im eigenen Tempo wachsen dürfen",
+        "description": "Ohne Druck oder Vergleiche."
+      }
     ]
   },
   "packages": {
@@ -141,9 +153,21 @@
     "subtitle": "Ich begleite dich und dein Kind auf dem Weg zu mehr Leichtigkeit, besserer Regulation und neuen Entwicklungsschritten. Damit du genau das findest, was zu euch passt, habe ich verschiedene Pakete vorbereitet.",
     "smallPrint": "Preise inkl. Vor- und Nachbereitung. Details werden individuell besprochen.",
     "sessionPacks": [
-      { "title": "Sitzungs-Paket • 7 Termine", "price": "770 €", "desc": "Ideal, um erste Veränderungen zu erleben und die Reflexintegration kennenzulernen." },
-      { "title": "Sitzungs-Paket • 9 Termine", "price": "990 €", "desc": "Für kontinuierliche Begleitung und tiefere Integration – mehr Zeit, um Fortschritte zu festigen." },
-      { "title": "Sitzungs-Paket • 11 Termine", "price": "1.200 €", "desc": "Das Rundum-Paket, um deinem Kind maximale Unterstützung auf seinem Weg zu geben." }
+      {
+        "title": "Sitzungs-Paket • 7 Termine",
+        "price": "770 €",
+        "desc": "Ideal, um erste Veränderungen zu erleben und die Reflexintegration kennenzulernen."
+      },
+      {
+        "title": "Sitzungs-Paket • 9 Termine",
+        "price": "990 €",
+        "desc": "Für kontinuierliche Begleitung und tiefere Integration – mehr Zeit, um Fortschritte zu festigen."
+      },
+      {
+        "title": "Sitzungs-Paket • 11 Termine",
+        "price": "1.200 €",
+        "desc": "Das Rundum-Paket, um deinem Kind maximale Unterstützung auf seinem Weg zu geben."
+      }
     ],
     "intensive": {
       "title": "Intensive Woche",
@@ -180,11 +204,11 @@
     "copyrightText": "Die Inhalte dieser Website sind urheberrechtlich geschützt."
   },
   "footer": {
-    "title": "QRI Reflex Therapie",
+    "title": "QRI Reflex Integration",
     "description": "Reflexintegration und regulative Therapieansätze.",
     "contactTitle": "Kontakt",
     "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Wien",
+      "address": "Argentinierstraße 50/1/4-5, 1040 Wien",
       "email": "info@aleokunakol.com",
       "phone": "+43 660 5733620"
     },
@@ -238,5 +262,7 @@
     }
   },
   "lastUpdated": "Aktualisiert: 2025",
-  "phone": "Telefon:"
+  "phone": "Telefon",
+  "email": "E-Mail",
+  "phoneNumber" : "+436605733620"
 }

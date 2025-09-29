@@ -28,7 +28,7 @@ const Services: React.FC = () => {
         </div>
         <div className="relative h-72 md:h-[420px] rounded-2xl overflow-hidden border border-brand-300/30 shadow-soft">
           <Image
-            src="/mother-child.jpg"
+            src="/reflex-integration-1.jpg"
             alt={t("services.imageAlt")}
             fill
             style={{ objectFit: "cover" }}

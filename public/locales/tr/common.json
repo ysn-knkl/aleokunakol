@@ -46,7 +46,10 @@
   "about": {
     "title": "Hakkımda",
     "imageAlt": "Portre",
-    "badges": ["QRI • PEMF • Aromaterapi", "Fizyoterapist"],
+    "badges": [
+      "QRI • PEMF • Aromaterapi",
+      "Fizyoterapist"
+    ],
     "highlights": [
       "10+ yıl çocuklar ve ailelerle",
       "Refleks entegrasyonu & nazik dokunuş",
@@ -104,12 +107,24 @@
   "motherChildCard": {
     "title": "Ebeveynlerin dileği—çocukların sessiz umudu",
     "imageAlt": "Anne ve çocuk",
-    "labels": { "mother": "Ebeveynler ister …", "child": "Peki çocuk?" },
+    "labels": {
+      "mother": "Ebeveynler ister …",
+      "child": "Peki çocuk?"
+    },
     "leftTitle": "Ebeveynler ister …",
     "left": [
-      { "title": "Evde huzur, odak ve uyum", "description": "Çocuğun sakinleşsin, odaklansın, keyifle öğrensin—günlük kavgalar bitsin." },
-      { "title": "Netlik ve seçenekler", "description": "Gerçek ihtiyacı anlamak ve uygulanabilir yollar bulmak." },
-      { "title": "Hayatlarına uyan çözümler", "description": "Ek yük değil; basit ve doğal araçlar." }
+      {
+        "title": "Evde huzur, odak ve uyum",
+        "description": "Çocuğun sakinleşsin, odaklansın, keyifle öğrensin—günlük kavgalar bitsin."
+      },
+      {
+        "title": "Netlik ve seçenekler",
+        "description": "Gerçek ihtiyacı anlamak ve uygulanabilir yollar bulmak."
+      },
+      {
+        "title": "Hayatlarına uyan çözümler",
+        "description": "Ek yük değil; basit ve doğal araçlar."
+      }
     ],
     "rightTitle": "Peki çocuk?",
     "rightContent": {
@@ -119,9 +134,18 @@
       "sp3": "“Gerçekten neye ihtiyacın var?”—“Neden böylesin?” değil."
     },
     "right": [
-      { "title": "Anlaşılmak", "description": "Sürekli düzeltme olmadan." },
-      { "title": "Görülmek", "description": "Ne hissettiğiyle—sadece (henüz) yapamadıklarıyla değil." },
-      { "title": "Kendi hızında büyümek", "description": "Baskı ve kıyas olmadan." }
+      {
+        "title": "Anlaşılmak",
+        "description": "Sürekli düzeltme olmadan."
+      },
+      {
+        "title": "Görülmek",
+        "description": "Ne hissettiğiyle—sadece (henüz) yapamadıklarıyla değil."
+      },
+      {
+        "title": "Kendi hızında büyümek",
+        "description": "Baskı ve kıyas olmadan."
+      }
     ]
   },
   "packages": {
@@ -129,9 +153,21 @@
     "subtitle": "Seni ve çocuğunu daha fazla rahatlık, daha iyi regülasyon ve yeni gelişim adımlarına götürüyorum.",
     "smallPrint": "Fiyatlara hazırlık ve takip dâhil. Detaylar bireysel konuşulur.",
     "sessionPacks": [
-      { "title": "Seans Paketi • 7 randevu", "price": "770 €", "desc": "İlk değişimleri görmek ve refleks entegrasyonunu tanımak için ideal." },
-      { "title": "Seans Paketi • 9 randevu", "price": "990 €", "desc": "Sürekli eşlik ve derin entegrasyon için." },
-      { "title": "Seans Paketi • 11 randevu", "price": "1.200 €", "desc": "Maksimum destek için tam paket." }
+      {
+        "title": "Seans Paketi • 7 randevu",
+        "price": "770 €",
+        "desc": "İlk değişimleri görmek ve refleks entegrasyonunu tanımak için ideal."
+      },
+      {
+        "title": "Seans Paketi • 9 randevu",
+        "price": "990 €",
+        "desc": "Sürekli eşlik ve derin entegrasyon için."
+      },
+      {
+        "title": "Seans Paketi • 11 randevu",
+        "price": "1.200 €",
+        "desc": "Maksimum destek için tam paket."
+      }
     ],
     "intensive": {
       "title": "Yoğun Hafta",
@@ -140,7 +176,10 @@
       "note": "Gelişimi hedefli desteklemek için 4–6 ayda bir önerilir."
     }
   },
-  "contact": { "title": "İletişim & Randevu", "reviewsTitle": "Yorumlar" },
+  "contact": {
+    "title": "İletişim & Randevu",
+    "reviewsTitle": "Yorumlar"
+  },
   "privacy": {
     "title": "Gizlilik Politikası",
     "body1": "Randevu ve iletişim sırasında paylaşılan bilgiler yalnızca hizmet amacıyla ve yasaya uygun kullanılır.",
@@ -165,16 +204,20 @@
     "copyrightText": "Bu sitedeki içerikler telif hakkıyla korunur."
   },
   "footer": {
-    "title": "QRI Reflex Terapi",
+    "title": "QRI Reflex Integration",
     "description": "Refleks entegrasyonu ve düzenleyici yaklaşımlar.",
     "contactTitle": "İletişim",
     "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Viyana",
+      "address": "Argentinierstraße 50/1/4-5, 1040 Wien",
       "email": "info@aleokunakol.com",
       "phone": "+43 660 5733620"
     },
     "quickLinksTitle": "Hızlı Bağlantılar",
-    "links": { "about": "Hakkımda", "services": "Hizmetler", "contact": "Randevu" },
+    "links": {
+      "about": "Hakkımda",
+      "services": "Hizmetler",
+      "contact": "Randevu"
+    },
     "location": "Viyana, Avusturya",
     "copyright": "© {{year}} QRI Reflex. Tüm hakları saklıdır."
   },
@@ -196,8 +239,20 @@
     "upload": "Yükle",
     "progress": "Yükleme durumu"
   },
-  "days": { "mon": "Pzt", "tue": "Sal", "wed": "Çar", "thu": "Per", "fri": "Cum", "sat": "Cts", "sun": "Paz" },
-  "levels": { "easy": "kolay", "medium": "orta", "hard": "zor" },
+  "days": {
+    "mon": "Pzt",
+    "tue": "Sal",
+    "wed": "Çar",
+    "thu": "Per",
+    "fri": "Cum",
+    "sat": "Cts",
+    "sun": "Paz"
+  },
+  "levels": {
+    "easy": "kolay",
+    "medium": "orta",
+    "hard": "zor"
+  },
   "calendly": {
     "consent": {
       "title": "Randevu bileşenini göstermeye izin ver",
@@ -207,5 +262,7 @@
     }
   },
   "lastUpdated": "Güncellendi: 2025",
-  "phone": "Telefon:"
+  "phone": "Telefon",
+  "email": "E-Posta",
+  "phoneNumber" : "+436605733620"
 }

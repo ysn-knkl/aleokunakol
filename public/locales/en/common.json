@@ -40,13 +40,16 @@
   },
   "hero": {
     "title": "Your child is not the problem – their nervous system needs support.",
-    "lead": "With reflex integration, aromatherapy and PEMF, you help your child regain balance.",
-    "cta": "Book now"
+    "cta": "Book now",
+    "lead": "With reflex integration, aromatherapy and PEMF, you help your child regain balance."
   },
   "about": {
     "title": "About Me",
     "imageAlt": "Portrait",
-    "badges": ["QRI • PEMF • Aromatherapy", "Physiotherapist"],
+    "badges": [
+      "QRI • PEMF • Aromatherapy",
+      "Physiotherapist"
+    ],
     "highlights": [
       "10+ years with children & parents",
       "Reflex integration & gentle touch",
@@ -104,12 +107,24 @@
   "motherChildCard": {
     "title": "What parents wish for—and what children quietly hope",
     "imageAlt": "Mother and child",
-    "labels": { "mother": "Parents wish for …", "child": "And the child?" },
+    "labels": {
+      "mother": "Parents wish for …",
+      "child": "And the child?"
+    },
     "leftTitle": "Parents wish for …",
     "left": [
-      { "title": "Calm, focus and harmony at home", "description": "They want their child to settle, focus better, learn with joy—and for the daily battles to end." },
-      { "title": "Clarity & ways to act", "description": "They want to understand what their child really needs—and find concrete, doable ways to help." },
-      { "title": "Solutions that fit life", "description": "Not extra burdens, but simple, natural tools that truly work in everyday life." }
+      {
+        "title": "Calm, focus and harmony at home",
+        "description": "They want their child to settle, focus better, learn with joy—and for the daily battles to end."
+      },
+      {
+        "title": "Clarity & ways to act",
+        "description": "They want to understand what their child really needs—and find concrete, doable ways to help."
+      },
+      {
+        "title": "Solutions that fit life",
+        "description": "Not extra burdens, but simple, natural tools that truly work in everyday life."
+      }
     ],
     "rightTitle": "And the child?",
     "rightContent": {
@@ -119,9 +134,18 @@
       "sp3": "“What do you really need?”—not “Why are you like this?”"
     },
     "right": [
-      { "title": "To be understood", "description": "Without constant correction." },
-      { "title": "To be seen", "description": "For what they feel—not only for what they (don’t yet) do." },
-      { "title": "To grow at their own pace", "description": "Without pressure or comparison." }
+      {
+        "title": "To be understood",
+        "description": "Without constant correction."
+      },
+      {
+        "title": "To be seen",
+        "description": "For what they feel—not only for what they (don’t yet) do."
+      },
+      {
+        "title": "To grow at their own pace",
+        "description": "Without pressure or comparison."
+      }
     ]
   },
   "packages": {
@@ -129,9 +153,21 @@
     "subtitle": "I support you and your child toward more ease, better regulation and new developmental steps. Choose the package that fits you best.",
     "smallPrint": "Prices include preparation and follow-up. Details are discussed individually.",
     "sessionPacks": [
-      { "title": "Session Pack • 7 appointments", "price": "€770", "desc": "Ideal to experience first changes and get to know reflex integration." },
-      { "title": "Session Pack • 9 appointments", "price": "€990", "desc": "For continuous support and deeper integration—more time to consolidate progress." },
-      { "title": "Session Pack • 11 appointments", "price": "€1,200", "desc": "The all-round package to give your child maximum support." }
+      {
+        "title": "Session Pack • 7 appointments",
+        "price": "€770",
+        "desc": "Ideal to experience first changes and get to know reflex integration."
+      },
+      {
+        "title": "Session Pack • 9 appointments",
+        "price": "€990",
+        "desc": "For continuous support and deeper integration—more time to consolidate progress."
+      },
+      {
+        "title": "Session Pack • 11 appointments",
+        "price": "€1,200",
+        "desc": "The all-round package to give your child maximum support."
+      }
     ],
     "intensive": {
       "title": "Intensive Week",
@@ -140,7 +176,10 @@
       "note": "Recommended every 4–6 months to support development purposefully."
     }
   },
-  "contact": { "title": "Contact & Booking", "reviewsTitle": "Reviews" },
+  "contact": {
+    "title": "Contact & Booking",
+    "reviewsTitle": "Reviews"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "body1": "Information shared during booking and contact is used only to provide services and in accordance with the law.",
@@ -165,16 +204,20 @@
     "copyrightText": "All content on this website is protected by copyright."
   },
   "footer": {
-    "title": "QRI Reflex Therapy",
+    "title": "QRI Reflex Integration",
     "description": "Reflex integration and regulatory approaches.",
     "contactTitle": "Contact",
     "contact": {
-      "address": "Argentinierstraße 18/3, 1040 Vienna",
+      "address": "Argentinierstraße 50/1/4-5, 1040 Wien",
       "email": "info@aleokunakol.com",
       "phone": "+43 660 5733620"
     },
     "quickLinksTitle": "Quick Links",
-    "links": { "about": "About", "services": "Services", "contact": "Booking" },
+    "links": {
+      "about": "About",
+      "services": "Services",
+      "contact": "Booking"
+    },
     "location": "Vienna, Austria",
     "copyright": "© {{year}} QRI Reflex. All rights reserved."
   },
@@ -196,8 +239,20 @@
     "upload": "Upload",
     "progress": "Upload progress"
   },
-  "days": { "mon": "Mon", "tue": "Tue", "wed": "Wed", "thu": "Thu", "fri": "Fri", "sat": "Sat", "sun": "Sun" },
-  "levels": { "easy": "easy", "medium": "medium", "hard": "hard" },
+  "days": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "levels": {
+    "easy": "easy",
+    "medium": "medium",
+    "hard": "hard"
+  },
   "calendly": {
     "consent": {
       "title": "Allow displaying the booking widget",
@@ -207,5 +262,7 @@
     }
   },
   "lastUpdated": "Updated: 2025",
-  "phone": "Phone:"
+  "phone": "Phone",
+  "email": "E-Mail",
+  "phoneNumber" : "+436605733620"
 }

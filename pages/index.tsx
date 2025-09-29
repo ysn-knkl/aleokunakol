@@ -33,7 +33,7 @@ export default function Home() {
       />
 
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <Services />
         <InfoCard />

@@ -13,20 +13,17 @@ const LOCALE_META: Record<Supported, { label: string; flag: string }> = {
 };
 
 export default function LanguageSwitcher() {
-  const router = useRouter();
+ const router = useRouter();
   const ref = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
 
-  // Varsayılanı her zaman Almanca yap
   const current = (SUPPORTED.includes(router.locale as Supported)
     ? router.locale
     : "de") as Supported;
 
   const switchTo = async (locale: Supported) => {
     setOpen(false);
-    document.cookie = `NEXT_LOCALE=${locale}; Path=/; Max-Age=${
-      60 * 60 * 24 * 365
-    }`;
+    document.cookie = `NEXT_LOCALE=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}`;
     await router.push(router.asPath, router.asPath, { locale });
   };
 
@@ -72,7 +69,13 @@ export default function LanguageSwitcher() {
       {open && locales.length > 0 && (
         <div
           role="menu"
-          className="absolute right-0 mt-2 w-44 rounded-2xl bg-white border border-brand-300/30 shadow-soft p-1 z-50"
+          className={[
+            "absolute right-0 z-50 w-44 rounded-2xl bg-white border border-brand-300/30 shadow-soft p-1",
+            // mobile: yukarı aç
+            "bottom-full mb-2",
+            // md ve üstü: aşağı aç
+            "md:bottom-auto md:mb-0 md:top-full md:mt-2",
+          ].join(" ")}
         >
           {locales.map((lc) => (
             <button
