@@ -1,5 +1,6 @@
 // pages/_app.tsx
 import "../styles/globals.css";
+import React from "react";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { appWithTranslation } from "next-i18next";
@@ -9,6 +10,8 @@ import { useRouter } from "next/router";
 import nextI18NextConfig from "../next-i18next.config";
 import BackToTop from "@/components/common/BackToTop";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import Script from "next/script";
+import { GA_ID, pageview } from "@/lib/gtag";
 
 const LOCALE_TO_OG: Record<string, string> = {
   de: "de_AT",
@@ -79,9 +82,41 @@ function AppSeo() {
 }
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  const router = useRouter();
+
+  // track route changes for SPA navigation
+  React.useEffect(() => {
+    const handleRoute = (url: string) => pageview(url);
+    router.events.on("routeChangeComplete", handleRoute);
+    return () => router.events.off("routeChangeComplete", handleRoute);
+  }, [router.events]);
+
   return (
     <SessionProvider session={session}>
       <AppSeo />
+
+      {/* Google Analytics */}
+      {GA_ID && (
+        <>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              `,
+            }}
+          />
+        </>
+      )}
+
       <Component {...pageProps} />
       <BackToTop />
       <WhatsAppButton />
