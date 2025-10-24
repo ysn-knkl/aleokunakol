@@ -180,14 +180,6 @@
     "title": "İletişim & Randevu",
     "reviewsTitle": "Yorumlar"
   },
-  "privacy": {
-    "title": "Gizlilik Politikası",
-    "body1": "Randevu ve iletişim sırasında paylaşılan bilgiler yalnızca hizmet amacıyla ve yasaya uygun kullanılır.",
-    "li1": "İzleme çerezi kullanmıyoruz.",
-    "li2": "Veriler üçüncü kişilerle paylaşılmaz.",
-    "li3": "Verilerinize erişme, düzeltme ve silme hakkınız var.",
-    "contact": "Sorumlu: QRI Reflex Therapy • info@qri-therapie.at"
-  },
   "impressum": {
     "title": "Künye",
     "legalLine": "Avusturya mevzuatınca zorunlu bilgiler.",
@@ -219,7 +211,7 @@
       "contact": "Randevu"
     },
     "location": "Viyana, Avusturya",
-    "copyright": "© {{year}} QRI Reflex. Tüm hakları saklıdır."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Tüm hakları saklıdır."
   },
   "exercises": {
     "title": "Egzersizlerim",
@@ -264,5 +256,112 @@
   "lastUpdated": "Güncellendi: 2025",
   "phone": "Telefon",
   "email": "E-Posta",
-  "phoneNumber" : "+436605733620"
+  "phoneNumber" : "+436605733620",
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "stand": "Güncelleme tarihi: {{date}}",
+    "section1": {
+      "title": "1. Veri Sorumlusu",
+      "lines": [
+        "Alexandra Oana Okunakol",
+        "Argentinierstraße 50/1/4-5, 1040 Viyana, Avusturya",
+        "E-posta: info@aleokunakol.com",
+        "Telefon: +43 660 5733620"
+      ],
+      "note": "(\"biz\", \"tarafımız\")"
+    },
+    "section2": {
+      "title": "2. İşleme Amaçları, Veri Kategorileri ve Hukuki Dayanaklar",
+      "sub1": {
+        "title": "2.1 Kullanıcı Hesabı ve Giriş (Google Sign-In)",
+        "data": "Veriler: E-posta adresi, ad, (isteğe bağlı) profil fotoğrafı; rol bilgisi (admin/terapist/kullanıcı).",
+        "purpose": "Amaç: Kullanıcı hesaplarını oluşturmak, oturumları yönetmek ve erişim izinlerini kontrol etmek.",
+        "legal": "Hukuki dayanak: GDPR Madde 6(1)(b) (sözleşme veya ön sözleşme tedbirleri) ve Madde 6(1)(f) (güvenli kimlik doğrulama konusundaki meşru menfaat)."
+      },
+      "sub2": {
+        "title": "2.2 İçerik Yönetimi ve Egzersiz Fonksiyonları",
+        "data": "Veriler: Egzersiz içerikleri ve atamaları, kullanıcıya atanan planlar (gün/döngü), ilerleme kayıtları (tamamlanma durumu, painScore, serbest yorum).",
+        "purpose": "Amaç: Egzersizlerin oluşturulması ve atanması, kullanıcı ilerlemesinin kaydedilmesi, hizmetin sağlanması.",
+        "legal": "Hukuki dayanak: GDPR Madde 6(1)(b).",
+        "note": "Özel veri kategorileri notu: Kullanıcının girdiği \"painScore\" ve yorumlar sağlıkla ilgili bilgiler içerebilir. Bu veriler yalnızca açık rızanızla ve belirtilen amaçla işlenir (GDPR Madde 9(2)(a)). Rızanızı dilediğiniz zaman geleceğe yönelik olarak geri çekebilirsiniz."
+      },
+      "sub3": {
+        "title": "2.3 Medya Yüklemeleri (Cloudinary)",
+        "data": "Veriler: Yüklenen görsel/video dosyaları ve teknik metaveriler (URL, çözünürlük, süre).",
+        "purpose": "Amaç: Medyanın güvenli şekilde saklanması ve uygulamada görüntülenmesi.",
+        "legal": "Hukuki dayanak: GDPR Madde 6(1)(b); ayrıca meşru menfaat (Madde 6(1)(f)) – hızlı içerik teslimi."
+      },
+      "sub4": {
+        "title": "2.4 Oturumlar ve Zorunlu Çerezler",
+        "data": "Veriler: NextAuth oturum çerezleri ve teknik log verileri (ör. IP, tarayıcı bilgisi, oturum süresi).",
+        "purpose": "Amaç: Oturum sürekliliğini sağlamak, güvenliği temin etmek ve hataları gidermek.",
+        "legal": "Hukuki dayanak: §165(3) TKG (zorunlu çerezler) ve GDPR Madde 6(1)(f)."
+      },
+      "sub5": {
+        "title": "2.5 Kullanım Analizi (Google Analytics – sadece onay ile)",
+        "data": "Veriler: Sayfa görüntüleme, etkinlik, cihaz ve tarayıcı bilgileri (çerez veya benzer teknolojilerle).",
+        "purpose": "Amaç: Ürünü geliştirmek için anonim/pseudonim kullanım analizi.",
+        "legal": "Hukuki dayanak: GDPR Madde 6(1)(a) (rıza). Analitik yalnızca çerez izni verildiğinde ve/veya GA kimliği etkinleştirildiğinde çalışır."
+      },
+      "sub6": {
+        "title": "2.6 Randevu ve İletişim Entegrasyonları",
+        "data": "Calendly (iframe): Randevu planlama sırasında veriler (takvim bilgisi, ad, e-posta) Calendly’ye iletilir.",
+        "legal1": "Hukuki dayanak: GDPR Madde 6(1)(b) (randevu planlama).",
+        "whatsapp": "WhatsApp (harici bağlantı): WhatsApp üzerinden iletişime geçtiğinizde, verileriniz WhatsApp Ireland/Meta tarafından işlenir.",
+        "legal2": "Hukuki dayanak: GDPR Madde 6(1)(a) veya (b) (iletişim başlatma)."
+      }
+    },
+    "section3": {
+      "title": "3. Alıcılar ve Veri İşleyenler",
+      "list": [
+        "Barındırma & Teknoloji: [Hosting sağlayıcısı] (veri işleyici).",
+        "Veritabanı: MongoDB (ör. MongoDB Atlas).",
+        "Kimlik Doğrulama: Google LLC (Google Sign-In).",
+        "Medya Depolama: Cloudinary Ltd.",
+        "Analitik (isteğe bağlı): Google Ireland / Google LLC."
+      ],
+      "note": "Tüm hizmet sağlayıcılarla veri işleme sözleşmeleri (DPA) yapılmıştır. Veri işleme yalnızca amaca yönelik ve uygun güvenlik önlemleriyle gerçekleştirilir."
+    },
+    "section4": {
+      "title": "4. Üçüncü Ülkelere Veri Aktarımı",
+      "text": "Google, Cloudinary, MongoDB Atlas ve/veya Calendly kullanımı kapsamında veriler AB/AEA dışındaki ülkelere (özellikle ABD) aktarılabilir. Bu aktarımlar AB Standart Sözleşme Maddeleri (SCC) veya eşdeğer güvencelere dayanır. Ayrıntılar için ilgili sağlayıcıların gizlilik politikalarına bakınız."
+    },
+    "section5": {
+      "title": "5. Saklama Süresi",
+      "lines": [
+        "Hesap verileri: Hesabınız aktif olduğu sürece ve yasal yükümlülükler çerçevesinde saklanır.",
+        "Egzersiz/Atama/İlerleme verileri: Hizmet sağlamak için gerekli olduğu sürece saklanır; talep halinde veya hesap kapatıldığında silinir veya anonimleştirilir.",
+        "Log verileri: Güvenlik ve hata ayıklama amacıyla kısa süreli tutulur."
+      ]
+    },
+    "section6": {
+      "title": "6. Veri Sağlama Zorunluluğu",
+      "text": "Hizmeti kullanmak için e-posta adresi ve kimlik doğrulama verileri gereklidir. Bu bilgiler olmadan bazı özellikler kullanılamaz."
+    },
+    "section7": {
+      "title": "7. Kullanıcı Hakları",
+      "text": "GDPR Madde 15–21 uyarınca şu haklara sahipsiniz: erişim, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği, itiraz ve rızayı geri çekme (Madde 7(3) GDPR).",
+      "contact": "Bu hakları kullanmak için lütfen yukarıdaki iletişim bilgileriyle bize ulaşın.",
+      "authority": "Ayrıca, Avusturya Veri Koruma Kurumu’na (DSB) şikayette bulunma hakkınız vardır: Barichgasse 40–42, 1030 Viyana, dsb@dsb.gv.at."
+    },
+    "section8": {
+      "title": "8. Çerezler ve Onay Yönetimi",
+      "lines": [
+        "Zorunlu çerezler: Oturum ve güvenlik için gereklidir (devre dışı bırakılamaz).",
+        "Analitik çerezleri: Yalnızca açık rıza ile etkinleştirilir; tarayıcı veya çerez ayarlarından dilediğiniz zaman geri çekebilirsiniz."
+      ]
+    },
+    "section9": {
+      "title": "9. Veri Güvenliği",
+      "text": "Tüm veriler güncel teknik ve organizasyonel önlemlerle (şifreleme, erişim kontrolü, rol bazlı erişim, minimum yetki) korunur. Üçüncü taraf entegrasyonlarında da uygun güvenlik standartları gözetilir."
+    },
+    "section10": {
+      "title": "10. Reşit Olmayanlar",
+      "text": "Hizmet ebeveynlere yöneliktir. Çocuklar için ayrı hesap oluşturulması gerekmez. Çocuklara ilişkin bilgiler yalnızca ebeveyn tarafından ve açık rıza ile işlenir."
+    },
+    "section11": {
+      "title": "11. Değişiklikler",
+      "text": "Bu gizlilik bildirimi gerektiğinde güncellenebilir. Güncel sürüm web sitemizde yayınlanır."
+    }
+  }
 }

@@ -185,14 +185,9 @@
       "note": "Recomandat la 4–6 luni pentru susținere țintită."
     }
   },
-  "contact": { "title": "Contact & Programări", "reviewsTitle": "Recenzii" },
-  "privacy": {
-    "title": "Politica de confidențialitate",
-    "body1": "Informațiile partajate la programare și contact sunt folosite doar pentru furnizarea serviciilor, conform legii.",
-    "li1": "Nu folosim cookie-uri de tracking.",
-    "li2": "Datele nu sunt partajate cu terți.",
-    "li3": "Ai dreptul de acces, rectificare și ștergere.",
-    "contact": "Operator: QRI Reflex Therapy • info@qri-therapie.at"
+  "contact": {
+    "title": "Contact & Programări",
+    "reviewsTitle": "Recenzii"
   },
   "impressum": {
     "title": "Impressum",
@@ -225,7 +220,7 @@
       "contact": "Programări"
     },
     "location": "Viena, Austria",
-    "copyright": "© {{year}} QRI Reflex. Toate drepturile rezervate."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Toate drepturile rezervate."
   },
   "exercises": {
     "title": "Exercițiile mele",
@@ -270,5 +265,112 @@
   "lastUpdated": "Actualizat: 2025",
   "phone": "Telefon",
   "email": "E-Mail",
-  "phoneNumber" : "+436605733620"
+  "phoneNumber": "+436605733620",
+  "privacy": {
+    "title": "Politica de confidențialitate",
+    "stand": "Ultima actualizare: {{date}}",
+    "section1": {
+      "title": "1. Operator de date",
+      "lines": [
+        "Alexandra Oana Okunakol",
+        "Argentinierstraße 50/1/4-5, 1040 Viena, Austria",
+        "E-mail: info@aleokunakol.com",
+        "Telefon: +43 660 5733620"
+      ],
+      "note": "(„noi”, „ne”)"
+    },
+    "section2": {
+      "title": "2. Scopurile prelucrării, categoriile de date și temeiul legal",
+      "sub1": {
+        "title": "2.1 Cont de utilizator și autentificare (Google Sign-In)",
+        "data": "Date: adresă de e-mail, nume, (opțional) fotografie de profil; atribut de rol (admin/terapeut/client).",
+        "purpose": "Scop: Crearea și gestionarea conturilor de utilizator, autentificărilor, sesiunilor și permisiunilor de acces.",
+        "legal": "Temei legal: Art. 6 alin. (1) lit. b GDPR (măsuri contractuale sau precontractuale) și Art. 6 alin. (1) lit. f GDPR (interes legitim privind autentificarea sigură)."
+      },
+      "sub2": {
+        "title": "2.2 Gestionarea conținutului și funcțiile de antrenament",
+        "data": "Date: conținuturi și atribuiri de exerciții, planuri atribuite utilizatorului (zile/cicluri), înregistrări ale progresului (finalizare, painScore, comentariu liber).",
+        "purpose": "Scop: Crearea și atribuirea exercițiilor, înregistrarea progresului utilizatorului și furnizarea serviciului.",
+        "legal": "Temei legal: Art. 6 alin. (1) lit. b GDPR.",
+        "note": "Notă privind categoriile speciale: valorile introduse de utilizator, precum „painScore” și comentariile, pot conține informații privind sănătatea. Aceste date sunt prelucrate doar cu consimțământul dvs. explicit și exclusiv în scopul indicat (Art. 9 alin. (2) lit. a GDPR). Consimțământul poate fi retras oricând, cu efect pentru viitor."
+      },
+      "sub3": {
+        "title": "2.3 Încărcarea de fișiere media (Cloudinary)",
+        "data": "Date: fișiere imagine/video încărcate și metadate tehnice (URL, rezoluție, durată).",
+        "purpose": "Scop: Stocarea și afișarea în siguranță a conținutului media în aplicație.",
+        "legal": "Temei legal: Art. 6 alin. (1) lit. b GDPR; de asemenea, interes legitim (Art. 6 alin. (1) lit. f) – livrarea performantă a conținutului."
+      },
+      "sub4": {
+        "title": "2.4 Sesiuni și cookie-uri strict necesare",
+        "data": "Date: cookie-uri de sesiune NextAuth și date tehnice de jurnal (ex. IP, user-agent, durata sesiunii).",
+        "purpose": "Scop: Menținerea sesiunii, asigurarea securității și depanarea erorilor.",
+        "legal": "Temei legal: §165 alin. (3) TKG (strict necesar) și Art. 6 alin. (1) lit. f GDPR."
+      },
+      "sub5": {
+        "title": "2.5 Analiza utilizării (Google Analytics – doar cu consimțământ)",
+        "data": "Date: vizualizări de pagini, evenimente, informații despre dispozitiv și browser (prin cookie-uri sau tehnologii similare).",
+        "purpose": "Scop: Analiza anonimă sau pseudonimizată a utilizării pentru îmbunătățirea produsului.",
+        "legal": "Temei legal: Art. 6 alin. (1) lit. a GDPR (consimțământ). Analiza este activată doar dacă acceptați cookie-urile și/sau dacă este configurat un ID GA."
+      },
+      "sub6": {
+        "title": "2.6 Integrări pentru programări și comunicare",
+        "data": "Calendly (iframe): În timpul programării unei întâlniri, datele (informații din calendar, nume, e-mail) sunt transmise către Calendly.",
+        "legal1": "Temei legal: Art. 6 alin. (1) lit. b GDPR (programare).",
+        "whatsapp": "WhatsApp (link extern): Dacă luați legătura prin WhatsApp, datele dvs. sunt prelucrate de WhatsApp Ireland/Meta.",
+        "legal2": "Temei legal: Art. 6 alin. (1) lit. a sau b GDPR (inițierea comunicării)."
+      }
+    },
+    "section3": {
+      "title": "3. Destinatari și persoane împuternicite pentru prelucrare",
+      "list": [
+        "Găzduire & Tehnologie: [Furnizor de hosting] (persoană împuternicită).",
+        "Bază de date: MongoDB (ex. MongoDB Atlas).",
+        "Autentificare: Google LLC (Google Sign-In).",
+        "Stocare media: Cloudinary Ltd.",
+        "Analiză (opțional): Google Ireland / Google LLC."
+      ],
+      "note": "Cu toți furnizorii menționați există contracte de prelucrare a datelor (DPA). Prelucrarea are loc strict în scopul specificat și cu măsuri de securitate adecvate."
+    },
+    "section4": {
+      "title": "4. Transferuri de date către țări terțe",
+      "text": "Datele pot fi transferate în țări din afara UE/SEE (în special SUA) în contextul utilizării Google, Cloudinary, MongoDB Atlas și/sau Calendly. Aceste transferuri se bazează pe Clauzele Contractuale Standard ale UE (SCC) sau pe garanții echivalente. Pentru detalii, consultați politicile de confidențialitate ale furnizorilor respectivi."
+    },
+    "section5": {
+      "title": "5. Perioada de stocare",
+      "lines": [
+        "Datele contului: Cât timp contul dvs. este activ și conform obligațiilor legale de păstrare.",
+        "Date despre exerciții/atribuiri/progres: Atâta timp cât este necesar pentru furnizarea serviciului; șterse sau anonimizate la cerere sau la închiderea contului.",
+        "Date jurnal: Păstrate pentru o perioadă scurtă, pentru securitate și depanare."
+      ]
+    },
+    "section6": {
+      "title": "6. Obligația de a furniza date",
+      "text": "Pentru utilizarea serviciului este necesară o adresă de e-mail și date de autentificare. Fără acestea, anumite funcții nu pot fi oferite."
+    },
+    "section7": {
+      "title": "7. Drepturile persoanelor vizate",
+      "text": "Conform Art. 15–21 GDPR, aveți următoarele drepturi: acces, rectificare, ștergere, restricționarea prelucrării, portabilitatea datelor, opoziție și retragerea consimțământului (Art. 7 alin. (3) GDPR).",
+      "contact": "Pentru exercitarea acestor drepturi, vă rugăm să ne contactați folosind datele de contact de mai sus.",
+      "authority": "De asemenea, aveți dreptul de a depune o plângere la Autoritatea Austriacă pentru Protecția Datelor (DSB): Barichgasse 40–42, 1030 Viena, dsb@dsb.gv.at."
+    },
+    "section8": {
+      "title": "8. Cookie-uri și gestionarea consimțământului",
+      "lines": [
+        "Cookie-uri esențiale: Necesare pentru sesiuni și securitate (nu pot fi dezactivate).",
+        "Cookie-uri analitice: Setate doar cu consimțământ explicit; pot fi retrase oricând din setările browserului sau ale cookie-urilor."
+      ]
+    },
+    "section9": {
+      "title": "9. Securitatea datelor",
+      "text": "Toate datele sunt protejate prin măsuri tehnice și organizaționale actualizate (criptare, control al accesului, principii de rol, privilegii minime). Se asigură standarde de securitate adecvate și pentru integrările terților."
+    },
+    "section10": {
+      "title": "10. Minori",
+      "text": "Serviciul este destinat părinților. Nu este necesară crearea unui cont separat pentru copii. Orice informație despre copii este prelucrată doar de părinți și în scopul declarat, cu consimțământ explicit."
+    },
+    "section11": {
+      "title": "11. Modificări",
+      "text": "Această politică de confidențialitate poate fi actualizată la nevoie. Versiunea curentă este disponibilă pe site-ul nostru."
+    }
+  }
 }

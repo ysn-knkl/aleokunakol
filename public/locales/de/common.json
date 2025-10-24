@@ -180,14 +180,6 @@
     "title": "Kontakt & Termin",
     "reviewsTitle": "Bewertungen"
   },
-  "privacy": {
-    "title": "Datenschutzerklärung",
-    "body1": "Informationen, die während des Buchungs- und Kontaktprozesses geteilt werden, werden ausschließlich zur Erbringung von Dienstleistungen und in Übereinstimmung mit dem Gesetz verwendet.",
-    "li1": "Wir verwenden keine Tracking-Cookies.",
-    "li2": "Daten werden nicht an Dritte weitergegeben.",
-    "li3": "Sie haben das Recht auf Zugriff, Berichtigung und Löschung Ihrer Daten.",
-    "contact": "Verantwortlich: QRI Reflex Therapie • info@qri-therapie.at"
-  },
   "impressum": {
     "title": "Impressum",
     "legalLine": "Informationspflicht laut §5 E-Commerce-Gesetz, §14 UGB, §63 GewO und §25 Mediengesetz.",
@@ -219,7 +211,7 @@
       "contact": "Termin"
     },
     "location": "Wien, Österreich",
-    "copyright": "© {{year}} QRI Reflex. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Alle Rechte vorbehalten."
   },
   "exercises": {
     "title": "Meine Übungen",
@@ -264,5 +256,112 @@
   "lastUpdated": "Aktualisiert: 2025",
   "phone": "Telefon",
   "email": "E-Mail",
-  "phoneNumber" : "+436605733620"
+  "phoneNumber": "+436605733620",
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "stand": "Stand: {{date}}",
+    "section1": {
+      "title": "1. Verantwortliche Stelle",
+      "lines": [
+        "Alexandra Oana Okunakol",
+        "Argentinierstraße 50/1/4-5, 1040 Wien",
+        "E-Mail: info@aleokunakol.com",
+        "Telefon: +43 660 5733620"
+      ],
+      "note": "(„wir“, „uns“)"
+    },
+    "section2": {
+      "title": "2. Zwecke der Verarbeitung, Datenkategorien, Rechtsgrundlagen",
+      "sub1": {
+        "title": "2.1 Nutzerkonto & Anmeldung (Google Sign-In)",
+        "data": "Daten: E-Mail-Adresse, Name, (optional) Profilbild; Rollen-Attribut (admin/therapist/client).",
+        "purpose": "Zweck: Nutzerkonten anlegen, anmelden, Sitzungen verwalten, Zugriffsrechte steuern.",
+        "legal": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertrag/vorvertragliche Maßnahmen) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherer Authentifizierung)."
+      },
+      "sub2": {
+        "title": "2.2 Inhaltsverwaltung & Trainingsfunktionen",
+        "data": "Daten: Übungsinhalte und Zuweisungen (Exercise/Assignment), dem Nutzer zugeordnete Pläne (Tage/Zyklen), Fortschrittsaufzeichnungen (Abschluss, painScore, Freitext-Kommentar).",
+        "purpose": "Zweck: Erstellung und Zuweisung von Übungen, Aufzeichnung des Nutzerfortschritts, Bereitstellung des Dienstes.",
+        "legal": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.",
+        "note": "Hinweis zu besonderen Kategorien: Vom Nutzer eingegebene Werte wie „painScore“ und Kommentare können gesundheitsbezogene Angaben enthalten. Diese Daten werden nur mit ausdrücklicher Einwilligung und ausschließlich für den angegebenen Zweck verarbeitet (Art. 9 Abs. 2 lit. a DSGVO). Die Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden."
+      },
+      "sub3": {
+        "title": "2.3 Medien-Uploads (Cloudinary)",
+        "data": "Daten: Hochgeladene Bild-/Videodateien und technische Metadaten (URL, Auflösung, Dauer).",
+        "purpose": "Zweck: Sichere Speicherung und Anzeige der Medien in der Anwendung.",
+        "legal": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO; außerdem berechtigtes Interesse (Art. 6 Abs. 1 lit. f) – performante Inhaltsauslieferung."
+      },
+      "sub4": {
+        "title": "2.4 Sitzungen, unbedingt erforderliche Cookies",
+        "data": "Daten: NextAuth-Sitzungs-Cookies und technische Logdaten (z. B. IP, User-Agent, Sitzungsdauer).",
+        "purpose": "Zweck: Aufrechterhaltung der Sitzung, Sicherheit und Fehlerbehebung.",
+        "legal": "Rechtsgrundlage: § 165 Abs. 3 TKG (unbedingt erforderlich) und Art. 6 Abs. 1 lit. f DSGVO."
+      },
+      "sub5": {
+        "title": "2.5 Nutzungsanalyse (Google Analytics – nur mit Zustimmung)",
+        "data": "Daten: Seitenaufrufe, Ereignisse, Geräte- und Browserdaten (mittels Cookies oder ähnlicher Technologien).",
+        "purpose": "Zweck: Anonymisierte bzw. pseudonymisierte Nutzungsanalyse zur Verbesserung des Produkts.",
+        "legal": "Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Analytics wird nur aktiviert, wenn Sie der Cookie-Nutzung zustimmen und/oder eine GA-ID konfiguriert ist."
+      },
+      "sub6": {
+        "title": "2.6 Termin- und Kommunikations-Integrationen",
+        "data": "Calendly (iframe): Bei der Terminvereinbarung werden Daten (Kalenderinformationen, Name, E-Mail) an Calendly übermittelt.",
+        "legal1": "Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Terminvereinbarung).",
+        "whatsapp": "WhatsApp (externer Link): Wenn Sie über WhatsApp Kontakt aufnehmen, werden Ihre Daten von WhatsApp Ireland/Meta verarbeitet.",
+        "legal2": "Rechtsgrundlage: Art. 6 Abs. 1 lit. a oder b DSGVO (Initiierung der Kommunikation)."
+      }
+    },
+    "section3": {
+      "title": "3. Empfänger und Auftragsverarbeiter",
+      "list": [
+        "Hosting & Technik: [Hosting-Provider] (Auftragsverarbeiter).",
+        "Datenbank: MongoDB (z. B. MongoDB Atlas).",
+        "Authentifizierung: Google LLC (Google Sign-In).",
+        "Medienspeicher: Cloudinary Ltd.",
+        "Analyse (optional): Google Ireland / Google LLC."
+      ],
+      "note": "Mit allen genannten Dienstleistern bestehen Auftragsverarbeitungsverträge (AVV/DPA). Die Datenverarbeitung erfolgt zweckgebunden und unter angemessenen Sicherheitsmaßnahmen."
+    },
+    "section4": {
+      "title": "4. Drittlandübermittlungen",
+      "text": "Daten können im Rahmen der Nutzung von Google, Cloudinary, MongoDB Atlas und/oder Calendly in Länder außerhalb der EU/des EWR (insbesondere die USA) übertragen werden. Diese Übermittlungen basieren auf EU-Standardvertragsklauseln (SCC) oder vergleichbaren Garantien. Weitere Informationen finden Sie in den Datenschutzhinweisen der jeweiligen Anbieter."
+    },
+    "section5": {
+      "title": "5. Speicherdauer",
+      "lines": [
+        "Kontodaten: Solange Ihr Konto aktiv ist und gemäß gesetzlicher Aufbewahrungspflichten.",
+        "Übungs-/Zuweisungs-/Fortschrittsdaten: Solange zur Erfüllung des Dienstes erforderlich; Löschung oder Anonymisierung auf Anfrage oder bei Kontoschließung.",
+        "Logdaten: Kurzzeitig zur Sicherstellung von Sicherheit und Fehlerbehebung."
+      ]
+    },
+    "section6": {
+      "title": "6. Bereitstellungspflicht",
+      "text": "Für die Nutzung des Dienstes sind E-Mail-Adresse und Authentifizierungsdaten erforderlich. Ohne diese Angaben können bestimmte Funktionen nicht bereitgestellt werden."
+    },
+    "section7": {
+      "title": "7. Betroffenenrechte",
+      "text": "Sie haben gemäß Art. 15–21 DSGVO folgende Rechte: Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch sowie Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO).",
+      "contact": "Kontaktieren Sie uns hierfür bitte über die oben angegebenen Kontaktdaten.",
+      "authority": "Darüber hinaus haben Sie das Recht, eine Beschwerde bei der Österreichischen Datenschutzbehörde (DSB) einzureichen: Barichgasse 40–42, 1030 Wien, dsb@dsb.gv.at."
+    },
+    "section8": {
+      "title": "8. Cookies & Einwilligungsmanagement",
+      "lines": [
+        "Erforderliche Cookies: Notwendig für Sitzungen und Sicherheit (nicht abwählbar).",
+        "Analyse-Cookies: Nur mit ausdrücklicher Zustimmung gesetzt; kann jederzeit über die Cookie-Einstellungen oder den Browser widerrufen werden."
+      ]
+    },
+    "section9": {
+      "title": "9. Datensicherheit",
+      "text": "Alle Daten werden durch aktuelle technische und organisatorische Maßnahmen (Verschlüsselung, Zugriffskontrolle, Rollenprinzip, Minimalrechte) geschützt. Auch bei Drittanbieter-Integrationen wird auf angemessene Sicherheitsstandards geachtet."
+    },
+    "section10": {
+      "title": "10. Minderjährige",
+      "text": "Der Dienst richtet sich an Eltern. Es ist keine separate Kontoerstellung für Kinder erforderlich. Etwaige Angaben zu Kindern werden nur durch die Eltern und zu dem angegebenen Zweck mit ausdrücklicher Zustimmung verarbeitet."
+    },
+    "section11": {
+      "title": "11. Änderungen",
+      "text": "Diese Datenschutzerklärung kann bei Bedarf angepasst werden. Die jeweils aktuelle Fassung ist auf unserer Website abrufbar."
+    }
+  }
 }

@@ -180,14 +180,6 @@
     "title": "Contact & Booking",
     "reviewsTitle": "Reviews"
   },
-  "privacy": {
-    "title": "Privacy Policy",
-    "body1": "Information shared during booking and contact is used only to provide services and in accordance with the law.",
-    "li1": "We do not use tracking cookies.",
-    "li2": "Data is not shared with third parties.",
-    "li3": "You have the right to access, rectify and erase your data.",
-    "contact": "Controller: QRI Reflex Therapy • info@qri-therapie.at"
-  },
   "impressum": {
     "title": "Impressum",
     "legalLine": "Mandatory information under Austrian law.",
@@ -219,7 +211,7 @@
       "contact": "Booking"
     },
     "location": "Vienna, Austria",
-    "copyright": "© {{year}} QRI Reflex. All rights reserved."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). All rights reserved."
   },
   "exercises": {
     "title": "My Exercises",
@@ -264,5 +256,112 @@
   "lastUpdated": "Updated: 2025",
   "phone": "Phone",
   "email": "E-Mail",
-  "phoneNumber" : "+436605733620"
+  "phoneNumber": "+436605733620",
+  "privacy": {
+    "title": "Privacy Policy",
+    "stand": "Last updated: {{date}}",
+    "section1": {
+      "title": "1. Data Controller",
+      "lines": [
+        "Alexandra Oana Okunakol",
+        "Argentinierstraße 50/1/4-5, 1040 Vienna, Austria",
+        "E-mail: info@aleokunakol.com",
+        "Phone: +43 660 5733620"
+      ],
+      "note": "(\"we\", \"us\")"
+    },
+    "section2": {
+      "title": "2. Purpose of Processing, Categories of Data, Legal Basis",
+      "sub1": {
+        "title": "2.1 User Account & Login (Google Sign-In)",
+        "data": "Data: Email address, name, (optional) profile picture; role attribute (admin/therapist/client).",
+        "purpose": "Purpose: To create and manage user accounts, logins, sessions, and access permissions.",
+        "legal": "Legal basis: Art. 6(1)(b) GDPR (contractual or pre-contractual measures) and Art. 6(1)(f) GDPR (legitimate interest in secure authentication)."
+      },
+      "sub2": {
+        "title": "2.2 Content Management & Training Functions",
+        "data": "Data: Exercise content and assignments, plans assigned to users (days/cycles), progress records (completion, painScore, free-text comment).",
+        "purpose": "Purpose: To create and assign exercises, record user progress, and provide the service.",
+        "legal": "Legal basis: Art. 6(1)(b) GDPR.",
+        "note": "Note on special categories: User-entered values such as 'painScore' and comments may contain health-related information. Such data is processed only with your explicit consent and solely for the stated purpose (Art. 9(2)(a) GDPR). You may withdraw your consent at any time with effect for the future."
+      },
+      "sub3": {
+        "title": "2.3 Media Uploads (Cloudinary)",
+        "data": "Data: Uploaded image/video files and related technical metadata (URL, resolution, duration).",
+        "purpose": "Purpose: To securely store and display media within the application.",
+        "legal": "Legal basis: Art. 6(1)(b) GDPR; also legitimate interest (Art. 6(1)(f)) – efficient content delivery."
+      },
+      "sub4": {
+        "title": "2.4 Sessions and Essential Cookies",
+        "data": "Data: NextAuth session cookies and technical log data (e.g., IP, user agent, session duration).",
+        "purpose": "Purpose: To maintain sessions, ensure security, and debug issues.",
+        "legal": "Legal basis: §165(3) TKG (strictly necessary) and Art. 6(1)(f) GDPR."
+      },
+      "sub5": {
+        "title": "2.5 Usage Analytics (Google Analytics – only with consent)",
+        "data": "Data: Page views, events, device and browser data (via cookies or similar technologies).",
+        "purpose": "Purpose: Anonymous or pseudonymous usage analysis to improve the product.",
+        "legal": "Legal basis: Art. 6(1)(a) GDPR (consent). Analytics is activated only if you consent to cookies and/or a GA-ID is configured."
+      },
+      "sub6": {
+        "title": "2.6 Appointment and Communication Integrations",
+        "data": "Calendly (iframe): When scheduling an appointment, data (calendar info, name, email) is transmitted to Calendly.",
+        "legal1": "Legal basis: Art. 6(1)(b) GDPR (appointment scheduling).",
+        "whatsapp": "WhatsApp (external link): When contacting via WhatsApp, your data is processed by WhatsApp Ireland/Meta.",
+        "legal2": "Legal basis: Art. 6(1)(a) or (b) GDPR (communication initiation)."
+      }
+    },
+    "section3": {
+      "title": "3. Recipients and Processors",
+      "list": [
+        "Hosting & Technology: [Hosting Provider] (data processor).",
+        "Database: MongoDB (e.g., MongoDB Atlas).",
+        "Authentication: Google LLC (Google Sign-In).",
+        "Media Storage: Cloudinary Ltd.",
+        "Analytics (optional): Google Ireland / Google LLC."
+      ],
+      "note": "Data processing agreements (DPAs) are in place with all mentioned providers. Processing is purpose-limited and protected by appropriate security measures."
+    },
+    "section4": {
+      "title": "4. Data Transfers to Third Countries",
+      "text": "Data may be transferred to countries outside the EU/EEA (in particular the USA) when using Google, Cloudinary, MongoDB Atlas and/or Calendly. These transfers are based on EU Standard Contractual Clauses (SCC) or equivalent safeguards. For details, please see the privacy notices of the respective providers."
+    },
+    "section5": {
+      "title": "5. Storage Period",
+      "lines": [
+        "Account data: As long as your account is active and in accordance with legal retention obligations.",
+        "Exercise/Assignment/Progress data: As long as necessary for service delivery; deleted or anonymized upon request or account closure.",
+        "Log data: Retained briefly to ensure security and debugging."
+      ]
+    },
+    "section6": {
+      "title": "6. Obligation to Provide Data",
+      "text": "To use the service, an email address and authentication data are required. Without these, certain features cannot be provided."
+    },
+    "section7": {
+      "title": "7. Data Subject Rights",
+      "text": "You have the following rights under Art. 15–21 GDPR: access, rectification, erasure, restriction of processing, data portability, objection, and withdrawal of consent (Art. 7(3) GDPR).",
+      "contact": "Please contact us using the details above to exercise these rights.",
+      "authority": "You also have the right to lodge a complaint with the Austrian Data Protection Authority (DSB): Barichgasse 40–42, 1030 Vienna, dsb@dsb.gv.at."
+    },
+    "section8": {
+      "title": "8. Cookies & Consent Management",
+      "lines": [
+        "Essential cookies: Necessary for sessions and security (cannot be disabled).",
+        "Analytics cookies: Set only with explicit consent; can be revoked at any time via browser or cookie settings."
+      ]
+    },
+    "section9": {
+      "title": "9. Data Security",
+      "text": "All data is protected by up-to-date technical and organizational measures (encryption, access control, role-based access, minimal privileges). Appropriate security standards are also ensured for third-party integrations."
+    },
+    "section10": {
+      "title": "10. Minors",
+      "text": "This service is aimed at parents. Separate accounts for children are not required. Any child-related information is processed only by parents and for the specified purpose with explicit consent."
+    },
+    "section11": {
+      "title": "11. Changes",
+      "text": "This privacy policy may be updated as necessary. The current version is available on our website."
+    }
+  }
 }

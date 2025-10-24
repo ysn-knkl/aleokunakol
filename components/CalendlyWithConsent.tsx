@@ -22,10 +22,6 @@ export default function CalendlyWithConsent() {
           <button className="btn-primary" onClick={() => setConsent(true)}>
             {t("calendly.consent.allow")}
           </button>
-          {/* İstersen bilgilendirme linki/Modal tetikleyebilirsin
-          <a href="/privacy" className="btn-ghost">
-            {t("calendly.consent.moreInfo")}
-          </a> */}
         </div>
       </div>
     );

@@ -72,7 +72,8 @@ const Footer = ({ showMaps = true, onOpenPrivacy, onOpenImpressum }: FooterProps
                 >
                   {t("footer.contact.phone")}
                 </a>
-              </li>            </ul>
+              </li>
+            </ul>
           </div>
 
           <div>
@@ -82,7 +83,6 @@ const Footer = ({ showMaps = true, onOpenPrivacy, onOpenImpressum }: FooterProps
               <li><a href="#services" className="nav-link">{t("footer.links.services")}</a></li>
               <li><a href="#contact" className="nav-link">{t("footer.links.contact")}</a></li>
 
-              {/* YENİ: Impressum & Datenschutz */}
               <li>
                 <button type="button" onClick={emitImpressum} className="nav-link">
                   {t("nav.impressum", "Impressum")}
