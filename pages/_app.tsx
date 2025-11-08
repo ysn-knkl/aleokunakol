@@ -12,6 +12,9 @@ import BackToTop from "@/components/common/BackToTop";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import Script from "next/script";
 import { GA_ID, pageview } from "@/lib/gtag";
+import { ConsentProvider } from "@/components/common/ConsentProvider";
+import CookieBanner from "@/components/common/CookieBanner";
+import CookiePreferences from "@/components/common/CookiePreferences";
 
 const LOCALE_TO_OG: Record<string, string> = {
   de: "de_AT",
@@ -98,6 +101,20 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       {/* Google Analytics */}
       {GA_ID && (
         <>
+          <Script id="consent-default" strategy="beforeInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            ad_storage: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'granted',
+            security_storage: 'granted'
+          });
+        `}
+          </Script>
           <Script
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -117,7 +134,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         </>
       )}
 
-      <Component {...pageProps} />
+      <ConsentProvider perLocale={false}>
+        <Component {...pageProps} />
+        {/* Global banner & preferences modal */}
+        <CookieBanner />
+        <CookiePreferences />
+      </ConsentProvider>
       <BackToTop />
       <WhatsAppButton />
     </SessionProvider>

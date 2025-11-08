@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { SOCIAL_LINKS } from "@/lib/socialLinks";
 
 export default function MobileMenu({
   onClose,
@@ -127,7 +128,34 @@ export default function MobileMenu({
           </Link>
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="border-t border-brand-300/30 pt-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-3">
+            {t("footer.social.title", "Sosyal medya")}
+          </p>
+          <div className="flex items-center gap-3 mt-4">
+            {SOCIAL_LINKS.map(({ key, href, fallbackLabel, Icon, color }) => {
+              const label = t(`footer.social.${key}`, fallbackLabel);
+              return (
+                <a
+                  key={key}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={label}
+                  className="inline-flex items-center justify-center text-text-primary transition-transform hover:-translate-y-0.5 hover:scale-110"
+                  style={{
+                    color: color,
+                  }}
+                >
+                  <Icon aria-hidden className="text-3xl" />
+                  <span className="sr-only">{label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between pt-4">
           {UserMenu}
           {LanguageSwitcher}
         </div>

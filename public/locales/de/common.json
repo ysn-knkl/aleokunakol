@@ -211,7 +211,14 @@
       "contact": "Termin"
     },
     "location": "Wien, Österreich",
-    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Alle Rechte vorbehalten."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Alle Rechte vorbehalten.",
+    "social": {
+      "title": "Folge uns",
+      "description": "Bleib bei neuen Angeboten und Inhalten auf dem Laufenden.",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube"
+    }
   },
   "exercises": {
     "title": "Meine Übungen",
@@ -362,6 +369,30 @@
     "section11": {
       "title": "11. Änderungen",
       "text": "Diese Datenschutzerklärung kann bei Bedarf angepasst werden. Die jeweils aktuelle Fassung ist auf unserer Website abrufbar."
+    }
+  },
+  "cookies": {
+    "banner": {
+      "text": "Wir verwenden notwendige Cookies sowie optionale Analyse- und Marketing-Cookies. Du kannst deine Präferenzen auswählen.",
+      "onlyEssential": "Nur notwendige",
+      "preferences": "Einstellungen",
+      "acceptAll": "Alle akzeptieren"
+    },
+    "prefs": {
+      "title": "Cookie-Einstellungen",
+      "essential": {
+        "title": "Notwendige Cookies",
+        "desc": "Sitzungs- und Sprachcookies. Immer aktiv."
+      },
+      "analytics": {
+        "title": "Analyse-Cookies",
+        "desc": "Zur Messung von Traffic und Leistung (Google Analytics)."
+      },
+      "marketing": {
+        "title": "Marketing-Cookies",
+        "desc": "Zur Personalisierung von Werbung und Inhalten Dritter."
+      },
+      "alwaysOn": "AN"
     }
   }
 }

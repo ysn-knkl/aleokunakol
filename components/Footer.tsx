@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
+import { SOCIAL_LINKS } from "@/lib/socialLinks";
 
 type FooterProps = {
   showMaps?: boolean;
@@ -47,7 +48,7 @@ const Footer = ({ showMaps = true, onOpenPrivacy, onOpenImpressum }: FooterProps
       )}
 
       <div className="bg-surface-50 border-t border-brand-300/30">
-        <div className="container-x grid gap-8 py-10 md:grid-cols-3">
+        <div className="container-x grid gap-8 py-10 md:grid-cols-4">
           <div>
             <h4 className="text-text-primary text-lg font-semibold">{t("footer.title")}</h4>
             <p className="text-text-secondary mt-3">{t("footer.description")}</p>
@@ -94,6 +95,37 @@ const Footer = ({ showMaps = true, onOpenPrivacy, onOpenImpressum }: FooterProps
                 </button>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <h5 className="text-text-primary font-semibold">
+              {t("footer.social.title", "Sosyal medya")}
+            </h5>
+            <p className="text-text-secondary mt-3 text-sm">
+              {t("footer.social.description", "Yeni içerikler için bizi takip edin.")}
+            </p>
+
+            <div className="flex items-center gap-3 mt-5">
+              {SOCIAL_LINKS.map(({ key, href, fallbackLabel, Icon, color }) => {
+                const label = t(`footer.social.${key}`, fallbackLabel);
+                return (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={label}
+                    className="inline-flex items-center justify-center text-text-primary transition-transform hover:-translate-y-0.5 hover:scale-110"
+                    style={{
+                      color: color,
+                    }}
+                  >
+                    <Icon aria-hidden className="text-3xl" />
+                    <span className="sr-only">{label}</span>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
 

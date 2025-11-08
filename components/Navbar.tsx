@@ -9,8 +9,8 @@ import Modal from "./common/Modal";
 import LanguageSwitcher from "./common/LanguageSwitcher";
 import ImpressumContent from "./legal/ImpressumContent";
 import PrivacyContent from "./legal/PrivacyContent";
+import { SOCIAL_LINKS } from "@/lib/socialLinks";
 
-// parçalar
 import Links from "./navbar/Links";
 import MobileMenu from "./navbar/MobileMenu";
 import UserMenu from "./navbar/UserMenu";
@@ -71,9 +71,8 @@ const Navbar: React.FC = () => {
       </a>
 
       <nav
-        className={`fixed inset-x-0 top-0 z-50 ${
-          openMobile ? "pointer-events-auto" : "pointer-events-none"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 ${openMobile ? "pointer-events-auto" : "pointer-events-none"
+          }`}
         role="navigation"
         aria-label={t("nav.primary", "Hauptnavigation")}
       >
@@ -107,6 +106,27 @@ const Navbar: React.FC = () => {
 
               {/* Desktop sağ */}
               <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
+                <div className="flex items-center gap-3">
+                  {SOCIAL_LINKS.map(({ key, href, fallbackLabel, Icon, color }) => {
+                    const label = t(`footer.social.${key}`, fallbackLabel);
+                    return (
+                      <a
+                        key={key}
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label={label}
+                        className="relative group inline-flex items-center justify-center text-text-primary transition-transform hover:-translate-y-0.5 hover:scale-110"
+                        style={{
+                          color: color,
+                        }}
+                      >
+                        <Icon aria-hidden className="text-2xl" />
+                        <span className="sr-only">{label}</span>
+                      </a>
+                    );
+                  })}
+                </div>
                 <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
                   {t("nav.cta")}
                 </Link>

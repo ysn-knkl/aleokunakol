@@ -39,7 +39,7 @@
     "save": "Kaydet"
   },
   "hero": {
-    "title": "Sorun çocuğun değil—sinir sistemi desteğe ihtiyaç duyuyor.",
+    "title": "Sorun çocuğun değil sinir sistemi desteğe ihtiyaç duyuyor.",
     "lead": "Refleks entegrasyonu, aromaterapi ve PEMF ile çocuğunu yeniden dengeye getir.",
     "cta": "Randevu al"
   },
@@ -61,8 +61,8 @@
     "title": "Refleks Entegrasyonu ile",
     "imageAlt": "Refleks terapisi",
     "bullets": [
-      "Daha fazla sakinlik, odak ve duygusal denge—baskısız",
-      "Öğrenme kapasitesinde artış—beyin sistemlerinin olgunlaşmasıyla",
+      "Daha fazla sakinlik, odak ve duygusal denge baskısız",
+      "Öğrenme kapasitesinde artış beyin sistemlerinin olgunlaşmasıyla",
       "Evde uygulanabilir, basit ve eğlenceli egzersizler",
       "Zorlayıcı durumlar için araçlar ve netlik",
       "10+ yıllık deneyim ve yürekle"
@@ -71,8 +71,8 @@
   "services2": {
     "imageAlt": "Refleks terapisi",
     "bullets": [
-      "Çok şey denedin—ama çocuğun bir türlü ilerlemiyor.",
-      "Çabaladığını görüyorsun ama yine de olmuyor—zor, duygusal, çatışmalı.",
+      "Çok şey denedin ama çocuğun bir türlü ilerlemiyor.",
+      "Çabaladığını görüyorsun ama yine de olmuyor zor, duygusal, çatışmalı.",
       "Ben de bir terapist olarak aynısını yaşadım. QRI ile çalışınca kırılma noktası geldi."
     ]
   },
@@ -80,8 +80,8 @@
     "title": "“İstese yapar”",
     "imageAlt": "Refleks terapisi",
     "bullets": [
-      "Çoğu kez hayır—çünkü sinir sistemi hayatta kalma modunda.",
-      "Entegre olmamış ilkel refleksler çocuğu beyin sapında tutar—ne mantık, ne odak, ne de “Hadi toparlan.”",
+      "Çoğu kez hayır çünkü sinir sistemi hayatta kalma modunda.",
+      "Entegre olmamış ilkel refleksler çocuğu beyin sapında tutar ne mantık, ne odak, ne de “Hadi toparlan.”",
       "Tembellik gibi görünen şey çoğu zaman bedensel aşırı yüklenmedir.",
       "Her seansta kendime sorarım:",
       "Fazla mı istiyorum? Çocuk bunu fizyolojik olarak yapabilir mi? Yapamıyorsa sorun çocukta değil, beklenti erkendir.",
@@ -105,7 +105,7 @@
     }
   },
   "motherChildCard": {
-    "title": "Ebeveynlerin dileği—çocukların sessiz umudu",
+    "title": "Ebeveynlerin dileği çocukların sessiz umudu",
     "imageAlt": "Anne ve çocuk",
     "labels": {
       "mother": "Ebeveynler ister …",
@@ -115,7 +115,7 @@
     "left": [
       {
         "title": "Evde huzur, odak ve uyum",
-        "description": "Çocuğun sakinleşsin, odaklansın, keyifle öğrensin—günlük kavgalar bitsin."
+        "description": "Çocuğun sakinleşsin, odaklansın, keyifle öğrensin günlük kavgalar bitsin."
       },
       {
         "title": "Netlik ve seçenekler",
@@ -131,7 +131,7 @@
       "desc": "Söyleyemese de çocuğun ister …",
       "sp1": "Kendi bedeninde güven.",
       "sp2": "Şunu soran biri:",
-      "sp3": "“Gerçekten neye ihtiyacın var?”—“Neden böylesin?” değil."
+      "sp3": "“Gerçekten neye ihtiyacın var?” “Neden böylesin?” değil."
     },
     "right": [
       {
@@ -140,7 +140,7 @@
       },
       {
         "title": "Görülmek",
-        "description": "Ne hissettiğiyle—sadece (henüz) yapamadıklarıyla değil."
+        "description": "Ne hissettiğiyle sadece (henüz) yapamadıklarıyla değil."
       },
       {
         "title": "Kendi hızında büyümek",
@@ -211,7 +211,14 @@
       "contact": "Randevu"
     },
     "location": "Viyana, Avusturya",
-    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Tüm hakları saklıdır."
+    "copyright": "© {{year}} QRI Reflex(Yasin Okunakol). Tüm hakları saklıdır.",
+    "social": {
+      "title": "Sosyal medya",
+      "description": "Yeni içerikler ve duyurular için bizi takip et.",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube"
+    }
   },
   "exercises": {
     "title": "Egzersizlerim",
@@ -225,7 +232,7 @@
     "plan": "Plan"
   },
   "uploader": {
-    "pickOrDrop": "Dosya seç / sürükle-bırak",
+    "pickOrDrop": "Dosya seç / sürükle bırak",
     "ariaLabel": "Dosya yükle",
     "supported": "Desteklenen türler",
     "upload": "Yükle",
@@ -256,7 +263,7 @@
   "lastUpdated": "Güncellendi: 2025",
   "phone": "Telefon",
   "email": "E-Posta",
-  "phoneNumber" : "+436605733620",
+  "phoneNumber": "+436605733620",
   "privacy": {
     "title": "Gizlilik Politikası",
     "stand": "Güncelleme tarihi: {{date}}",
@@ -362,6 +369,30 @@
     "section11": {
       "title": "11. Değişiklikler",
       "text": "Bu gizlilik bildirimi gerektiğinde güncellenebilir. Güncel sürüm web sitemizde yayınlanır."
+    }
+  },
+  "cookies": {
+    "banner": {
+      "text": "Bu sitede temel çerezlerin yanında analitik ve pazarlama çerezleri kullanabiliriz. Tercihini seçebilirsin.",
+      "onlyEssential": "Yalnızca zorunlu",
+      "preferences": "Tercihler",
+      "acceptAll": "Kabul et"
+    },
+    "prefs": {
+      "title": "Çerez tercihleri",
+      "essential": {
+        "title": "Zorunlu çerezler",
+        "desc": "Oturum ve dil çerezleri. Her zaman aktiftir."
+      },
+      "analytics": {
+        "title": "Analitik çerezler",
+        "desc": "Trafik ölçümü ve performans (Google Analytics)."
+      },
+      "marketing": {
+        "title": "Pazarlama çerezleri",
+        "desc": "Reklam kişiselleştirme ve üçüncü taraf içerikler."
+      },
+      "alwaysOn": "AÇIK"
     }
   }
 }
