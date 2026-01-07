@@ -15,7 +15,7 @@
     "cloudinary": "^2.7.0",
     "mongodb": "^6.19.0",
     "mongoose": "^8.18.0",
-    "next": "latest",
+    "next": "15.5.8",
     "next-auth": "^4.24.11",
     "next-i18next": "latest",
     "next-seo": "latest",
