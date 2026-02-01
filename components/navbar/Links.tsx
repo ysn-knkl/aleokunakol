@@ -42,14 +42,14 @@ export default function Links({ isAuthed }: LinksProps) {
         {t("nav.services", "Leistungen")}
       </Link>
 
-      <Link
+      {/* <Link
         href={hrefHash("#contact")}
         locale={locale}
         className={`${base} ${isActive("#contact") ? active : normal}`}
         aria-current={isActive("#contact") ? "page" : undefined}
       >
         {t("nav.contact", "Termin")}
-      </Link>
+      </Link> */}
 
       {isAuthed && (
         <Link

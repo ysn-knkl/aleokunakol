@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import ButtonCTA from './common/ButtonCTA';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation('common');
@@ -20,11 +19,11 @@ const Hero: React.FC = () => {
           {t('hero.title')}
         </h1>
         <p className="lead mt-4 max-w-2xl mx-auto">{t('hero.lead')}</p>
-        <div className="mt-10 flex items-center justify-center">
+        {/* <div className="mt-10 flex items-center justify-center">
           <a href="#contact" className="btn-primary mt-8">
             {t('hero.cta')}
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

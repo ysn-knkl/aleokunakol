@@ -78,9 +78,9 @@ export default function MobileMenu({
           <Link href={hrefHash("#packages")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
             {t("nav.services")}
           </Link>
-          <Link href={hrefHash("#contact")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
+          {/* <Link href={hrefHash("#contact")} className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100">
             {t("nav.contact")}
-          </Link>
+          </Link> */}
 
           {isAuthed && (
             <Link
@@ -122,11 +122,11 @@ export default function MobileMenu({
           </button>
         </nav>
 
-        <div className="pt-1">
+        {/* <div className="pt-1">
           <Link href={to("#contact")} className="btn-primary w-full justify-center">
             {t("nav.cta")}
           </Link>
-        </div>
+        </div> */}
 
         <div className="border-t border-brand-300/30 pt-4">
           <p className="text-xs uppercase tracking-[0.2em] text-text-muted mb-3">

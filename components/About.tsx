@@ -71,13 +71,13 @@ const About: React.FC = () => {
               )}
 
               {/* CTA */}
-              <a
+              {/* <a
                 href="#contact"
                 className="mt-6 inline-flex items-center justify-center w-full rounded-xl bg-brand-600 text-white font-medium py-3 hover:bg-brand-700 transition"
                 aria-label={t("nav.cta", "Termin buchen")}
               >
                 {t("nav.cta")}
-              </a>
+              </a> */}
             </div>
           </div>
         </aside>

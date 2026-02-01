@@ -82,7 +82,7 @@ const Footer = ({ showMaps = true, onOpenPrivacy, onOpenImpressum }: FooterProps
             <ul className="mt-3 space-y-1">
               <li><a href="#about" className="nav-link">{t("footer.links.about")}</a></li>
               <li><a href="#services" className="nav-link">{t("footer.links.services")}</a></li>
-              <li><a href="#contact" className="nav-link">{t("footer.links.contact")}</a></li>
+              {/* <li><a href="#contact" className="nav-link">{t("footer.links.contact")}</a></li> */}
 
               <li>
                 <button type="button" onClick={emitImpressum} className="nav-link">

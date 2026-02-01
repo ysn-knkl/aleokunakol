@@ -1,4 +1,3 @@
-// pages/index.tsx
 import {
   Navbar,
   Hero,
@@ -42,7 +41,7 @@ export default function Home() {
         <MotherChildCard />
         <About />
         <OfferPackages />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
       </main>
     </>

@@ -136,7 +136,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
       <ConsentProvider perLocale={false}>
         <Component {...pageProps} />
-        {/* Global banner & preferences modal */}
         <CookieBanner />
         <CookiePreferences />
       </ConsentProvider>

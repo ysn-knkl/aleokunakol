@@ -127,9 +127,10 @@ const Navbar: React.FC = () => {
                     );
                   })}
                 </div>
-                <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
+
+                {/* <Link href={`/${locale}#contact`} className="btn-primary whitespace-nowrap">
                   {t("nav.cta")}
-                </Link>
+                </Link> */}
                 <UserMenu
                   isAdmin={isAdmin}
                   locale={locale}
