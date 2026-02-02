@@ -36,7 +36,65 @@
     "edit": "Edit",
     "delete": "Delete",
     "cancel": "Cancel",
-    "save": "Save"
+    "save": "Save",
+    "notAvailable": "N/A"
+  },
+  "admin": {
+    "pageTitle": "Admin Panel",
+    "pageSubtitle": "User management and exercise assignment module.",
+    "confirmDeleteAssignment": "Are you sure you want to delete this assignment?",
+    "selectUserAndExercise": "Select a user and an exercise.",
+    "assignSuccess": "Assignment successful ✅",
+    "assign": {
+      "title": "Exercise Assignment",
+      "user": "User",
+      "exercise": "Exercise",
+      "sets": "Sets",
+      "reps": "Reps",
+      "days": "Days",
+      "submit": "Assign",
+      "submitting": "Assigning..."
+    },
+    "users": {
+      "title": "Users",
+      "searchPlaceholder": "Search (email, name)",
+      "email": "Email",
+      "name": "Name",
+      "role": "Role",
+      "id": "ID",
+      "selectedUser": "Selected user",
+      "userId": "User ID"
+    },
+    "assignments": {
+      "title": "Assigned Exercises",
+      "empty": "No exercises assigned to this user yet.",
+      "deleted": "Deleted exercise"
+    },
+    "exercises": {
+      "title": "Exercise Management",
+      "new": "New exercise",
+      "columns": {
+        "title": "Title",
+        "level": "Level",
+        "tags": "Tags",
+        "body": "Body area",
+        "slug": "Slug",
+        "actions": "Actions"
+      },
+      "createTitle": "New Exercise",
+      "editTitle": "Edit Exercise",
+      "form": {
+        "title": "Title",
+        "slug": "Slug",
+        "description": "Description",
+        "tags": "Tags (comma separated)",
+        "body": "Body area (comma separated)",
+        "images": "Images (comma separated URLs)",
+        "video": "YouTube/Video URL",
+        "text": "Text content (optional)"
+      }
+    },
+    "confirmDeleteExercise": "Are you sure you want to delete this exercise?"
   },
   "hero": {
     "title": "Your child is not the problem their nervous system needs support.",

@@ -13,6 +13,7 @@ type ExerciseRow = { _id: string; title: string };
 
 const AdminPage: NextPage = () => {
   const { t } = useTranslation("common");
+  const na = t("common.notAvailable", "-");
 
   // State
   const [users, setUsers] = React.useState<UserRow[]>([]);
@@ -108,6 +109,16 @@ const AdminPage: NextPage = () => {
     ],
     [t]
   );
+
+  const renderDays = (list: string[] | undefined) => {
+    if (!Array.isArray(list) || list.length === 0) return na;
+    return list.map((d) => t(`days.${d}`, d)).join(", ");
+  };
+
+  const renderLevel = (level: string | undefined) => {
+    if (!level) return na;
+    return t(`levels.${level}`, level);
+  };
 
   const toggleDay = (d: string) => {
     setDays((prev) => (prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d]));
@@ -310,7 +321,7 @@ const AdminPage: NextPage = () => {
                   <th className="py-2 pr-3">{t("admin.users.email", "Email")}</th>
                   <th className="py-2 pr-3">{t("admin.users.name", "Ad")}</th>
                   <th className="py-2 pr-3">{t("admin.users.role", "Rol")}</th>
-                  <th className="py-2 pr-3">ID</th>
+                  <th className="py-2 pr-3">{t("admin.users.id", "ID")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -334,7 +345,7 @@ const AdminPage: NextPage = () => {
                       onClick={() => openAssignments(u._id)}
                     >
                       <td className="py-2 pr-3">{u.email}</td>
-                      <td className="py-2 pr-3">{u.name || "-"}</td>
+                      <td className="py-2 pr-3">{u.name || na}</td>
                       <td className="py-2 pr-3">
                         <span className="px-2 py-1 rounded-full border text-xs">{u.role}</span>
                       </td>
@@ -390,9 +401,9 @@ const AdminPage: NextPage = () => {
                       <div>
                         <div className="font-medium">{a.exercise?.title || t("admin.assignments.deleted", "Silinmiş egzersiz")}</div>
                         <div className="text-xs text-text-secondary mt-1">
-                          {(a.schedule?.sets ? a.schedule.sets + " " + t("exercises.set", "set") : "-")} •{" "}
-                          {(a.schedule?.reps ? a.schedule.reps + " " + t("exercises.rep", "tekrar") : "-")} •{" "}
-                          {Array.isArray(a.schedule?.days) ? a.schedule.days.join(", ") : "-"}
+                          {(a.schedule?.sets ? a.schedule.sets + " " + t("exercises.set", "set") : na)} •{" "}
+                          {(a.schedule?.reps ? a.schedule.reps + " " + t("exercises.rep", "tekrar") : na)} •{" "}
+                          {renderDays(a.schedule?.days)}
                         </div>
                       </div>
                       <button
@@ -443,7 +454,7 @@ const AdminPage: NextPage = () => {
                   <th className="py-2 pr-3">{t("admin.exercises.columns.level", "Seviye")}</th>
                   <th className="py-2 pr-3">{t("admin.exercises.columns.tags", "Etiketler")}</th>
                   <th className="py-2 pr-3">{t("admin.exercises.columns.body", "Bölge")}</th>
-                  <th className="py-2 pr-3">Slug</th>
+                  <th className="py-2 pr-3">{t("admin.exercises.columns.slug", "Slug")}</th>
                   <th className="py-2">{t("admin.exercises.columns.actions", "İşlemler")}</th>
                 </tr>
               </thead>
@@ -458,10 +469,10 @@ const AdminPage: NextPage = () => {
                   exercisesFull.map((x: any) => (
                     <tr key={x._id || x.id} className="border-t">
                       <td className="py-2 pr-3">{x.title}</td>
-                      <td className="py-2 pr-3">{x.level || "-"}</td>
-                      <td className="py-2 pr-3">{Array.isArray(x.tags) ? x.tags.join(", ") : "-"}</td>
-                      <td className="py-2 pr-3">{Array.isArray(x.bodyParts) ? x.bodyParts.join(", ") : "-"}</td>
-                      <td className="py-2 pr-3">{x.slug || "-"}</td>
+                      <td className="py-2 pr-3">{renderLevel(x.level)}</td>
+                      <td className="py-2 pr-3">{Array.isArray(x.tags) ? x.tags.join(", ") : na}</td>
+                      <td className="py-2 pr-3">{Array.isArray(x.bodyParts) ? x.bodyParts.join(", ") : na}</td>
+                      <td className="py-2 pr-3">{x.slug || na}</td>
                       <td className="py-2">
                         <div className="flex items-center gap-2">
                           <button onClick={() => openEdit(x)} className="px-2 py-1 rounded border hover:bg-surface-50">
@@ -500,7 +511,7 @@ const AdminPage: NextPage = () => {
                   />
                   <input
                     className="border rounded-lg px-3 py-2"
-                    placeholder="Slug"
+                    placeholder={t("admin.exercises.form.slug", "Slug") as string}
                     value={editing?.slug || ""}
                     onChange={(e) => setEditing((s: any) => ({ ...s, slug: e.target.value }))}
                   />

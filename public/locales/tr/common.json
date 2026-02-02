@@ -36,7 +36,65 @@
     "edit": "Düzenle",
     "delete": "Sil",
     "cancel": "Vazgeç",
-    "save": "Kaydet"
+    "save": "Kaydet",
+    "notAvailable": "Yok"
+  },
+  "admin": {
+    "pageTitle": "Yönetim Paneli",
+    "pageSubtitle": "Kullanıcı yönetimi ve egzersiz atama modülü.",
+    "confirmDeleteAssignment": "Bu atamayı silmek istediğine emin misin?",
+    "selectUserAndExercise": "Kullanıcı ve egzersiz seçin.",
+    "assignSuccess": "Atama başarılı ✅",
+    "assign": {
+      "title": "Egzersiz Atama",
+      "user": "Kullanıcı",
+      "exercise": "Egzersiz",
+      "sets": "Set",
+      "reps": "Tekrar",
+      "days": "Günler",
+      "submit": "Ata",
+      "submitting": "Atanıyor..."
+    },
+    "users": {
+      "title": "Kullanıcılar",
+      "searchPlaceholder": "Ara (email, ad)",
+      "email": "Email",
+      "name": "Ad",
+      "role": "Rol",
+      "id": "ID",
+      "selectedUser": "Seçili kullanıcı",
+      "userId": "Kullanıcı ID"
+    },
+    "assignments": {
+      "title": "Atanan Egzersizler",
+      "empty": "Bu kullanıcıya henüz egzersiz atanmamış.",
+      "deleted": "Silinmiş egzersiz"
+    },
+    "exercises": {
+      "title": "Egzersiz Yönetimi",
+      "new": "Yeni egzersiz",
+      "columns": {
+        "title": "Başlık",
+        "level": "Seviye",
+        "tags": "Etiketler",
+        "body": "Bölge",
+        "slug": "Slug",
+        "actions": "İşlemler"
+      },
+      "createTitle": "Yeni Egzersiz",
+      "editTitle": "Egzersizi Düzenle",
+      "form": {
+        "title": "Başlık",
+        "slug": "Slug",
+        "description": "Açıklama",
+        "tags": "Etiketler (virgül ile)",
+        "body": "Bölge (virgül ile)",
+        "images": "Görseller (virgül ile URL)",
+        "video": "YouTube/Video URL",
+        "text": "Metin içeriği (opsiyonel)"
+      }
+    },
+    "confirmDeleteExercise": "Bu egzersizi silmek istediğine emin misin?"
   },
   "hero": {
     "title": "Sorun çocuğun değil sinir sistemi desteğe ihtiyaç duyuyor.",
