@@ -36,7 +36,65 @@
     "edit": "Bearbeiten",
     "delete": "Löschen",
     "cancel": "Abbrechen",
-    "save": "Speichern"
+    "save": "Speichern",
+    "notAvailable": "k. A."
+  },
+  "admin": {
+    "pageTitle": "Admin-Bereich",
+    "pageSubtitle": "Modul für Benutzerverwaltung und Übungszuweisung.",
+    "confirmDeleteAssignment": "Möchtest du diese Zuweisung wirklich löschen?",
+    "selectUserAndExercise": "Bitte Nutzer und Übung auswählen.",
+    "assignSuccess": "Zuweisung erfolgreich ✅",
+    "assign": {
+      "title": "Übungszuweisung",
+      "user": "Benutzer",
+      "exercise": "Übung",
+      "sets": "Sätze",
+      "reps": "Wiederholungen",
+      "days": "Tage",
+      "submit": "Zuweisen",
+      "submitting": "Weist zu..."
+    },
+    "users": {
+      "title": "Benutzer",
+      "searchPlaceholder": "Suche (E-Mail, Name)",
+      "email": "E-Mail",
+      "name": "Name",
+      "role": "Rolle",
+      "id": "ID",
+      "selectedUser": "Ausgewählter Benutzer",
+      "userId": "Benutzer-ID"
+    },
+    "assignments": {
+      "title": "Zugewiesene Übungen",
+      "empty": "Diesem Benutzer wurden noch keine Übungen zugewiesen.",
+      "deleted": "Gelöschte Übung"
+    },
+    "exercises": {
+      "title": "Übungsverwaltung",
+      "new": "Neue Übung",
+      "columns": {
+        "title": "Titel",
+        "level": "Level",
+        "tags": "Tags",
+        "body": "Körperbereich",
+        "slug": "Slug",
+        "actions": "Aktionen"
+      },
+      "createTitle": "Neue Übung",
+      "editTitle": "Übung bearbeiten",
+      "form": {
+        "title": "Titel",
+        "slug": "Slug",
+        "description": "Beschreibung",
+        "tags": "Tags (durch Komma getrennt)",
+        "body": "Körperbereich (durch Komma getrennt)",
+        "images": "Bilder (URLs durch Komma getrennt)",
+        "video": "YouTube/Video-URL",
+        "text": "Textinhalt (optional)"
+      }
+    },
+    "confirmDeleteExercise": "Möchtest du diese Übung wirklich löschen?"
   },
   "hero": {
     "title": "Dein Kind ist nicht das Problem – sein Nervensystem braucht Unterstützung.",

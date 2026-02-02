@@ -31,6 +31,7 @@
     "delete": "Șterge",
     "cancel": "Anulează",
     "save": "Salvează",
+    "notAvailable": "N/A",
     "exercises": "Exerciții",
     "admin": "Admin",
     "cta": "Programează o ședință",
@@ -40,6 +41,63 @@
     "openMenu": "Deschide meniul",
     "closeMenu": "Închide meniul",
     "userMenu": "Meniu utilizator"
+  },
+  "admin": {
+    "pageTitle": "Panou Admin",
+    "pageSubtitle": "Modul pentru gestionarea utilizatorilor și atribuirea exercițiilor.",
+    "confirmDeleteAssignment": "Sigur vrei să ștergi această atribuire?",
+    "selectUserAndExercise": "Selectează un utilizator și un exercițiu.",
+    "assignSuccess": "Atribuire reușită ✅",
+    "assign": {
+      "title": "Atribuire exercițiu",
+      "user": "Utilizator",
+      "exercise": "Exercițiu",
+      "sets": "Serii",
+      "reps": "Repetări",
+      "days": "Zile",
+      "submit": "Atribuie",
+      "submitting": "Se atribuie..."
+    },
+    "users": {
+      "title": "Utilizatori",
+      "searchPlaceholder": "Caută (email, nume)",
+      "email": "Email",
+      "name": "Nume",
+      "role": "Rol",
+      "id": "ID",
+      "selectedUser": "Utilizator selectat",
+      "userId": "ID utilizator"
+    },
+    "assignments": {
+      "title": "Exerciții atribuite",
+      "empty": "Acestui utilizator nu i-au fost atribuite încă exerciții.",
+      "deleted": "Exercițiu șters"
+    },
+    "exercises": {
+      "title": "Gestionare exerciții",
+      "new": "Exercițiu nou",
+      "columns": {
+        "title": "Titlu",
+        "level": "Nivel",
+        "tags": "Etichete",
+        "body": "Zonă",
+        "slug": "Slug",
+        "actions": "Acțiuni"
+      },
+      "createTitle": "Exercițiu nou",
+      "editTitle": "Editează exercițiul",
+      "form": {
+        "title": "Titlu",
+        "slug": "Slug",
+        "description": "Descriere",
+        "tags": "Etichete (separate prin virgulă)",
+        "body": "Zonă (separată prin virgulă)",
+        "images": "Imagini (URL-uri separate prin virgulă)",
+        "video": "URL YouTube/Video",
+        "text": "Conținut text (opțional)"
+      }
+    },
+    "confirmDeleteExercise": "Sigur vrei să ștergi acest exercițiu?"
   },
   "auth": {
     "signInTitle": "Autentificare",
