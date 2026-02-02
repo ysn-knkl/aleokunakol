@@ -7,6 +7,7 @@ import AdminShell from "@/components/admin/AdminShell";
 import MediaUploader from "@/components/admin/MediaUploader";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../next-i18next.config";
 
 type UserRow = { _id: string; email: string; name?: string; role: string };
 type ExerciseRow = { _id: string; title: string };
@@ -635,7 +636,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(ctx.locale ?? "de", ["common"])),
+      ...(await serverSideTranslations(ctx.locale ?? "de", ["common"], nextI18NextConfig)),
     },
   };
 };
