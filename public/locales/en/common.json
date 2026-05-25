@@ -16,6 +16,7 @@
     "skipToContent": "Skip to content",
     "primary": "Primary navigation",
     "logoAlt": "QRI Reflex Logo",
+    "miniCourse": "Mini Curs",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "userMenu": "User menu"
@@ -95,6 +96,16 @@
       }
     },
     "confirmDeleteExercise": "Are you sure you want to delete this exercise?"
+  },
+  "miniCourse": {
+    "pageTitle": "Mini Curs",
+    "pageSubtitle": "A short, clear and friendly page for parents who want to begin gently.",
+    "badge": "Mini Curs",
+    "imageAlt": "Reflex integration session",
+    "title": "First steps toward more calm and regulation",
+    "lead": "A simple starting point for understanding reflexes and supporting your child at home in a steady way.",
+    "body1": "Mini Curs is designed as an easy introduction. It briefly explains why nervous system regulation matters and how small daily observations can shift the rhythm of the whole family.",
+    "body2": "This page starts with one clear image and one simple message: your child does not need pressure, but gentle, consistent support that fits their body."
   },
   "hero": {
     "title": "Your child is not the problem their nervous system needs support.",

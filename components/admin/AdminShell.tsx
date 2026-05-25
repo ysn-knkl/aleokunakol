@@ -7,12 +7,14 @@ import Footer from "@/components/Footer";
 
 type Props = {
   title?: string;
+  subtitle?: string;
   children: React.ReactNode;
 };
 
-export default function AdminShell({ title, children }: Props) {
+export default function AdminShell({ title, subtitle, children }: Props) {
   const { t } = useTranslation("common");
   const resolvedTitle = title || t("admin.pageTitle", "Admin Panel");
+  const resolvedSubtitle = subtitle || t("admin.pageSubtitle", "Kullanıcı yönetimi ve egzersiz atama modülü.");
   const siteName = t("seo.siteName");
 
   return (
@@ -36,7 +38,7 @@ export default function AdminShell({ title, children }: Props) {
               {resolvedTitle}
             </h1>
             <p className="mt-3 text-text-secondary">
-              {t("admin.pageSubtitle", "Kullanıcı yönetimi ve egzersiz atama modülü.")}
+              {resolvedSubtitle}
             </p>
           </div>
         </section>

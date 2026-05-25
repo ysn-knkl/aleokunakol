@@ -61,6 +61,17 @@ export default function Links({ isAuthed }: LinksProps) {
           {t("nav.exercises", "Übungen")}
         </Link>
       )}
+
+      {locale === "ro" && (
+        <Link
+          href={{ pathname: "/mini-curs" }}
+          locale={locale}
+          className="btn-primary whitespace-nowrap !px-4 !py-2 !text-sm"
+          aria-current={asPath.includes("/mini-curs") ? "page" : undefined}
+        >
+          {t("nav.miniCourse", "Mini Curs")}
+        </Link>
+      )}
     </>
   );
 }

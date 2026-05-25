@@ -16,6 +16,7 @@
     "skipToContent": "Sari la conținut",
     "primary": "Navigare principală",
     "logoAlt": "Logo QRI Reflex",
+    "miniCourse": "Mini Curs",
     "openMenu": "Deschide meniul",
     "closeMenu": "Închide meniul",
     "userMenu": "Meniu utilizator"
@@ -98,6 +99,16 @@
       }
     },
     "confirmDeleteExercise": "Sigur vrei să ștergi acest exercițiu?"
+  },
+  "miniCourse": {
+    "pageTitle": "Ce sunt reflexele primitive și de ce sunt un factor-cheie pentru somn, atenție și reglare emoțională",
+    "pageSubtitle": "Un mini-curs gratuit pe e-mail (6 mesaje) în care observi corpul înainte de comportament, înțelegi 4 reflexe-cheie (Moro, Galant, ATNR/STNR) și primești exerciții simple, blânde, pe care le poți aplica imediat.",
+    "badge": "Mini Curs",
+    "imageAlt": "Sesiune de integrare a reflexelor",
+    "title": "Primii pași spre mai mult calm și reglare",
+    "lead": "Un punct de pornire simplu pentru a înțelege mai bine reflexele și sprijinul pe care îl poți oferi copilului tău acasă.",
+    "body1": "Mini Curs este gândit ca o introducere ușor de parcurs. Explică pe scurt de ce reglarea sistemului nervos contează și cum observațiile mici din fiecare zi pot schimba ritmul întregii familii.",
+    "body2": "Pe această pagină începi cu o imagine clară și un mesaj simplu: copilul tău nu trebuie forțat, ci susținut cu pași blânzi, constanți și potriviți pentru corpul lui."
   },
   "auth": {
     "signInTitle": "Autentificare",

@@ -24,7 +24,8 @@ export default function LanguageSwitcher() {
   const switchTo = async (locale: Supported) => {
     setOpen(false);
     document.cookie = `NEXT_LOCALE=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}`;
-    await router.push(router.asPath, router.asPath, { locale });
+    const targetPath = router.asPath.includes("/mini-curs") ? "/" : router.asPath;
+    await router.push(targetPath, targetPath, { locale });
   };
 
   // dışarı tık & Esc kapatma

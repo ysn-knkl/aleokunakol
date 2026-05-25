@@ -16,6 +16,7 @@
     "skipToContent": "İçeriğe geç",
     "primary": "Ana gezinme",
     "logoAlt": "QRI Reflex Logosu",
+    "miniCourse": "Mini Curs",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
     "userMenu": "Kullanıcı menüsü"
@@ -95,6 +96,16 @@
       }
     },
     "confirmDeleteExercise": "Bu egzersizi silmek istediğine emin misin?"
+  },
+  "miniCourse": {
+    "pageTitle": "Mini Curs",
+    "pageSubtitle": "Nazik bir başlangıç yapmak isteyen ebeveynler için kısa, net ve uyumlu bir sayfa.",
+    "badge": "Mini Curs",
+    "imageAlt": "Refleks entegrasyonu seansı",
+    "title": "Daha fazla sakinlik ve regülasyon için ilk adımlar",
+    "lead": "Refleksleri daha iyi anlamak ve çocuğunu evde daha dengeli desteklemek için basit bir başlangıç noktası.",
+    "body1": "Mini Curs kolay takip edilen bir giriş olarak tasarlandı. Sinir sistemi regülasyonunun neden önemli olduğunu ve günlük hayattaki küçük gözlemlerin tüm ailenin ritmini nasıl etkileyebileceğini kısa şekilde anlatır.",
+    "body2": "Bu sayfa tek bir net görsel ve basit bir mesajla başlar: çocuğunun baskıya değil, bedenine uygun nazik ve istikrarlı desteğe ihtiyacı var."
   },
   "hero": {
     "title": "Sorun çocuğun değil sinir sistemi desteğe ihtiyaç duyuyor.",

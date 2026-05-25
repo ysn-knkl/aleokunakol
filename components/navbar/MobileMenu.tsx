@@ -45,8 +45,6 @@ export default function MobileMenu({
     return () => document.removeEventListener("mousedown", handleClick);
   }, [onClose]);
 
-  const to = (hash: string) => `/${locale}${hash}`;
-
   const hrefHash = (hash: string) => ({
     pathname: "/",
     hash: hash.replace(/^#/, ""),
@@ -89,6 +87,16 @@ export default function MobileMenu({
               className="rounded-xl px-3 py-3 text-lg font-medium hover:bg-surface-100"
             >
               {t("nav.exercises", "Egzersizler")}
+            </Link>
+          )}
+
+          {locale === "ro" && (
+            <Link
+              href={{ pathname: "/mini-curs" }}
+              locale={locale}
+              className="btn-primary mt-1 w-full justify-center text-center"
+            >
+              {t("nav.miniCourse", "Mini Curs")}
             </Link>
           )}
 
