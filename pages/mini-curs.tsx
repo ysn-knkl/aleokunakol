@@ -10,6 +10,7 @@ import { Footer, Navbar } from "@/components";
 export default function MiniCursPage() {
   const { t } = useTranslation("common");
   const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [email, setEmail] = useState("");
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
     "https://www.aleokunakol.com/ro/mini-curs"
@@ -96,9 +97,9 @@ export default function MiniCursPage() {
           return;
         }
 
-        alert("Successfully subscribed!");
-
-        closeSubscribeModal();
+        setIsSubscribeOpen(false);
+        setEmail("");
+        setIsSuccessOpen(true);
       } catch (error) {
         console.log(error);
 
@@ -250,6 +251,134 @@ export default function MiniCursPage() {
             </button>
           </div>
         </form>
+      </Modal>
+
+      {/* Success Modal */}
+      <Modal
+        title="Îți mulțumesc! 💛"
+        open={isSuccessOpen}
+        onClose={() => setIsSuccessOpen(false)}
+        size="lg"
+      >
+        <div className="not-prose grid gap-6 md:grid-cols-[1.1fr,1.3fr] items-start">
+          {/* Left Column: Image */}
+          <div className="relative h-64 md:h-[450px] overflow-hidden rounded-2xl border border-brand-300/20 shadow-md">
+            <Image
+              src="/mini-course/MSA5333.jpg"
+              alt="Alexandra - Fizioterapeut"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 35vw"
+            />
+          </div>
+
+          {/* Right Column: Romanian subscription success message details */}
+          <div className="space-y-6 text-text-primary text-[0.95rem] leading-relaxed">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold text-brand-600 mb-2">
+                Ești înscris/ă la Mini-cursul gratuit!
+              </h3>
+              <p className="text-sm font-semibold text-text-secondary leading-snug">
+                Cum să îți dai seama dacă reflexele primitive neintegrate îți influențează copilul — astfel încât să știi ce să faci acasă, în doar 10–15 minute pe zi.
+              </p>
+            </div>
+
+            <p className="text-text-secondary italic bg-surface-50 border-l-4 border-brand-400 p-3 rounded-r-xl">
+              În câteva minute vei primi primul e-mail. Între timp, iată ce să faci ca să începi ușor și să obții rezultate:
+            </p>
+
+            {/* Step 1 */}
+            <div className="space-y-3 bg-brand-50/30 border border-brand-100 p-4 rounded-xl">
+              <h4 className="font-bold text-brand-700 flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-500 text-white text-xs">1</span>
+                Pasul 1 (important): Verifică e-mailul
+              </h4>
+              <ul className="space-y-2 pl-2">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">📩</span>
+                  <span><strong>Verifică inbox-ul (și „Promotions/Spam”).</strong></span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">🔍</span>
+                  <span>
+                    Caută mesajul cu subiectul: <em>„Bun venit! De ce copilul vrea... dar uneori nu poate (încă)”</em>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">📥</span>
+                  <span>
+                    Dacă îl găsești, <strong>mută-l în Inbox</strong> ca să te asiguri că primești toate cele 5 e-mailuri.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-xs text-text-secondary border-t border-brand-100/50 pt-2 mt-2">
+                Dacă nu ajunge în 10 minute: caută după „Alexandra” sau scrie-mi la:{" "}
+                <a href="mailto:info@aleokunakol.com" className="underline text-brand-600 font-semibold hover:text-brand-700">
+                  info@aleokunakol.com
+                </a>.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="space-y-3 bg-brand-50/30 border border-brand-100 p-4 rounded-xl">
+              <h4 className="font-bold text-brand-700 flex items-center gap-2">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-500 text-white text-xs">2</span>
+                Pasul 2: Intră în comunitatea de pe Facebook
+              </h4>
+              <p className="text-sm text-text-secondary pl-2">
+                Pentru sprijin, întrebări și claritate, te invit în grupul meu privat:
+              </p>
+              
+              <div className="pt-2 pb-3">
+                <a
+                  href="https://www.facebook.com/groups/1626279855278044/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group/btn overflow-hidden inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-[#1877f2] via-[#1a85f7] to-[#3b9cff] hover:from-[#166fe5] hover:to-[#2e8bed] text-white px-6 py-3.5 font-bold shadow-[0_4px_20px_rgba(24,119,242,0.35)] hover:shadow-[0_6px_25px_rgba(24,119,242,0.5)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 text-center text-[0.98rem] tracking-wide"
+                >
+                  {/* Subtle shine reflection swipe */}
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000 ease-out" />
+                  
+                  {/* Glassmorphic Facebook Icon Badge */}
+                  <div className="flex items-center justify-center bg-white/10 p-1.5 rounded-xl backdrop-blur-sm group-hover/btn:scale-110 transition-transform duration-300">
+                    <svg className="h-5 w-5 fill-current text-white" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </div>
+                  
+                  <span>Intră în grupul Facebook</span>
+                  
+                  {/* Interactive pointer icon */}
+                  <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-1">
+                    👉
+                  </span>
+                </a>
+              </div>
+
+              <div className="text-xs space-y-2 border-t border-brand-100/50 pt-2">
+                <p className="font-semibold text-text-primary">
+                  Când ceri acces, te rog să completezi:
+                </p>
+                <ul className="list-disc list-inside space-y-1 text-text-secondary pl-1">
+                  <li>e-mailul cu care te-ai înscris</li>
+                  <li>vârsta copilului</li>
+                  <li>provocarea #1 (somn / emoții / atenție / postură etc.)</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Action Bar inside success */}
+            <div className="flex justify-end pt-2">
+              <button
+                type="button"
+                onClick={() => setIsSuccessOpen(false)}
+                className="rounded-full bg-surface-100 hover:bg-surface-200 border border-brand-300/30 px-6 py-2 text-sm font-semibold text-text-primary transition"
+              >
+                Închide
+              </button>
+            </div>
+          </div>
+        </div>
       </Modal>
     </>
   );
