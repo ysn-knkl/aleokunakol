@@ -12,6 +12,7 @@ export default class MyDocument extends Document<{ locale?: string }> {
     return (
       <Html lang={locale}>
         <Head>
+          <meta name="facebook-domain-verification" content="r7y4vsrtwbj2j2f73poz21w164vcb2" />
           {/* favicon buraya eklenir */}
           <link rel="icon" href="/favicon.png" sizes="any" />
         </Head>
